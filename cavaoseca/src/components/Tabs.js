@@ -3,16 +3,20 @@ import styled from "styled-components";
 // import { Link } from "react-scroll";
 import { Link } from "react-router-dom";
 
-const Tabs = ({ mode }) => {
-  const path = window.location.pathname;
+const Tabs = ({ mode, location }) => {
 
+console.log("LOCATIN EN TABS", location)
   {
     return (
-      <TabsBox mode={mode}>
+      <TabsBox mode={mode} location={location}>
         <Link to="/" spy={true} smooth={false} offset={-50} duration={800}>
           HOME
         </Link>
-        <Link to="/about" spy={true} smooth={false} offset={-13} duration={800}>
+        <Link
+        
+        // to="/about" spy={true} smooth={false} offset={-13} duration={800}
+        
+        >
           QUIENES SOMOS
         </Link>
         <Link to="/products" spy={true} smooth={false} offset={70} duration={800}>
@@ -42,11 +46,11 @@ margin-top: 5px;
 
   a {
     font-family: "Poppins";
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     line-height: 14px;
     text-decoration: none;
-    color: #fefefe;
+    color: ${(props) => (props.location === "/products" ? "#6a6f58" : "white")};
     cursor: pointer;
     padding: ${(props) => (props.mode === "large" ? "0 50px" : "25px 0")};
     background: transparent;

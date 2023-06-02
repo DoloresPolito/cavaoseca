@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import "../App.css";
 import { motion, useAnimation } from "framer-motion";
@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import instagram from "../assets/contact/instagram-white.png";
 import whatsapp from "../assets/contact/whatsapp-white.png";
 import { Link as RouterLink } from "react-router-dom";
+import logo from "../assets/logo-footer.png";
 
 const FooterNew = () => {
   // const [t] = useTranslation("global");
@@ -44,18 +45,18 @@ const FooterNew = () => {
           <FooterContainer mode={width} ref={ref}>
             <motion.div>
               {" "}
-              {/* <Logo src={logo} /> */}
+              <Logo src={logo} />
             </motion.div>
 
             <Column1 animate={animation}>
               <FooterTitle>Contactanos</FooterTitle>
               <div>
-                <a href="mailto:oliviapollitzer@gmail.com">
+                <a href="mailto:dolores.polito@gmail.com">
                   {" "}
                   {/* <img src={mail} alt="mail" /> */}
                 </a>
                 <a
-                  href="https://www.instagram.com/olipollitzer/"
+                  href="https://www.instagram.com/cavaoseca/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -63,12 +64,12 @@ const FooterNew = () => {
                   <img src={instagram} alt="instagram" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/olivia-pollitzer-31396817a/"
+                  href="https://wa.me/5493446584076"
                   target="_blank"
                   rel="noreferrer"
                 >
                   {" "}
-                  <img src={whatsapp} alt="linkedin" />
+                  <img src={whatsapp} alt="whatsapp" />
                 </a>
               </div>
             </Column1>
@@ -117,7 +118,7 @@ const FooterNew = () => {
                     <img src={instagram} alt="instagram" />
                   </a>
                   <a
-                   href="https://www.linkedin.com/in/olivia-pollitzer-31396817a/"
+                    href="https://www.linkedin.com/in/olivia-pollitzer-31396817a/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -146,10 +147,7 @@ const FooterNew = () => {
                 </RouterLink>
               </ul>
             </Div>
-            <div>
-              {" "}
-              {/* <Logo2 src={logo} /> */}
-            </div>
+            <div> {/* <Logo2 src={logo} /> */}</div>
 
             <CopyRight2>
               <p> Todos los derechos reservados</p>
@@ -163,8 +161,8 @@ const FooterNew = () => {
 
 const FooterSection = styled.div`
   height: 300px;
-  background-color: #5f5f67;
-  color: #f6f6f6;
+  background-color: #dad6cc;
+  color: #252525;
   display: flex;
   width: 100%;
   margin: auto;
@@ -181,8 +179,8 @@ const FooterContainer = styled(motion.div)`
 
 const Logo = styled.img`
   position: relative;
-  left: 20px;
-  width: 380px;
+  left: 90px;
+  width: 230px;
   top: 10px;
 
   @media only screen and (max-width: 1150px) {
@@ -245,8 +243,8 @@ const Column2 = styled(motion.div)`
   }
 
   li {
-    text-decoration: underline #5f5f67;
-    color: #f6f6f6;
+    text-decoration: underline #dad6cc;
+    color: #252525;
     font-weight: 400;
   }
 
@@ -262,7 +260,7 @@ const FooterTitle = styled.h4`
   font-family: "Bebas Neue", cursive;
   font-size: 20px;
   line-height: 22px;
-  color: #ffffff;
+  color: #252525;
   font-weight: 600;
   letter-spacing: 2px;
 
@@ -273,9 +271,10 @@ const FooterTitle = styled.h4`
 `;
 
 const CopyRight = styled(motion.div)`
-  position: absolute;
-  bottom: -40px;
-  left: 90px;
+  position: absolute; 
+   bottom: -60px;
+  left: 500px;
+
 
   p {
     font-size: 13px;
@@ -325,7 +324,7 @@ const Div = styled.div`
 
   li {
     text-decoration: underline #5f5f67;
-    color: #f6f6f6;
+    color: #252525;
     font-weight: 400;
   }
 

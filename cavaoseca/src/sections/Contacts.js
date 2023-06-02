@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
 import instagram from "../assets/contact/instagram-white.png";
 import whatsapp from "../assets/contact/whatsapp-white.png";
 // import emailjs from "emailjs-com";
+import backgroundImage from "../assets/fondos/nuevo_loli_pruebacontacto.png"
+import Modal from "../components/Modal";
 
 const Contact = () => {
   //   const frmContact = { userName: ``, userEmail: ``, message: `` };
@@ -35,88 +37,87 @@ const Contact = () => {
   return (
     <>
       <div
-        className="set_bg"
         style={{
-          // backgroundImage: "url('photo3.jpg')",
+          backgroundImage: `url(${backgroundImage})`,
           width: "100%",
           height: "100vh",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center"
         }}
       >
         <Navbar />
 
-        <FormContainer>
-                      <Form
-                        // onSubmit={handleSubmit}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                      >
-                        <Input
-                          className="form-item"
-                          placeholder="Nombre completo"
-                          type="text"
-                          required
-                          // value={contact.userName}
-                          name="userName"
-                          // onChange={handleChange}
-                        />
 
-                        <Input
-                          className="form-item"
-                          placeholder="Email"
-                          // value={contact.userEmail}
-                          // onChange={handleChange}
-                          name="userEmail"
-                          type="text"
-                          required
-                        />
+        <FormContainer
+        
+        >
+          <Form
+            // onSubmit={handleSubmit}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <Input
+              className="form-item"
+              placeholder="Nombre completo"
+              type="text"
+              required
+              // value={contact.userName}
+              name="userName"
+              // onChange={handleChange}
+            />
 
-                        <Input
-                          className="form-item"
-                          placeholder="Mensaje"
-                          // value={contact.message}
-                          // onChange={handleChange}
-                          name="message"
-                          type="text"
-                          required
-                        />
+            <Input
+              className="form-item"
+              placeholder="Email"
+              // value={contact.userEmail}
+              // onChange={handleChange}
+              name="userEmail"
+              type="text"
+              required
+            />
 
-                        <button
-                          type="submit"
-                          className="bottom-form"
-                      
-                        >
-                          Enviar
-                        </button>
-                      </Form>
-                    </FormContainer>
+            <Input
+              className="form-item"
+              placeholder="Mensaje"
+              // value={contact.message}
+              // onChange={handleChange}
+              name="message"
+              type="text"
+              required
+            />
 
-                    <Media>
-                <a href="mailto:oliviapollitzer@gmail.com">
-                  {" "}
-                  {/* <img src={mail} alt="mail" /> */}
-                </a>
-                <a
-                  href="https://www.instagram.com/olipollitzer/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <img src={instagram} alt="instagram" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/olivia-pollitzer-31396817a/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <img src={whatsapp} alt="linkedin" />
-                </a>
-              </Media>
+            <button type="submit" className="bottom-form">
+              Enviar
+            </button>
+          </Form>
+        </FormContainer>
 
+        <Media>
+          <a href="mailto:dolores.polito@gmail.com">
+            {" "}
+            {/* <img src={mail} alt="mail" /> */}
+          </a>
+          <a
+            href="https://www.instagram.com/cavaoseca/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            <img src={instagram} alt="instagram" />
+          </a>
+          <a
+            href="https://wa.me/5493446584076"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            <img src={whatsapp} alt="whatsapp" />
+          </a>
+        </Media>
       </div>
-
     </>
   );
 };
@@ -127,13 +128,12 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 80px;
 
   @media only screen and (max-width: 1045px) {
     width: 500px;
   }
-
 `;
 
 const Form = styled.form`
@@ -145,7 +145,6 @@ const Form = styled.form`
   padding-top: 100px;
   font-weight: 300;
   letter-spacing: 2px;
-
 
   @media only screen and (max-width: 535px) {
     width: 350px;
@@ -163,7 +162,6 @@ const Form = styled.form`
     cursor: pointer;
     font-size: 16px;
     margin-left: 0px;
-    
   }
 `;
 
@@ -178,19 +176,36 @@ const Input = styled.input`
 `;
 
 const Media = styled.div`
-display: flex;
-justify-content: center;
-margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 
-
-img {
+  img {
     height: 30px;
     width: 30px;
     padding: 10px;
   }
+`;
 
-`
+const Button = styled.button`
+  position: fixed;
+  top: 100px;
+  right: 80px;
+  background-color: black;
+  border: 1.5px solid #ff5000;
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  z-index: 100;
 
-
+  p {
+    color: #ffffff;
+    font-size: 14px;
+    margin: auto;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+  }
+`;
 
 export default Contact;
