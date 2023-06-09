@@ -1,26 +1,73 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SectionProducts } from "../styles";
 import { SimpleGrid, Box } from "@chakra-ui/react";
 import styled from "styled-components";
-import tintos from "../assets/animation/tintos1.png";
-import blancos from "../assets/animation/blancos1.png";
-import espumantes from "../assets/animation/espumantes1.png";
 import Navbar from "../components/Navbar";
-// import carrito from "../assets/products/carrito.png";
 import vinos from "../vinos";
 import { useInput } from "../hooks/useInput";
 import Modal from "../components/Modal";
+import copasverdes from "../assets/copasverde.png";
+import backgroundImage from "../assets/fondos/fondo_producto.png";
+import Checkbox from "../components/Checkbox";
+import { useChecked } from "../hooks/useChecked";
+import ProductsFooter from "./ProductsFooter"
 
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
-
   const [scroll, setScroll] = useState(window.pageYOffset);
-
   const input = useInput("");
+  const [wines, setWines] = useState(vinos);
+
+  const initialState = {
+    tintos: false,
+    blancos: false,
+    espumantes: false,
+  };
+
+  const [checked, handleClickCheckbox] = useChecked(initialState);
+
+  console.log(checked);
+
+  useEffect(() => {
+    console.log("cheked en useeffect", checked);
+
+
+  }, [wines, checked]);
 
   const handleSubmit = function (e) {
     e.preventDefault();
+    console.log("input.value", input.value);
+
+    const vinosFiltrados = buscarVinos(input.value);
+    console.log(vinosFiltrados);
+
+    console.log("vinos filtrados", vinosFiltrados);
+
+    setWines(vinosFiltrados);
   };
+
+  const borrarFiltros = () => {
+    setWines(vinos);
+    input.value = "";
+  };
+
+  function buscarVinos(search) {
+    console.log("entra a la funcion filtrar");
+    const resultado = vinos.filter((vino) =>
+      vino.name.toLowerCase().includes(search.toLowerCase())
+    );
+    return resultado;
+  }
+
+  function filtrarPorTipo(tipo){
+
+    console.log("entra a la funcion filtrar por tipo");
+    const resultado = vinos.filter((vino) =>
+      vino.tipo.toLowerCase().includes(tipo.toLowerCase())
+    );
+    return resultado;
+
+  }
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -30,7 +77,6 @@ const Products = () => {
   };
 
   const opening = (vino) => {
-    console.log("vino en modal", vino);
     setOpenModal(true);
     setSelectedWine(vino);
     document.body.style.overflow = "hidden";
@@ -45,14 +91,17 @@ const Products = () => {
   const handleMouseLeave = () => {
     setHovered(false);
   };
+
   return (
     <>
       <div
-        className="set_bg"
         style={{
-          background: "#DAD6CC",
+          backgroundImage: `url(${backgroundImage})`,
           width: "100%",
-          height: "100%",
+          minHeight: "100vh",
+          backgroundSize: "1500px 1000px",
+          backgroundRepeat: "repeat-y",
+          backgroundPosition: "center center",
         }}
       >
         <Navbar props="products" />
@@ -61,82 +110,43 @@ const Products = () => {
           <Left>
             <form onSubmit={handleSubmit}>
               <input
+                onChange={input.onChange}
+                value={input.value}
+                type="search"
+                placeholder="Buscar por nombre"
+              />
+            </form>
+            <button onClick={borrarFiltros}>borrar filtros</button>
+
+            <CheckboxContainer>
+              <Checkbox
+                name="tintos"
+                checked={checked.tintos}
+                setChecked={handleClickCheckbox}
+              />
+              <Checkbox
+                name="blancos"
+                checked={checked.blancos}
+                setChecked={handleClickCheckbox}
+              />
+              <Checkbox
+                name="espumantes"
+                checked={checked.espumantes}
+                setChecked={handleClickCheckbox}
+              />
+            </CheckboxContainer>
+          </Left>
+          <Right>
+            <SelectProducts>
+              {/* <form onSubmit={handleSubmit}>
+              <input
                 placeholder="Search"
                 onChange={input.onChange}
                 value={input.value}
                 type="search"
               ></input>
-            </form>
-
-            {/* <h2>Tipos de vino</h2>
-            <ul>
-              <li>
-                <input type="checkbox" id="checkbox-1" />
-                <label for="checkbox-1">Tintos</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkbox-2" />
-                <label for="checkbox-2">Blancos</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkbox-3" />
-                <label for="checkbox-3">Espumantes</label>
-              </li>
-            </ul> */}
-
-            {/* <h2>Marcas</h2>
-            <ul>
-              <li>
-                <input type="checkbox" id="checkbox-1" />
-                <label for="checkbox-1">Rutini</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkbox-2" />
-                <label for="checkbox-2">Catena Zapata</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkbox-3" />
-                <label for="checkbox-3">Achaval Ferrer</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkbox-1" />
-                <label for="checkbox-1">Rutini</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkbox-2" />
-                <label for="checkbox-2">Catena Zapata</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkbox-3" />
-                <label for="checkbox-3">Achaval Ferrer</label>
-              </li>
-            </ul> */}
-          </Left>
-          <Right>
-            <SelectProducts>
-              <RedWines
-              // mode={view} onClick={() => handleSelected("tintos")}
-              >
-                <img src={tintos} height="100%" width="80%" alt="tintos" />
-              </RedWines>
-
-              <WhiteWines
-              //  mode={view} onClick={() => handleSelected("blancos")}
-              >
-                <img src={blancos} height="100%" width="80%" alt="blancos" />
-              </WhiteWines>
-
-              <SparklingWines
-              // mode={view}
-              // onClick={() => handleSelected("espumantes")}
-              >
-                <img
-                  src={espumantes}
-                  height="100%"
-                  width="80%"
-                  alt="espumantes"
-                />
-              </SparklingWines>
+            </form>  */}
+              <img src={copasverdes} />
             </SelectProducts>
 
             <Catalog>
@@ -145,7 +155,7 @@ const Products = () => {
                 spacing={25}
                 style={{ marginTop: "30px", marginLeft: "180px" }}
               >
-                {vinos.map((vino) => {
+                {wines.map((vino) => {
                   return (
                     <>
                       <div>
@@ -182,6 +192,7 @@ const Products = () => {
                                 onClick={() => opening(vino)}
                               >
                                 <p>{vino.name}</p>
+                                <p>ver más</p>
                               </div>
                             )}
                           </div>
@@ -217,17 +228,66 @@ const Products = () => {
             </Catalog>
           </Right>
         </SectionProducts>
+        <ProductsFooter />
       </div>
     </>
   );
 };
 const SelectProducts = styled.div`
   height: 150px;
-  width: 400px;
+  width: 85%;
   display: flex;
-  justify-content: center;
   align-self: flex-end;
   padding-top: 50px;
+
+  img {
+    height: 200px;
+    position: absolute;
+    right: 130px;
+  }
+
+  form {
+    color: black;
+    margin-top: 70px;
+  }
+
+  input {
+    color: black;
+    height: 50px;
+    width: 350px;
+    border: none;
+    border-radius: 25px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-family: "Bebas Neue", cursive;
+    color: #6a6f58;
+    letter-spacing: 2px;
+  }
+
+  ul {
+    list-style: none;
+    text-align: left;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  input[type="checkbox"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-color: red !important;
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+  }
 `;
 
 const RedWines = styled.div`
@@ -376,6 +436,7 @@ const Catalog = styled.div`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 30px;
 
   p {
     line-height: 1;
@@ -399,7 +460,7 @@ const Info = styled.div`
 const Left = styled.div`
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 280px;
   margin-top: 100px;
 
   form {
@@ -408,11 +469,12 @@ const Left = styled.div`
 
   input {
     color: black;
-    height: 40px;
-    width: 100%;
+    height: 50px;
+    width: 280px;
     border: none;
     border-radius: 25px;
     padding: 20px;
+    border: 1px solid #6a6f58;
   }
 
   h2 {
@@ -443,11 +505,29 @@ const Left = styled.div`
     display: inline-block;
     vertical-align: middle;
   }
+
+  button {
+    background-color: #6a6f58;
+    border: none;
+    color: #fefefe;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    margin-top: 10px;
+  }
 `;
 
 const Right = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: -80px;
+`;
+
+const CheckboxContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin-top: 70px;
 `;
 
 export default Products;

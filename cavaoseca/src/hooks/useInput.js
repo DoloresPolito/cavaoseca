@@ -5,6 +5,7 @@ export function useInput() {
 
   function onChange(e) {
     setValue(e.target.value);
+    console.log(value)
   }
 
   return { value, onChange };

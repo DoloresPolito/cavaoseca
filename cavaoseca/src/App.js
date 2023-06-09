@@ -2,14 +2,14 @@ import "./App.css";
 import Home from "./sections/Home";
 import Contact from "./sections/Contacts";
 import Products from "./sections/Products";
-import Footer from "./sections/Footer";
 import About from "./sections/About";
-import Modal from "./components/Modal";
+
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+ 
       <Routes>
         <>
           <Route path="/" element={<Home />} />
@@ -20,7 +20,7 @@ function App() {
         </>
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

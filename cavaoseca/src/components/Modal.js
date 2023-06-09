@@ -88,6 +88,7 @@ const ModalContainer = styled.div`
   transform: translate(-50%, -50%);
   display: flex;
   background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(128, 128, 128, 0.2);
   /* box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75); */
   border-radius: 8px;
   margin-top: 50px;
@@ -134,6 +135,7 @@ const CloseButton = styled.p`
   position: fixed;
   top: 8px;
   right: 8px;
+  cursor:pointer
 `;
 
 const Content = styled.div`
