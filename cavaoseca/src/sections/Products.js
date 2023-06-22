@@ -11,8 +11,23 @@ import backgroundImage from "../assets/fondos/fondo_producto.png";
 import Checkbox from "../components/Checkbox";
 import { useChecked } from "../hooks/useChecked";
 import ProductsFooter from "./ProductsFooter";
-import p1 from "../assets/vinos/grilla/Blend de Tintas.png"
+import { useLocation } from 'react-router-dom';
+import images from './images';
 
+import cocodrilo from "../assets/vinos/grilla/Cocodrilo.png"
+import bramarevalledeuco from "../assets/vinos/grilla/Bramare Valle De Uco.png"
+import bramarelujandecuyo from "../assets/vinos/grilla/Bramare Valle De Uco.png"
+import bramarepinotnoir from "../assets/vinos/grilla/Bramare Pinot Noir.png"
+import felino from "../assets/vinos/grilla/Felino.png"
+import judasmalbec from "../assets/vinos/grilla/Judas Malbec.png"
+import judasblend from "../assets/vinos/grilla/Judas Blend.png"
+import susanabalbosignature from "../assets/vinos/grilla/Susana Balbo Signature.png"
+import briosso from "../assets/vinos/grilla/Brioso.png"
+import closdelossiete from "../assets/vinos/grilla/Clos de Los Siete.png"
+import rutinisauvignonblanc from "../assets/vinos/grilla/Rutini Colección Sauvignon Blanc.png"
+
+import rutinimalbec from "../assets/vinos/grilla/Rutini Coleccion Malbec.png"
+import rutinichardonnay from "../assets/vinos/grilla/Rutini Coleccion Chardonnay.png"
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
   const [scroll, setScroll] = useState(window.pageYOffset);
@@ -27,6 +42,7 @@ const Products = () => {
   };
 
   const [checked, handleClickCheckbox] = useChecked(initialState);
+  const location = useLocation();
 
   useEffect(() => {
     const obtenerVinos = async () => {
@@ -97,6 +113,31 @@ const Products = () => {
     setHovered(false);
   };
 
+
+
+
+  const imagenes = {
+
+    bramarevalledeuco: bramarevalledeuco,
+    bramarelujandecuyo: bramarelujandecuyo,
+    bramarepinotnoir:bramarepinotnoir,
+    felino:felino,
+    cocodrilo: cocodrilo,
+    judasmalbec:judasmalbec,
+    judasblend:judasblend,
+    susanabalbosignature:susanabalbosignature,
+    briosso:briosso,
+    closdelossiete:closdelossiete,
+    rutinisauvignonblanc:rutinisauvignonblanc,
+    rutinimalbec:rutinimalbec,
+    rutinichardonnay:rutinichardonnay,
+
+
+
+
+    // Agrega más variables de imagen aquí si es necesario
+  };
+
   return (
     <>
       <div
@@ -151,15 +192,17 @@ const Products = () => {
                 <Catalog>
                   <SimpleGrid columns={4} spacing={25}>
                     {wines.map((vino) => {
-                
+
+const imagenVariable = imagenes[vino.imagename]
                       return (
                         <>
-                          <div>
+                          <div key={vino.name}>
                             <Box
                               bg="transparent"
                               height="190px"
                               width="110px"
                               borderRadius={"3px"}
+                            
                             >
                               <div
                                 style={{
@@ -173,7 +216,8 @@ const Products = () => {
                                 onMouseLeave={handleMouseLeave}
                               >
                                 <img
-                                    src={p1}
+                              
+                              src={imagenVariable}
                                   height="240px"
                                   width="160px"
                                   alt="vino"
@@ -198,9 +242,11 @@ const Products = () => {
                             <Info>
                               <WineName>
                                 {/* <p> {`${vino.ruta}`}</p> */}
-                                <p> {vino.winery}</p>
-                                <p> {vino.name}</p>
-                                <p> {vino.type}</p>
+                              
+
+                                <p className="winery"> {vino.winery}</p>
+                                <p className="name"> {vino.name}</p>
+                                <p className="type"> {vino.type}</p>
 
                                 <Modal
                                   open={openModal}
@@ -258,6 +304,9 @@ const Products = () => {
                 <Catalog>
                   <SimpleGrid spacing={25} columns={width > 1000 ? 4 : 3}>
                     {wines.map((vino) => {
+
+const imagenSrc = images(`./${vino.name}.png`).default;
+console.log(imagenSrc); // Verifica la ruta de la imagen importada
                       return (
                         <>
                           <div>
@@ -278,10 +327,10 @@ const Products = () => {
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                               >
-                                {/* <button style={{position:"relative", left:"50px", top:"10px", backgroundColor:"#6A6F58", border:"none", borderRadius:"30px", padding:"7px"}}><img src={carrito}    height="20px"
-         width="20px"/></button> */}
+   
                                 <img
                                     // src={vino.ruta}
+                                    src={imagenSrc}
                                   height="240px"
                                   width="160px"
                                   alt="vino"
@@ -305,9 +354,9 @@ const Products = () => {
 
                             <Info>
                               <WineName>
-                                <p> {vino.winery}</p>
-                                <p> {vino.name}</p>
-                                <p> {vino.type}</p>
+                                <p className="winery"> {vino.winery}</p>
+                                <p className="name"> {vino.name}</p>
+                                <p className="price"> {vino.type}</p>
                                 {/* <button onClick={() => opening(vino)}>
                               <p>ver mas</p>
                             </button> */}
@@ -491,11 +540,10 @@ const WineName = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
-
   justify-content: flex-start;
   align-items: flex-start;
 
-  p {
+   .winery {
     color: #6a6f58 !important;
     font-size: 14px !important;
     font-family: "Poppins";
@@ -504,6 +552,29 @@ const WineName = styled.div`
 
     line-height: 1 !important;
     margin: 5px;
+  }
+
+  .name {
+    color: #6a6f58 !important;
+    font-size: 14px !important;
+    font-family: "Poppins";
+    font-weight: 700 !important;
+    text-align: left;
+
+    line-height: 1 !important;
+    margin: 5px;
+  }
+
+  .type{
+    color: #6a6f58 !important;
+    font-size: 14px !important;
+    font-family: "Poppins";
+    font-weight: 600 !important;
+    text-align: left;
+
+    line-height: 1 !important;
+    margin: 5px;
+    text-transform: uppercase;
   }
 `;
 
