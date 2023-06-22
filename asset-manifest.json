@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/cavaoseca/static/css/main.1f1d3c26.css",
-    "main.js": "/cavaoseca/static/js/main.92083bab.js",
+    "main.js": "/cavaoseca/static/js/main.b075c297.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
     "static/media/30mobile.png": "/cavaoseca/static/media/30mobile.14468c67d144640414d8.png",
+    "static/media/fondo_producto.png": "/cavaoseca/static/media/fondo_producto.3cc67f59f47751e23e05.png",
     "static/media/mixdesktop.png": "/cavaoseca/static/media/mixdesktop.61de8c06d0fae642f990.png",
     "static/media/mixmobile.png": "/cavaoseca/static/media/mixmobile.6b65905ab77cb8e59c36.png",
     "static/media/nuevo_loli_pruebacontacto.png": "/cavaoseca/static/media/nuevo_loli_pruebacontacto.9b78aa2a5de621184bd6.png",
@@ -19,6 +20,7 @@
     "static/media/Rutini Coleccion Malbec.png": "/cavaoseca/static/media/Rutini Coleccion Malbec.6caba074262e8660a08d.png",
     "static/media/Bressia Lagrima Canela.png": "/cavaoseca/static/media/Bressia Lagrima Canela.c8c136a41d57e7b978b7.png",
     "static/media/Cocodrilo.png": "/cavaoseca/static/media/Cocodrilo.4111eecffe99e31de833.png",
+    "static/media/Blend de Tintas.png": "/cavaoseca/static/media/Blend de Tintas.022c543e769ad861b456.png",
     "static/media/Dv Catena Malbec Malbec.png": "/cavaoseca/static/media/Dv Catena Malbec Malbec.504e2eaec6f15759ac64.png",
     "static/media/Felino.png": "/cavaoseca/static/media/Felino.ca83114acebf4d4aa813.png",
     "static/media/slick.svg": "/cavaoseca/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -27,11 +29,11 @@
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
     "main.1f1d3c26.css.map": "/cavaoseca/static/css/main.1f1d3c26.css.map",
-    "main.92083bab.js.map": "/cavaoseca/static/js/main.92083bab.js.map",
+    "main.b075c297.js.map": "/cavaoseca/static/js/main.b075c297.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1f1d3c26.css",
-    "static/js/main.92083bab.js"
+    "static/js/main.b075c297.js"
   ]
 }
