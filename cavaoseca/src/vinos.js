@@ -7,7 +7,8 @@ const vinos = [
         description:"Sus aromas congregan flores blancas y violetas, cerezas y frutos negros. En el paladar es intenso con notas de tabaco, chocolate y dulce de leche. Es untuoso y de buen ingreso, amable y redondo, de taninos dulces y agradable persistencia.",
         price:"$8.970",
         type:"Malbec",
-        tipo:"Tinto"
+        tipo:"Tinto",
+        // ruta: "../assets/vinos/grilla/Bramare Valle De Uco.png"
 
     },
 
@@ -18,7 +19,8 @@ const vinos = [
         description:"Intensos aromas a cassis, cerezas y moras maduras se acentúan con pimienta blanca, clavo de olor, tabaco y madera sutil. Al paladar sus taninos casi perfectos encuentran una cremosidad y justa reminiscencia de café y frutos negros en una sensación final extensa y prolongada.",
         price:"$8.970",
         type:"Malbec",
-        tipo:"Tinto"
+        tipo:"Tinto",
+        // ruta: "../assets/vinos/grilla/Bramare Lujan De Cuyo.png"
 
     },
 

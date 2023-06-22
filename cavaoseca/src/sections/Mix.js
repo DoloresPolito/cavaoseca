@@ -2,6 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import mancha1 from "../assets/Mancha 3.png";
 import mancha2 from "../assets/Manch 4.png";
+import vino1 from "../assets/vinos/grilla/Bressia Lagrima Canela.png"
+import vino2 from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png"
+import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png"
+import vino4 from "../assets/vinos/grilla/Rutini Coleccion Malbec.png"
+import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png"
+import vino6 from "../assets/vinos/grilla/Felino.png"
+import vino7 from "../assets/vinos/grilla/Cocodrilo.png"
+import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png"
+
 
 const Mix = () => {
   return (
@@ -15,7 +24,7 @@ const Mix = () => {
         <Bottom>
           <div>
             <Box>
-              <img src={`/vinos/grilla/Bressia Lagrima Canela.png`} />
+              <img src={vino1} />
               <div>
               <h2>Bressia Lagrima Canela</h2>
               <p>$5.600</p>
@@ -23,7 +32,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={`/vinos/grilla/Gran Enemigo Gualtallary.png`} />
+              <img src={vino2} />
               <div>
               <h2>Gualtallary</h2>
               <p>$3.000</p>
@@ -31,7 +40,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={`/vinos/grilla/Dv Catena Chardonnay.png`} />
+              <img src={vino3} />
               <div>
               <h2>DV Catena Chardonnay</h2>
               <p>$3.000</p>
@@ -39,7 +48,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={`/vinos/grilla/Rutini Coleccion Malbec.png`} />
+              <img src={vino4} />
               <div>
               <h2>Rutini Coleccion Malbec</h2>
               <p>$3.000</p>
@@ -47,7 +56,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={`/vinos/grilla/Saint Felicien Chardonnay.png`} />
+              <img src={vino5} />
               <div>
               <h2>Saint Felicien Malbec</h2>
               <p>$3.000</p>
@@ -55,7 +64,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={`/vinos/grilla/Felino.png`} />
+              <img src={vino6} />
               <div>
               <h2>Felino</h2>
               <p>$3.000</p>
@@ -63,7 +72,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={`/vinos/grilla/Cocodrilo.png`} />
+              <img src={vino7} />
               <div>
               <h2>Cocodrilo</h2>
               <p>$3.000</p>
@@ -71,7 +80,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={`/vinos/grilla/Dv Catena Malbec Malbec.png`} />
+              <img src={vino8} />
               <div>
               <h2>DV Catena </h2>
               <p>$3.000</p>
