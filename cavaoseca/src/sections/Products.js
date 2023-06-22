@@ -10,13 +10,14 @@ import copasverdes from "../assets/copasverde.png";
 import backgroundImage from "../assets/fondos/fondo_producto.png";
 import Checkbox from "../components/Checkbox";
 import { useChecked } from "../hooks/useChecked";
-import ProductsFooter from "./ProductsFooter"
+import ProductsFooter from "./ProductsFooter";
 
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
   const [scroll, setScroll] = useState(window.pageYOffset);
   const input = useInput("");
   const [wines, setWines] = useState(vinos);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const initialState = {
     tintos: false,
@@ -30,8 +31,7 @@ const Products = () => {
 
   useEffect(() => {
     console.log("cheked en useeffect", checked);
-
-
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, [wines, checked]);
 
   const handleSubmit = function (e) {
@@ -59,14 +59,12 @@ const Products = () => {
     return resultado;
   }
 
-  function filtrarPorTipo(tipo){
-
+  function filtrarPorTipo(tipo) {
     console.log("entra a la funcion filtrar por tipo");
     const resultado = vinos.filter((vino) =>
       vino.tipo.toLowerCase().includes(tipo.toLowerCase())
     );
     return resultado;
-
   }
 
   const [openModal, setOpenModal] = useState(false);
@@ -107,126 +105,230 @@ const Products = () => {
         <Navbar props="products" />
 
         <SectionProducts mode={scroll}>
-          <Left>
-            <form onSubmit={handleSubmit}>
-              <input
-                onChange={input.onChange}
-                value={input.value}
-                type="search"
-                placeholder="Buscar por nombre"
-              />
-            </form>
-            <button onClick={borrarFiltros}>borrar filtros</button>
+          {width > 1200 ? (
+            <>
+              <Left>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    onChange={input.onChange}
+                    value={input.value}
+                    type="search"
+                    placeholder="Buscar por nombre"
+                  />
+                </form>
+                <button onClick={borrarFiltros}>borrar filtros</button>
 
-            <CheckboxContainer>
-              <Checkbox
-                name="tintos"
-                checked={checked.tintos}
-                setChecked={handleClickCheckbox}
-              />
-              <Checkbox
-                name="blancos"
-                checked={checked.blancos}
-                setChecked={handleClickCheckbox}
-              />
-              <Checkbox
-                name="espumantes"
-                checked={checked.espumantes}
-                setChecked={handleClickCheckbox}
-              />
-            </CheckboxContainer>
-          </Left>
-          <Right>
-            <SelectProducts>
-              {/* <form onSubmit={handleSubmit}>
-              <input
-                placeholder="Search"
-                onChange={input.onChange}
-                value={input.value}
-                type="search"
-              ></input>
-            </form>  */}
-              <img src={copasverdes} />
-            </SelectProducts>
+                <CheckboxContainer>
+                  <Checkbox
+                    name="tintos"
+                    checked={checked.tintos}
+                    setChecked={handleClickCheckbox}
+                  />
+                  <Checkbox
+                    name="blancos"
+                    checked={checked.blancos}
+                    setChecked={handleClickCheckbox}
+                  />
+                  <Checkbox
+                    name="espumantes"
+                    checked={checked.espumantes}
+                    setChecked={handleClickCheckbox}
+                  />
+                </CheckboxContainer>
+              </Left>
+              <Right>
+                <SelectProducts>
+                  <img src={copasverdes} />
+                </SelectProducts>
 
-            <Catalog>
-              <SimpleGrid
-                columns={4}
-                spacing={25}
-                style={{ marginTop: "30px", marginLeft: "180px" }}
-              >
-                {wines.map((vino) => {
-                  return (
-                    <>
-                      <div>
-                        <Box
-                          bg="transparent"
-                          height="190px"
-                          width="110px"
-                          borderRadius={"3px"}
-                        >
-                          <div
-                            style={{
-                              backgroundColor: "#eae9e5",
-                              height: "100px",
-                              width: "170px",
-                              marginBottom: "80px",
-                            }}
-                            className="image-container"
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            {/* <button style={{position:"relative", left:"50px", top:"10px", backgroundColor:"#6A6F58", border:"none", borderRadius:"30px", padding:"7px"}}><img src={carrito}    height="20px"
-         width="20px"/></button> */}
-                            <img
-                              src={`/vinos/grilla/${vino.name}.png`}
-                              height="240px"
-                              width="160px"
-                              alt="vino"
-                              style={{ marginTop: "0px", marginLeft: "0px" }}
-                            />
-
-                            {hovered && (
+                <Catalog>
+                  <SimpleGrid columns={4} spacing={25}>
+                    {wines.map((vino) => {
+                      return (
+                        <>
+                          <div>
+                            <Box
+                              bg="transparent"
+                              height="190px"
+                              width="110px"
+                              borderRadius={"3px"}
+                            >
                               <div
-                                className="overlay"
-                                onClick={() => opening(vino)}
+                                style={{
+                                  backgroundColor: "#eae9e5",
+                                  height: "100px",
+                                  width: "170px",
+                                  marginBottom: "80px",
+                                }}
+                                className="image-container"
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
                               >
-                                <p>{vino.name}</p>
-                                <p>ver más</p>
-                              </div>
-                            )}
-                          </div>
-                        </Box>
+                                <img
+                                  src={`/vinos/grilla/${vino.name}.png`}
+                                  height="240px"
+                                  width="160px"
+                                  alt="vino"
+                                  style={{
+                                    marginTop: "0px",
+                                    marginLeft: "0px",
+                                  }}
+                                />
 
-                        <Info>
-                          <WineName>
-                            <p> {vino.winery}</p>
-                            <p> {vino.name}</p>
-                            <p> {vino.type}</p>
-                            {/* <button onClick={() => opening(vino)}>
+                                {hovered && (
+                                  <div
+                                    className="overlay"
+                                    onClick={() => opening(vino)}
+                                  >
+                                    <p>{vino.name}</p>
+                                    <p>ver más</p>
+                                  </div>
+                                )}
+                              </div>
+                            </Box>
+
+                            <Info>
+                              <WineName>
+                                <p> {vino.winery}</p>
+                                <p> {vino.name}</p>
+                                <p> {vino.type}</p>
+
+                                <Modal
+                                  open={openModal}
+                                  selectedWine={selectedWine}
+                                  onClose={() => closing()}
+                                />
+                              </WineName>
+
+                              <WinePrice>
+                                <bold> {vino.price}</bold>
+                              </WinePrice>
+                            </Info>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </SimpleGrid>
+                </Catalog>
+              </Right>
+            </>
+          ) : (
+            <>
+              <VerticalContainer>
+                <Top>
+                  {" "}
+                  <CheckboxContainer>
+                    <Checkbox
+                      name="tintos"
+                      checked={checked.tintos}
+                      setChecked={handleClickCheckbox}
+                    />
+                    <Checkbox
+                      name="blancos"
+                      checked={checked.blancos}
+                      setChecked={handleClickCheckbox}
+                    />
+                    <Checkbox
+                      name="espumantes"
+                      checked={checked.espumantes}
+                      setChecked={handleClickCheckbox}
+                    />
+                  </CheckboxContainer>
+                  <div>
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        onChange={input.onChange}
+                        value={input.value}
+                        type="search"
+                        placeholder="Buscar por nombre"
+                      />
+                    </form>
+                    <button onClick={borrarFiltros}>borrar filtros</button>
+                  </div>
+                </Top>
+                <Catalog>
+                  <SimpleGrid
+                    spacing={25}
+                    columns={width > 1000 ? 4 : 3}
+               
+                  >
+                    {wines.map((vino) => {
+                      return (
+                        <>
+                          <div>
+                            <Box
+                              bg="transparent"
+                              height="190px"
+                              width="110px"
+                              borderRadius={"3px"}
+                            >
+                              <div
+                                style={{
+                                  backgroundColor: "#eae9e5",
+                                  height: "100px",
+                                  width: "170px",
+                                  marginBottom: "80px",
+                                }}
+                                className="image-container"
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                              >
+                                {/* <button style={{position:"relative", left:"50px", top:"10px", backgroundColor:"#6A6F58", border:"none", borderRadius:"30px", padding:"7px"}}><img src={carrito}    height="20px"
+         width="20px"/></button> */}
+                                <img
+                                  src={`/vinos/grilla/${vino.name}.png`}
+                                  height="240px"
+                                  width="160px"
+                                  alt="vino"
+                                  style={{
+                                    marginTop: "0px",
+                                    marginLeft: "0px",
+                                  }}
+                                />
+
+                                {hovered && (
+                                  <div
+                                    className="overlay"
+                                    onClick={() => opening(vino)}
+                                  >
+                                    <p>{vino.name}</p>
+                                    <p>ver más</p>
+                                  </div>
+                                )}
+                              </div>
+                            </Box>
+
+                            <Info>
+                              <WineName>
+                                <p> {vino.winery}</p>
+                                <p> {vino.name}</p>
+                                <p> {vino.type}</p>
+                                {/* <button onClick={() => opening(vino)}>
                               <p>ver mas</p>
                             </button> */}
 
-                            <Modal
-                              open={openModal}
-                              selectedWine={selectedWine}
-                              onClose={() => closing()}
-                            />
-                          </WineName>
+                                <Modal
+                                  open={openModal}
+                                  selectedWine={selectedWine}
+                                  onClose={() => closing()}
+                                />
+                              </WineName>
 
-                          <WinePrice>
-                            <bold> {vino.price}</bold>
-                          </WinePrice>
-                          {/* <p>3 cuotas de $3.600</p> */}
-                          {/* <button>ENVIO GRATIS</button> */}
-                        </Info>
-                      </div>
-                    </>
-                  );
-                })}
-              </SimpleGrid>
-            </Catalog>
-          </Right>
+                              <WinePrice>
+                                <bold> {vino.price}</bold>
+                              </WinePrice>
+                              {/* <p>3 cuotas de $3.600</p> */}
+                              {/* <button>ENVIO GRATIS</button> */}
+                            </Info>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </SimpleGrid>
+                </Catalog>
+              </VerticalContainer>
+            </>
+          )}
         </SectionProducts>
         <ProductsFooter />
       </div>
@@ -428,9 +530,20 @@ export const Line = styled.div`
 
 const Catalog = styled.div`
   height: 100%;
-
   margin-top: 50px;
   margin-bottom: 50px;
+  padding-top: 30px !important;
+
+  position: relative;
+  left: 80px;
+
+  @media only screen and (max-width: 1200px) {
+    padding-left: 0px !important;
+    padding-top: 0px;
+    margin: 0 auto;
+
+    left: 0px !important;
+  }
 `;
 
 const Info = styled.div`
@@ -530,4 +643,74 @@ const CheckboxContainer = styled.div`
   margin-top: 70px;
 `;
 
+const VerticalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    color: black;
+    @media only screen and (max-width: 1200px) {
+      margin-top: 70px;
+    }
+  }
+
+  input {
+    color: black;
+    height: 50px;
+    width: 280px;
+    border: none;
+    border-radius: 25px;
+    padding: 20px;
+    border: 1px solid #6a6f58;
+  }
+
+  h2 {
+    font-family: "Bebas Neue", cursive;
+    color: #6a6f58;
+    letter-spacing: 2px;
+  }
+
+  ul {
+    list-style: none;
+    text-align: left;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  input[type="checkbox"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-color: red !important;
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  button {
+    background-color: #6a6f58;
+    border: none;
+    color: #fefefe;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    margin-top: 10px;
+  }
+`;
+
+const Top = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+
+  width: 100%;
+`;
 export default Products;

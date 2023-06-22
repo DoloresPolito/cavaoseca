@@ -5,10 +5,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./Navbar";
-import promomix from "../assets/promos/mixnuevo.png";
-import off30 from "../assets/promos/30nuevo.png";
+import promomixdesktop from "../assets/promos/mix/mixdesktop.png";
+import promomixtablet from "../assets/promos/mix/mixtablet.png";
+import promomixmobile from "../assets/promos/mix/mixmobile.png";
 
-import promomixmobile from "../assets/promos/mixmobile.png";
+import promooffmobile from "../assets/promos/off/offmobile.png"
+
+import off30 from "../assets/promos/30nuevo.png";
 import off30mobile from "../assets/promos/30mobile.png";
 
 function Carrousel() {
@@ -21,6 +24,7 @@ function Carrousel() {
   }, []);
 
   const medium = 850;
+  const small = 500;
 
   const changeSlide = (index) => {
     setCurrentIndex(index);
@@ -56,7 +60,7 @@ function Carrousel() {
         <SlideContainer>
   
           <img  
-            style={{backgroundImage: `url(${promomix})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
+            style={{backgroundImage: `url(${promomixdesktop})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
           />
       </SlideContainer>
         <SlideContainer>
@@ -65,7 +69,29 @@ function Carrousel() {
           />
       </SlideContainer>
       </Slider>
+      </>) : (
+      <>
+      {width >= small ? (<>
+      
+      
+        <Slider {...settings} afterChange={setCurrentIndex}>
+        <SlideContainer>
+  
+          <img  
+            style={{backgroundImage: `url(${promomixtablet})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
+          />
+      </SlideContainer>
+        <SlideContainer>
+          <img  
+          style={{backgroundImage: `url(${promooffmobile})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
+          />
+      </SlideContainer>
+      </Slider>
+      
       </>) : (<>
+
+
+     
       
         <Slider {...settings} afterChange={setCurrentIndex}>
         <SlideContainer>
@@ -76,12 +102,16 @@ function Carrousel() {
       </SlideContainer>
         <SlideContainer>
           <img  
-          style={{backgroundImage: `url(${off30mobile})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
+          style={{backgroundImage: `url(${promooffmobile})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
           />
       </SlideContainer>
       </Slider>
       
-      </>)}
+      
+        </>)}
+      </>
+      
+    )}
     
 
     </CarrouselContainer>

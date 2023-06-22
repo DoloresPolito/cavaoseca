@@ -159,10 +159,10 @@ const FooterContainer = styled(motion.div)`
   display: flex;
   height: 200px;
   width: 85%;
-  border-top: 1px solid white;
+  /* border-top: 1px solid white; */
   margin: auto;
   position: relative;
-  border-top: ${(props) => (props.view === "products" ? "1px solid #6a6f58" : "1px solid white")};
+  /* border-top: ${(props) => (props.view === "products" ? "1px solid #6a6f58" : "1px solid white")}; */
 `;
 
 const Logo = styled.img`
