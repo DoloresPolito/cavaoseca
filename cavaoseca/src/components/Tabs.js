@@ -9,7 +9,7 @@ const Tabs = ({ mode, location }) => {
   {
     return (
       <TabsBox mode={mode} location={location}>
-        <Link to="/" spy={true} smooth={false} offset={-50} duration={800}>
+        <Link to="/cavaoseca" spy={true} smooth={false} offset={-50} duration={800}>
           HOME
         </Link>
         {/* <Link

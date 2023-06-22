@@ -8,8 +8,10 @@ const vinos = [
         price:"$8.970",
         type:"Malbec",
         tipo:"Tinto",
+        // ruta: require('./assets/vinos/grilla/Bramare Valle De Uco.png').default
         // ruta: "../assets/vinos/grilla/Bramare Valle De Uco.png"
-
+        ruta: "/vinos/grilla/Bramare Valle De Uco.png",
+        id:1
     },
 
     {
@@ -20,7 +22,8 @@ const vinos = [
         price:"$8.970",
         type:"Malbec",
         tipo:"Tinto",
-        // ruta: "../assets/vinos/grilla/Bramare Lujan De Cuyo.png"
+        ruta: "../assets/vinos/grilla/Bramare Lujan De Cuyo.png",
+        id:2
 
     },
 
@@ -31,7 +34,9 @@ const vinos = [
         description:"De color rojo carmesí, este Pinot Noir expresa su elegancia desde la nariz donde encontramos fruta roja fresca, cerezas, guindas, que se combinan con notas de bosque, exaltando su frescura. En boca es complejo y vertical, con taninos que se hacen presentes para marcar su particular estilo.",
         price:"$8.100",
         type:"Pinot Noir",
-        tipo:"Tinto"
+        tipo:"Tinto",
+        ruta: "../assets/vinos/grilla/Bramare Pinot Noir.png",
+        id:3
 
     },
 
@@ -42,7 +47,8 @@ const vinos = [
         description:"Chardonnay de buen cuerpo que descubre aromas a flores blancas, durazno blanco y ananá. Su corto paso por barrica añade complejidad con notas de pan tostado, vainilla y chocolate.",
         price:"$3.275",
         type:"Chardonnay",
-        tipo:"Blanco"
+        tipo:"Blanco",
+        id:4
 
     },
 

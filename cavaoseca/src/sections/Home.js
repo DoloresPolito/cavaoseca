@@ -2,10 +2,7 @@ import "../App.css";
 import Carrousel from "../components/Carrousel";
 import styled from "styled-components";
 import HomeFooter from "../sections/HomeFooter";
-import Promos from "./Promos";
-import Promos2 from "./Promos2";
 import Mix from "./Mix";
-
 
 const Home = () => {
   return (
@@ -13,9 +10,8 @@ const Home = () => {
       <HomeSection>
         <Carrousel />
       </HomeSection>
-<Mix/>
-      {/* <Promos />
-      <Promos2 /> */}
+      <Mix />
+
       <HomeFooter />
     </>
   );
