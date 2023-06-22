@@ -11,23 +11,76 @@ import backgroundImage from "../assets/fondos/fondo_producto.png";
 import Checkbox from "../components/Checkbox";
 import { useChecked } from "../hooks/useChecked";
 import ProductsFooter from "./ProductsFooter";
-import { useLocation } from 'react-router-dom';
-import images from './images';
+import { useLocation } from "react-router-dom";
+import images from "./images";
 
-import cocodrilo from "../assets/vinos/grilla/Cocodrilo.png"
-import bramarevalledeuco from "../assets/vinos/grilla/Bramare Valle De Uco.png"
-import bramarelujandecuyo from "../assets/vinos/grilla/Bramare Valle De Uco.png"
-import bramarepinotnoir from "../assets/vinos/grilla/Bramare Pinot Noir.png"
-import felino from "../assets/vinos/grilla/Felino.png"
-import judasmalbec from "../assets/vinos/grilla/Judas Malbec.png"
-import judasblend from "../assets/vinos/grilla/Judas Blend.png"
-import susanabalbosignature from "../assets/vinos/grilla/Susana Balbo Signature.png"
-import briosso from "../assets/vinos/grilla/Brioso.png"
-import closdelossiete from "../assets/vinos/grilla/Clos de Los Siete.png"
-import rutinisauvignonblanc from "../assets/vinos/grilla/Rutini Colección Sauvignon Blanc.png"
+import cocodrilo from "../assets/vinos/grilla/Cocodrilo.png";
+import bramarevalledeuco from "../assets/vinos/grilla/Bramare Valle De Uco.png";
+import bramarelujandecuyo from "../assets/vinos/grilla/Bramare Valle De Uco.png";
+import bramarepinotnoir from "../assets/vinos/grilla/Bramare Pinot Noir.png";
+import felino from "../assets/vinos/grilla/Felino.png";
+import judasmalbec from "../assets/vinos/grilla/Judas Malbec.png";
+import judasblend from "../assets/vinos/grilla/Judas Blend.png";
+import susanabalbosignature from "../assets/vinos/grilla/Susana Balbo Signature.png";
+import briosso from "../assets/vinos/grilla/Brioso.png";
+import closdelossiete from "../assets/vinos/grilla/Clos de Los Siete.png";
+import rutinisauvignonblanc from "../assets/vinos/grilla/Rutini Colección Sauvignon Blanc.png";
+import rutinimalbec from "../assets/vinos/grilla/Rutini Coleccion Malbec.png";
+import rutinichardonnay from "../assets/vinos/grilla/Rutini Coleccion Chardonnay.png";
+import rutinicabernetmalbec from "../assets/vinos/grilla/Rutini Coleccion Cabernet Malbec.png";
+import black from "../assets/vinos/grilla/Black.png";
+import zahamalbec from "../assets/vinos/grilla/Zaha Malbec.png";
+import zahacabernetfranc from "../assets/vinos/grilla/Zaha Cabernet Franc.png";
+import artesano from "../assets/vinos/grilla/Artesano.png";
 
-import rutinimalbec from "../assets/vinos/grilla/Rutini Coleccion Malbec.png"
-import rutinichardonnay from "../assets/vinos/grilla/Rutini Coleccion Chardonnay.png"
+
+
+import findelmundosinglevineyardpinotnoir from "../assets/vinos/grilla/Fin del Mundo Single Vineyard Pinot Noir.png"
+import findelmundosinglevineyardmalbec from "../assets/vinos/grilla/Fin del Mundo Single Vineyard Malbec.png"
+
+import nicolacatenabonarda from "../assets/vinos/grilla/Nicola Catena Bonarda (vino de parcela).png"
+import malbecargentino from "../assets/vinos/grilla/Malbec Argentino.png"
+
+import dvcatenasyrah from "../assets/vinos/grilla/Dv Catena Syrah.png"
+import dvcatenamalbecmalbec from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png"
+import dvcatenalapiramide from "../assets/vinos/grilla/Dv Catena La Pirámide.png"
+import dvcatenachardonnay from "../assets/vinos/grilla/Dv Catena Chardonnay.png"
+import dvcatenacabernetmalbec from "../assets/vinos/grilla/Dv Catena Cabernet Malbec.png"
+import dvcatenacabernet from "../assets/vinos/grilla/Dv Catena Cabernet.png"
+
+import angelicazapatamerlot from "../assets/vinos/grilla/Angelica Zapata Merlot.png"
+import angelicazapatachardonnay from "../assets/vinos/grilla/Angelica Zapata Chardonnay.png"
+import angelicazapatacabernetsauvignon from "../assets/vinos/grilla/Angelica Zapata Cabernet Sauvignon.png"
+import angelicazapatacabernetfranc from "../assets/vinos/grilla/Angelica Zapata Cabernet Franc.png"
+import saintfelicienmalbec from "../assets/vinos/grilla/Saint Felicien Malbec.png"
+import bressiaprofundo from "../assets/vinos/grilla/Bressia Profundo.png"
+import bressiapielnegra from "../assets/vinos/grilla/Bressia Piel Negra.png"
+
+import bressiamonteagrelomalbec from "../assets/vinos/grilla/Bressia Monteagrelo Malbec.png"
+import bressiamonteagrelocabernetfranc from "../assets/vinos/grilla/Bressia Monteagrelo Cabernet Franc.png"
+import bressialagrimacanela from "../assets/vinos/grilla/Bressia Lagrima Canela.png"
+import bressiaconjuro from "../assets/vinos/grilla/Bressia Conjuro.png"
+import lucapinotnoir from "../assets/vinos/grilla/Luca Pinot Noir.png"
+import lucachardonnay from "../assets/vinos/grilla/Luca Chardonnay.png"
+import lucabesodedante from "../assets/vinos/grilla/Luca Beso de Dante.png"
+
+import carolauracatena from "../assets/vinos/grilla/Caro - Laura Catena.png"
+
+import granenemigocorte from "../assets/vinos/grilla/Gran Enemigo Corte.png"
+import granenemigogualtallary from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png"
+import granenemigochacayes from "../assets/vinos/grilla/Gran Enemigo Chacayes.png"
+import granenemigoagrelo from "../assets/vinos/grilla/Gran Enemigo Agrelo.png"
+import granenemigoelcepillo from "../assets/vinos/grilla/Gran Enemigo El Cepillo.png"
+import elenemigomalbec from "../assets/vinos/grilla/El Enemigo Malbec.png"
+import elenemigochardonnay from "../assets/vinos/grilla/El Enemigo Chardonnay.png"
+
+import elenemigocabernetfranc from "../assets/vinos/grilla/El Enemigo Cabernet Franc.png"
+import elenemigobonarda from "../assets/vinos/grilla/El Enemigo Bonarda.png"
+
+import achavalferrercabernetfranc from "../assets/vinos/grilla/Achaval Ferrer Cabernet Franc.png"
+import achavalferrermalbec from "../assets/vinos/grilla/Achaval Ferrer Malbec.png"
+
+import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.png"
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
   const [scroll, setScroll] = useState(window.pageYOffset);
@@ -113,29 +166,69 @@ const Products = () => {
     setHovered(false);
   };
 
-
-
-
   const imagenes = {
+    bramarevalledeuco,
+    bramarelujandecuyo,
+    bramarepinotnoir,
+    felino,
+    cocodrilo,
+    judasmalbec,
+    judasblend,
+    susanabalbosignature,
+    briosso,
+    closdelossiete,
+    rutinisauvignonblanc,
+    rutinimalbec,
+    rutinichardonnay,
+    rutinicabernetmalbec,
+    black,
+    zahamalbec,
+    zahacabernetfranc,
+    artesano,
+    findelmundosinglevineyardpinotnoir,
+    findelmundosinglevineyardmalbec,
+    nicolacatenabonarda,
+    malbecargentino,
+    dvcatenasyrah,
+    dvcatenamalbecmalbec,
+    dvcatenalapiramide,
+    dvcatenachardonnay,
+    dvcatenacabernetmalbec,
+    dvcatenacabernet,
+    angelicazapatamerlot,
+    angelicazapatachardonnay,
+    angelicazapatacabernetsauvignon,
+    angelicazapatacabernetfranc,
+    saintfelicienmalbec,
+    bressiaprofundo,
+    bressiapielnegra,
+    bressiamonteagrelomalbec,
+    bressiamonteagrelocabernetfranc,
+    bressialagrimacanela,
+    bressiaconjuro,
+    lucapinotnoir,
+    lucachardonnay,
+    lucabesodedante,
+    carolauracatena,
+    granenemigocorte,
+    granenemigogualtallary,
+    granenemigochacayes,
+    granenemigoagrelo,
+    granenemigoelcepillo,
+    elenemigomalbec,
+    elenemigochardonnay,
+    elenemigocabernetfranc,
+    elenemigobonarda,
+    achavalferrercabernetfranc,
+    achavalferrermalbec,
+    achavalferrerquimera
 
-    bramarevalledeuco: bramarevalledeuco,
-    bramarelujandecuyo: bramarelujandecuyo,
-    bramarepinotnoir:bramarepinotnoir,
-    felino:felino,
-    cocodrilo: cocodrilo,
-    judasmalbec:judasmalbec,
-    judasblend:judasblend,
-    susanabalbosignature:susanabalbosignature,
-    briosso:briosso,
-    closdelossiete:closdelossiete,
-    rutinisauvignonblanc:rutinisauvignonblanc,
-    rutinimalbec:rutinimalbec,
-    rutinichardonnay:rutinichardonnay,
 
 
 
 
-    // Agrega más variables de imagen aquí si es necesario
+    
+
   };
 
   return (
@@ -192,8 +285,7 @@ const Products = () => {
                 <Catalog>
                   <SimpleGrid columns={4} spacing={25}>
                     {wines.map((vino) => {
-
-const imagenVariable = imagenes[vino.imagename]
+                      const imagenVariable = imagenes[vino.imagename];
                       return (
                         <>
                           <div key={vino.name}>
@@ -202,7 +294,6 @@ const imagenVariable = imagenes[vino.imagename]
                               height="190px"
                               width="110px"
                               borderRadius={"3px"}
-                            
                             >
                               <div
                                 style={{
@@ -216,8 +307,7 @@ const imagenVariable = imagenes[vino.imagename]
                                 onMouseLeave={handleMouseLeave}
                               >
                                 <img
-                              
-                              src={imagenVariable}
+                                  src={imagenVariable}
                                   height="240px"
                                   width="160px"
                                   alt="vino"
@@ -242,7 +332,6 @@ const imagenVariable = imagenes[vino.imagename]
                             <Info>
                               <WineName>
                                 {/* <p> {`${vino.ruta}`}</p> */}
-                              
 
                                 <p className="winery"> {vino.winery}</p>
                                 <p className="name"> {vino.name}</p>
@@ -304,9 +393,8 @@ const imagenVariable = imagenes[vino.imagename]
                 <Catalog>
                   <SimpleGrid spacing={25} columns={width > 1000 ? 4 : 3}>
                     {wines.map((vino) => {
-
-const imagenSrc = images(`./${vino.name}.png`).default;
-console.log(imagenSrc); // Verifica la ruta de la imagen importada
+                      const imagenSrc = images(`./${vino.name}.png`).default;
+                      console.log(imagenSrc); // Verifica la ruta de la imagen importada
                       return (
                         <>
                           <div>
@@ -327,10 +415,9 @@ console.log(imagenSrc); // Verifica la ruta de la imagen importada
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                               >
-   
                                 <img
-                                    // src={vino.ruta}
-                                    src={imagenSrc}
+                                  // src={vino.ruta}
+                                  src={imagenSrc}
                                   height="240px"
                                   width="160px"
                                   alt="vino"
@@ -543,7 +630,7 @@ const WineName = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
 
-   .winery {
+  .winery {
     color: #6a6f58 !important;
     font-size: 14px !important;
     font-family: "Poppins";
@@ -565,7 +652,7 @@ const WineName = styled.div`
     margin: 5px;
   }
 
-  .type{
+  .type {
     color: #6a6f58 !important;
     font-size: 14px !important;
     font-family: "Poppins";
