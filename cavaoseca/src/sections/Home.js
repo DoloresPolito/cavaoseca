@@ -3,6 +3,7 @@ import Carrousel from "../components/Carrousel";
 import styled from "styled-components";
 import HomeFooter from "../sections/HomeFooter";
 import Mix from "./Mix";
+import Off from "./Off"
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Carrousel />
       </HomeSection>
       <Mix />
+      <Off />
 
       <HomeFooter />
     </>
