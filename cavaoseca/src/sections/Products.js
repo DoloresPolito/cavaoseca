@@ -336,7 +336,8 @@ const Products = () => {
                               </WineName>
 
                               <WinePrice>
-                                <bold> {vino.price}</bold>
+                                <p>{vino.price}</p>
+                                {/* <bold> </bold> */}
                               </WinePrice>
                             </Info>
                           </div>
@@ -622,21 +623,29 @@ const WineName = styled.div`
   align-items: flex-start;
 
   .winery {
-    color: #6a6f58 !important;
+    /* color: #6a6f58 !important; */
     font-size: 14px !important;
     font-family: "Poppins";
-    font-weight: 500 !important;
+    /* font-weight: 500 !important; */
     text-align: left;
 
     line-height: 1 !important;
     margin: 5px;
+
+
+      font-size: 12px;
+      font-weight: 600;
+      font-family: "Cinzel", sans-serif;
+      text-transform: uppercase;
+      color: #5b5a5a;
+    
   }
 
   .name {
     color: #6a6f58 !important;
     font-size: 14px !important;
     font-family: "Poppins";
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     text-align: left;
 
     line-height: 1 !important;
@@ -647,7 +656,7 @@ const WineName = styled.div`
     color: #6a6f58 !important;
     font-size: 14px !important;
     font-family: "Poppins";
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     text-align: left;
 
     line-height: 1 !important;
@@ -656,15 +665,18 @@ const WineName = styled.div`
   }
 `;
 
-const WinePrice = styled.p`
-  color: #6a6f58 !important;
+const WinePrice = styled.button`
+ width: 80px !important;
+margin-top: 0px !important;
+  p{
+    color: #6a6f58 !important;
   font-size: 15px !important;
   font-family: "Poppins";
   font-weight: 600;
   text-align: left;
   margin: 0;
-  line-height: 1;
-  margin-top: 5px;
+
+  }
 `;
 
 export const Line = styled.div`

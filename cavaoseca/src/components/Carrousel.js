@@ -5,13 +5,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./Navbar";
-import promomixdesktop from "../assets/promos/mix/mixdesktop.png";
+
+
+import promomixdesktop from "../assets/promos/mixnuevo.png";
 import promomixtablet from "../assets/promos/mix/mixtablet.png";
 import promomixmobile from "../assets/promos/mix/mixmobile.png";
 
 import promooffmobile from "../assets/promos/off/offmobile.png"
 
-import off30 from "../assets/promos/30nuevo.png";
+import off30 from "../assets/promos/20nuevo.png";
 import off30mobile from "../assets/promos/30mobile.png";
 
 function Carrousel() {
