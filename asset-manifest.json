@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/cavaoseca/static/css/main.1f1d3c26.css",
-    "main.js": "/cavaoseca/static/js/main.fc4a3319.js",
+    "main.js": "/cavaoseca/static/js/main.56749270.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
     "static/media/30mobile.png": "/cavaoseca/static/media/30mobile.14468c67d144640414d8.png",
     "static/media/fondo_producto.png": "/cavaoseca/static/media/fondo_producto.3cc67f59f47751e23e05.png",
     "static/media/mixmobile.png": "/cavaoseca/static/media/mixmobile.6b65905ab77cb8e59c36.png",
     "static/media/mixnuevo.png": "/cavaoseca/static/media/mixnuevo.c3dccfda9966e372ce3e.png",
     "static/media/20nuevo.png": "/cavaoseca/static/media/20nuevo.f17475fc351efd42c7c8.png",
+    "static/media/offtotal.png": "/cavaoseca/static/media/offtotal.9f82aa554db846d0ebbc.png",
     "static/media/nuevo_loli_pruebacontacto.png": "/cavaoseca/static/media/nuevo_loli_pruebacontacto.9b78aa2a5de621184bd6.png",
     "static/media/offmobile.png": "/cavaoseca/static/media/offmobile.66e4831b490c9598365f.png",
     "static/media/mixtablet.png": "/cavaoseca/static/media/mixtablet.d4f7022d1defd2fa0042.png",
@@ -102,11 +103,11 @@
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
     "main.1f1d3c26.css.map": "/cavaoseca/static/css/main.1f1d3c26.css.map",
-    "main.fc4a3319.js.map": "/cavaoseca/static/js/main.fc4a3319.js.map",
+    "main.56749270.js.map": "/cavaoseca/static/js/main.56749270.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1f1d3c26.css",
-    "static/js/main.fc4a3319.js"
+    "static/js/main.56749270.js"
   ]
 }
