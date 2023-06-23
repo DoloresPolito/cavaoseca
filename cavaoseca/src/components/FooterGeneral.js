@@ -79,10 +79,10 @@ const FooterGeneral = ({view}) => {
                   {" "}
                   <li> PRODUCTOS</li>
                 </RouterLink>
-                <RouterLink to="/about">
+                {/* <RouterLink to="/about">
                   {" "}
                   <li>SOBRE NOSOTROS</li>{" "}
-                </RouterLink>
+                </RouterLink> */}
                 <RouterLink to="/contact">
                   {" "}
                   <li>CONTACTO</li>{" "}
@@ -134,10 +134,10 @@ const FooterGeneral = ({view}) => {
                   {" "}
                   <li> PRODUCTOS</li>{" "}
                 </RouterLink>
-                <RouterLink to="/about">
+                {/* <RouterLink to="/about">
                   {" "}
                   <li>SOBRE NOSOTROS</li>{" "}
-                </RouterLink>
+                </RouterLink> */}
                 <RouterLink to="/contact">
                   {" "}
                   <li>CONTACTO</li>{" "}

@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./Navbar";
 
 
-import promomixdesktop from "../assets/promos/mixnuevo.png";
+import promomixdesktop from "../assets/promos/mixdif.png";
 import promomixtablet from "../assets/promos/mix/mixtablet.png";
 import promomixmobile from "../assets/promos/mix/mixmobile.png";
 
@@ -16,10 +16,12 @@ import promooffmobile from "../assets/promos/off/offmobile.png"
 import off30 from "../assets/promos/20nuevo.png";
 import off30mobile from "../assets/promos/30mobile.png";
 
+
+
 function Carrousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showNavBar, setShowNavBar] = useState(true);
-
+  const [showButton, setButton] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
@@ -63,12 +65,21 @@ function Carrousel() {
   
           <img  
             style={{backgroundImage: `url(${promomixdesktop})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
-          />
+          ></img>
+
+    <BigButton>ver más</BigButton>
       </SlideContainer>
         <SlideContainer>
           <img  
           style={{backgroundImage: `url(${off30})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
           />
+                {showButton && (
+                   <button className="bigbutton">
+                                  <BigButton>ver más</BigButton>
+                   </button>
+
+      )}
+       
       </SlideContainer>
       </Slider>
       </>) : (
@@ -127,14 +138,23 @@ const CarrouselContainer = styled.div`
   margin: 0;
   padding: 0;
   overflow: hidden;
+  z-index: 10;
 `;
 
 const SlideContainer = styled.div`
   height: 100vh;
+  z-index: 10;
 `;
 
 
+const BigButton = styled.button`
+height:30px;
+width: 100px;
+background-color: red;
+z-index: 100;
+position: absolute;
 
+`
 
 // const SlideImage = styled.div`
 //   height: 100%;

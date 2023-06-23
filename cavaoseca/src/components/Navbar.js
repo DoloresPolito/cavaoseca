@@ -25,6 +25,8 @@ const Navbar = ({ props }) => {
 
         {/* {location.pathname === "/products" ? (<> <Logo src={logoverde} /></>) : (<>  <Logo src={logo} /></>)} */}
         {/* <Logo src={copasverdes} /> */}
+        <Logo location={location.pathname}>        <h2>CAVA O SECA</h2></Logo>
+
         {width >= medium ? (
           <>
             <Tabs mode={"large"} view={props} location={location.pathname} />
@@ -41,11 +43,20 @@ const Navbar = ({ props }) => {
   );
 };
 
-const Logo = styled.img`
-position: absolute;
+const Logo = styled.div`
+position: absolute !important;
 height: 85px;
-top:0;
+top:2px;
 left: 70px;
+
+h2{
+  font-family: "Bebas Neue", cursive;
+  color: #6a6f58;
+  font-size: 38px;
+  letter-spacing: 1px;
+
+  color: ${(props) => (props.location === "/products" ? "#6a6f58" : "white")};
+}
   /* height: 40px;
   width: 200px;
   @media only screen and (max-width: 700px) {

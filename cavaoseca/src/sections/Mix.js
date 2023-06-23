@@ -138,9 +138,9 @@ const Top = styled.div`
   /* flex: 30%; */
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 200px;
 
-  h2 {
+  /* h2 {
     color: white;
     max-width: 700px;
     font-weight: 600;
@@ -148,6 +148,16 @@ const Top = styled.div`
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 150%;
+  } */
+  h2 {
+    color: white;
+    font-family: "Cormorant", serif;
+    font-size: 28px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    /* font-family: "Cinzel", sans-serif; */
+    font-weight: 500;
+    margin-left: 100px;
   }
 `;
 

@@ -39,15 +39,15 @@ const Tabs = ({ mode, location }) => {
         </Link>
 
         <a href="https://www.instagram.com/cavaoseca/" target="_blank">
-          {location === "/" ? (
+          {location === "/products" ? (
             <>
               {" "}
-              <img src={instagram} />
+              <img src={instagramverde} />
             </>
           ) : (
             <>
               {" "}
-              <img src={instagramverde} />
+              <img src={instagram} />
             </>
           )}
         </a>
