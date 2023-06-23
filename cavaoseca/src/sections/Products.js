@@ -33,54 +33,52 @@ import zahamalbec from "../assets/vinos/grilla/Zaha Malbec.png";
 import zahacabernetfranc from "../assets/vinos/grilla/Zaha Cabernet Franc.png";
 import artesano from "../assets/vinos/grilla/Artesano.png";
 
+import findelmundosinglevineyardpinotnoir from "../assets/vinos/grilla/Fin del Mundo Single Vineyard Pinot Noir.png";
+import findelmundosinglevineyardmalbec from "../assets/vinos/grilla/Fin del Mundo Single Vineyard Malbec.png";
 
+import nicolacatenabonarda from "../assets/vinos/grilla/Nicola Catena Bonarda (vino de parcela).png";
+import malbecargentino from "../assets/vinos/grilla/Malbec Argentino.png";
 
-import findelmundosinglevineyardpinotnoir from "../assets/vinos/grilla/Fin del Mundo Single Vineyard Pinot Noir.png"
-import findelmundosinglevineyardmalbec from "../assets/vinos/grilla/Fin del Mundo Single Vineyard Malbec.png"
+import dvcatenasyrah from "../assets/vinos/grilla/Dv Catena Syrah.png";
+import dvcatenamalbecmalbec from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
+import dvcatenalapiramide from "../assets/vinos/grilla/Dv Catena La Pirámide.png";
+import dvcatenachardonnay from "../assets/vinos/grilla/Dv Catena Chardonnay.png";
+import dvcatenacabernetmalbec from "../assets/vinos/grilla/Dv Catena Cabernet Malbec.png";
+import dvcatenacabernet from "../assets/vinos/grilla/Dv Catena Cabernet.png";
 
-import nicolacatenabonarda from "../assets/vinos/grilla/Nicola Catena Bonarda (vino de parcela).png"
-import malbecargentino from "../assets/vinos/grilla/Malbec Argentino.png"
+import angelicazapatamerlot from "../assets/vinos/grilla/Angelica Zapata Merlot.png";
+import angelicazapatachardonnay from "../assets/vinos/grilla/Angelica Zapata Chardonnay.png";
+import angelicazapatacabernetsauvignon from "../assets/vinos/grilla/Angelica Zapata Cabernet Sauvignon.png";
+import angelicazapatacabernetfranc from "../assets/vinos/grilla/Angelica Zapata Cabernet Franc.png";
+import saintfelicienmalbec from "../assets/vinos/grilla/Saint Felicien Malbec.png";
+import bressiaprofundo from "../assets/vinos/grilla/Bressia Profundo.png";
+import bressiapielnegra from "../assets/vinos/grilla/Bressia Piel Negra.png";
 
-import dvcatenasyrah from "../assets/vinos/grilla/Dv Catena Syrah.png"
-import dvcatenamalbecmalbec from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png"
-import dvcatenalapiramide from "../assets/vinos/grilla/Dv Catena La Pirámide.png"
-import dvcatenachardonnay from "../assets/vinos/grilla/Dv Catena Chardonnay.png"
-import dvcatenacabernetmalbec from "../assets/vinos/grilla/Dv Catena Cabernet Malbec.png"
-import dvcatenacabernet from "../assets/vinos/grilla/Dv Catena Cabernet.png"
+import bressiamonteagrelomalbec from "../assets/vinos/grilla/Bressia Monteagrelo Malbec.png";
+import bressiamonteagrelocabernetfranc from "../assets/vinos/grilla/Bressia Monteagrelo Cabernet Franc.png";
+import bressialagrimacanela from "../assets/vinos/grilla/Bressia Lagrima Canela.png";
+import bressiaconjuro from "../assets/vinos/grilla/Bressia Conjuro.png";
+import lucapinotnoir from "../assets/vinos/grilla/Luca Pinot Noir.png";
+import lucachardonnay from "../assets/vinos/grilla/Luca Chardonnay.png";
+import lucabesodedante from "../assets/vinos/grilla/Luca Beso de Dante.png";
 
-import angelicazapatamerlot from "../assets/vinos/grilla/Angelica Zapata Merlot.png"
-import angelicazapatachardonnay from "../assets/vinos/grilla/Angelica Zapata Chardonnay.png"
-import angelicazapatacabernetsauvignon from "../assets/vinos/grilla/Angelica Zapata Cabernet Sauvignon.png"
-import angelicazapatacabernetfranc from "../assets/vinos/grilla/Angelica Zapata Cabernet Franc.png"
-import saintfelicienmalbec from "../assets/vinos/grilla/Saint Felicien Malbec.png"
-import bressiaprofundo from "../assets/vinos/grilla/Bressia Profundo.png"
-import bressiapielnegra from "../assets/vinos/grilla/Bressia Piel Negra.png"
+import carolauracatena from "../assets/vinos/grilla/Caro - Laura Catena.png";
 
-import bressiamonteagrelomalbec from "../assets/vinos/grilla/Bressia Monteagrelo Malbec.png"
-import bressiamonteagrelocabernetfranc from "../assets/vinos/grilla/Bressia Monteagrelo Cabernet Franc.png"
-import bressialagrimacanela from "../assets/vinos/grilla/Bressia Lagrima Canela.png"
-import bressiaconjuro from "../assets/vinos/grilla/Bressia Conjuro.png"
-import lucapinotnoir from "../assets/vinos/grilla/Luca Pinot Noir.png"
-import lucachardonnay from "../assets/vinos/grilla/Luca Chardonnay.png"
-import lucabesodedante from "../assets/vinos/grilla/Luca Beso de Dante.png"
+import granenemigocorte from "../assets/vinos/grilla/Gran Enemigo Corte.png";
+import granenemigogualtallary from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png";
+import granenemigochacayes from "../assets/vinos/grilla/Gran Enemigo Chacayes.png";
+import granenemigoagrelo from "../assets/vinos/grilla/Gran Enemigo Agrelo.png";
+import granenemigoelcepillo from "../assets/vinos/grilla/Gran Enemigo El Cepillo.png";
+import elenemigomalbec from "../assets/vinos/grilla/El Enemigo Malbec.png";
+import elenemigochardonnay from "../assets/vinos/grilla/El Enemigo Chardonnay.png";
 
-import carolauracatena from "../assets/vinos/grilla/Caro - Laura Catena.png"
+import elenemigocabernetfranc from "../assets/vinos/grilla/El Enemigo Cabernet Franc.png";
+import elenemigobonarda from "../assets/vinos/grilla/El Enemigo Bonarda.png";
 
-import granenemigocorte from "../assets/vinos/grilla/Gran Enemigo Corte.png"
-import granenemigogualtallary from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png"
-import granenemigochacayes from "../assets/vinos/grilla/Gran Enemigo Chacayes.png"
-import granenemigoagrelo from "../assets/vinos/grilla/Gran Enemigo Agrelo.png"
-import granenemigoelcepillo from "../assets/vinos/grilla/Gran Enemigo El Cepillo.png"
-import elenemigomalbec from "../assets/vinos/grilla/El Enemigo Malbec.png"
-import elenemigochardonnay from "../assets/vinos/grilla/El Enemigo Chardonnay.png"
+import achavalferrercabernetfranc from "../assets/vinos/grilla/Achaval Ferrer Cabernet Franc.png";
+import achavalferrermalbec from "../assets/vinos/grilla/Achaval Ferrer Malbec.png";
 
-import elenemigocabernetfranc from "../assets/vinos/grilla/El Enemigo Cabernet Franc.png"
-import elenemigobonarda from "../assets/vinos/grilla/El Enemigo Bonarda.png"
-
-import achavalferrercabernetfranc from "../assets/vinos/grilla/Achaval Ferrer Cabernet Franc.png"
-import achavalferrermalbec from "../assets/vinos/grilla/Achaval Ferrer Malbec.png"
-
-import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.png"
+import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.png";
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
   const [scroll, setScroll] = useState(window.pageYOffset);
@@ -221,14 +219,7 @@ const Products = () => {
     elenemigobonarda,
     achavalferrercabernetfranc,
     achavalferrermalbec,
-    achavalferrerquimera
-
-
-
-
-
-    
-
+    achavalferrerquimera,
   };
 
   return (

@@ -2,15 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import mancha1 from "../assets/Mancha 3.png";
 import mancha2 from "../assets/Manch 4.png";
-import vino1 from "../assets/vinos/grilla/Bressia Lagrima Canela.png"
-import vino2 from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png"
-import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png"
-import vino4 from "../assets/vinos/grilla/Rutini Coleccion Malbec.png"
-import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png"
-import vino6 from "../assets/vinos/grilla/Felino.png"
-import vino7 from "../assets/vinos/grilla/Cocodrilo.png"
-import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png"
-
+import vino1 from "../assets/vinos/grilla/Bressia Lagrima Canela.png";
+import vino2 from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png";
+import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png";
+import vino4 from "../assets/vinos/grilla/Rutini Coleccion Malbec.png";
+import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
+import vino6 from "../assets/vinos/grilla/Felino.png";
+import vino7 from "../assets/vinos/grilla/Cocodrilo.png";
+import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
 
 const Mix = () => {
   return (
@@ -26,68 +25,98 @@ const Mix = () => {
             <Box>
               <img src={vino1} />
               <div>
-              <h2>Bressia Lagrima Canela</h2>
-              <p>$5.600</p>
+                <h2>Bressia Lagrima Canela</h2>
+                <h3>CHARDONNAY</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
 
             <Box>
               <img src={vino2} />
               <div>
-              <h2>Gualtallary</h2>
-              <p>$3.000</p>
+                <h2>Gualtallary</h2>
+                <h3>malbec</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
 
             <Box>
               <img src={vino3} />
               <div>
-              <h2>DV Catena Chardonnay</h2>
-              <p>$3.000</p>
+                <h2>DV Catena Chardonnay</h2>
+                <h3>cabernet franc</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
 
             <Box>
               <img src={vino4} />
               <div>
-              <h2>Rutini Coleccion Malbec</h2>
-              <p>$3.000</p>
+                <h2>Rutini Coleccion Malbec</h2>
+                <h3>malbec</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
 
             <Box>
               <img src={vino5} />
               <div>
-              <h2>Saint Felicien Malbec</h2>
-              <p>$3.000</p>
+                <h2>Saint Felicien Malbec</h2>
+                <h3>malbec</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
 
             <Box>
               <img src={vino6} />
               <div>
-              <h2>Felino</h2>
-              <p>$3.000</p>
+                <h2>Felino</h2>
+                <h3>CHARDONNAY</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
 
             <Box>
               <img src={vino7} />
               <div>
-              <h2>Cocodrilo</h2>
-              <p>$3.000</p>
+                <h2>Cocodrilo</h2>
+                <h3>cabernet sauvignon</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
 
             <Box>
               <img src={vino8} />
               <div>
-              <h2>DV Catena </h2>
-              <p>$3.000</p>
+                <h2>DV Catena </h2>
+                <h3>syrah</h3>
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
               </div>
             </Box>
-
-
           </div>
         </Bottom>
       </MixSection>
@@ -112,10 +141,13 @@ const Top = styled.div`
   height: 300px;
 
   h2 {
-    font-family: "Poppins";
-    font-weight: 500;
     color: white;
-    max-width: 500px;
+    max-width: 700px;
+    font-weight: 600;
+    font-family: "Cinzel", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 150%;
   }
 `;
 
@@ -136,13 +168,11 @@ const Bottom = styled.div`
     justify-content: center;
   }
   img {
-
     margin: 0px;
     height: 250px;
     width: 180px;
     margin-left: -40px;
     margin-top: -5px;
-
   }
 `;
 
@@ -170,7 +200,7 @@ const Box = styled.div`
   height: 230px;
   width: 280px;
 
-  div{
+  div {
     display: flex;
     flex-direction: column;
 
@@ -179,11 +209,33 @@ const Box = styled.div`
     margin-top: 40px;
     margin-left: -30px;
 
+    h2 {
+      font-size: 12px;
+      font-weight: 600;
+      font-family: "Cinzel", sans-serif;
+      text-transform: uppercase;
+      color: #5b5a5a;
+    }
 
-    h2{
-        font-size: 15px;
-        font-weight: 300;
+    h3 {
+      font-size: 12px;
+      font-weight: 600;
+      font-family: "Roboto";
+      text-transform: uppercase;
+      color: #6a7059;
+    }
 
+    button {
+      background-color: #6a7059;
+      color: white;
+      border: none;
+      width: 80px;
+      height: 30px;
+      margin-top: 30px;
+
+      p {
+        margin-top: 6px;
+      }
     }
   }
 `;
