@@ -135,20 +135,10 @@ const MixSection = styled.div`
 
 const Top = styled.div`
   display: flex;
-  /* flex: 30%; */
   justify-content: center;
   align-items: center;
   height: 200px;
 
-  /* h2 {
-    color: white;
-    max-width: 700px;
-    font-weight: 600;
-    font-family: "Cinzel", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 150%;
-  } */
   h2 {
     color: white;
     font-family: "Cormorant", serif;
@@ -157,7 +147,19 @@ const Top = styled.div`
     text-transform: uppercase;
     /* font-family: "Cinzel", sans-serif; */
     font-weight: 500;
-    margin-left: 100px;
+    /* margin-left: 100px; */
+    line-height: 40px;
+    max-width: 800px;
+    z-index: 1000;
+
+    @media only screen and (max-width: 900px) {
+      max-width: 500px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      max-width: 400px;
+      font-size: 23px;
+    }
   }
 `;
 
@@ -187,15 +189,15 @@ const Bottom = styled.div`
 `;
 
 const Img1 = styled.img`
-  position: relative;
-  top: 28px;
+  position: absolute;
+  top: 1428px;
   left: -50px;
 `;
 
 const Img2 = styled.img`
-  position: relative;
-  top: 70px;
-  left: 70px;
+  position: absolute;
+  top: 1428px;
+  left: 1000px;
 `;
 
 const Box = styled.div`

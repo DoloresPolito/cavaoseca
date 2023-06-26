@@ -20,36 +20,52 @@ const Off = () => {
             <div>
               <h2>Rutini Coleccion</h2>
               <h3>malbec</h3>
-              {/* <button>
+              <img src={vino4} />
+              <button>
                   {" "}
                   <p>$5.600</p>
-                </button> */}
+                </button>
             </div>
-            <img src={vino4} />
+       
+    
           </Box>
 
           <Box>
             <div>
               <h2>Saint Felicien </h2>
               <h3>malbec</h3>
-              {/* <button>
+              <img src={vino5} />
+                  <button>
                   {" "}
                   <p>$5.600</p>
-                </button> */}
+                </button>
             </div>
-            <img src={vino5} />
+           
           </Box>
 
           <Box>
             <div>
               <h2>DV Catena </h2>
               <h3>Chardonnay Chardonnay</h3>
-              {/* <button>
+              <img src={vino3} />
+                 <button>
                   {" "}
                   <p>$5.600</p>
-                </button> */}
+                </button>
             </div>
-            <img src={vino3} />
+          
+          </Box>
+          <Box>
+            <div>
+              <h2>DV Catena </h2>
+              <h3>Chardonnay Chardonnay</h3>
+              <img src={vino3} />
+                <button>
+                  {" "}
+                  <p>$5.600</p>
+                </button>
+            </div>
+          
           </Box>
         </div>
       </Section>
@@ -64,14 +80,17 @@ const Section = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
 
   div {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
+    flex-wrap: wrap;
+    /* padding-bottom: 140px; */
+  }
+
+  @media only screen and (max-width: 1230px) {
+    height: 100%;
   }
 `;
 
@@ -87,7 +106,7 @@ const TopLine = styled.div`
     font-size: 28px;
     letter-spacing: 1.2px;
     margin: auto;
-    padding-top: 17px;
+    padding-top: 6px;
   }
 `;
 
@@ -96,6 +115,13 @@ const Box = styled.div`
   display: flex;
   flex-direction: column !important;
   padding-top: 60px;
+  /* margin-top: 60px; */
+  z-index: 100;
+
+  img{
+    height: 360px;
+    padding-top: 20px;
+  }
 
   div {
     display: flex;
@@ -103,6 +129,20 @@ const Box = styled.div`
 
     justify-content: center;
     align-items: center;
+
+
+    button {
+      background-color: #6a7059;
+      color: white;
+      border: none;
+      width: 80px;
+      height: 30px;
+      margin-bottom: 10px;
+
+      p {
+        margin-top: 6px;
+      }
+    }
 
     h2 {
       font-size: 22px;
@@ -121,18 +161,7 @@ const Box = styled.div`
       color: #6a7059;
     }
 
-    button {
-      background-color: #6a7059;
-      color: white;
-      border: none;
-      width: 80px;
-      height: 30px;
-      margin-top: 30px;
-
-      p {
-        margin-top: 6px;
-      }
-    }
+  
   }
 `;
 
