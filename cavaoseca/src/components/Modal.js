@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 
-const Modal = ({ open, onClose, selectedWine }) => {
+const Modal = ({ open, onClose, selectedWine, selectedImage }) => {
   const { ref, inView } = useInView();
   const controls = useAnimation();
+
+  
 
   useEffect(() => {
     if (inView || open) {
@@ -39,8 +41,11 @@ const Modal = ({ open, onClose, selectedWine }) => {
                     position: "relative",
                   }}
                 >
+
+
+                        
                   <img
-                    src={`/vinos/singlewine/${selectedWine.name}.png`}
+                    src={selectedImage}
                     height="240px"
                     width="160px"
                     alt="vino"
@@ -48,8 +53,10 @@ const Modal = ({ open, onClose, selectedWine }) => {
                       position: "absolute",
                       top: "0px",
                       left: "-50px",
-                      width: "300px",
+                      width: "340px",
                       height: "500px",
+    
+            
                     }}
                   />
                 </div>
@@ -57,11 +64,11 @@ const Modal = ({ open, onClose, selectedWine }) => {
 
                 <Description>
                   <TitleContainer>
-                    <h2>{selectedWine.name}</h2>
+                    <h2>{selectedWine.shortname}</h2>
                     <div/>
                     <h4>{selectedWine.type}</h4>
                   </TitleContainer>
-                  <p>{selectedWine.description}</p>
+                  <p>{selectedWine.singlewinedescription}</p>
 
                   <h6>$ 4.500</h6>
                 </Description>
@@ -91,7 +98,8 @@ const ModalContainer = styled.div`
   box-shadow: 0 0 4px rgba(128, 128, 128, 0.2);
   /* box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75); */
   border-radius: 8px;
-  margin-top: 50px;
+  margin-top: 70px;
+  height: 670px;
 `;
 const TitleContainer = styled.div`
   display: flex;
@@ -160,7 +168,7 @@ const Description = styled.div`
     letter-spacing: 1.2px;
     line-height: 35px;
     color: #6a6f58;
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: left;
     font-weight: 400;
   }
@@ -183,7 +191,8 @@ const Description = styled.div`
 
 const Line = styled.div`
   border-left: 0.5px solid #6a6f58;
-  height: 580px;
+
+  height: 670px;
   position: absolute;
   left: 38%;
   margin-top: -64px;

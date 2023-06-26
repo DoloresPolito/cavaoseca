@@ -17,7 +17,6 @@ const FooterGeneral = ({view}) => {
   
     useEffect(() => {
       window.addEventListener("resize", () => setWidth(window.innerWidth));
-    console.log("VIEW EN GENERAL FOOTER", view)
     }, []);
   
     useEffect(() => {
@@ -308,6 +307,7 @@ const Div = styled.div`
   display: flex;
   margin-bottom: 40px;
 
+
   ul {
     font-family: "Poppins";
     font-style: normal;
@@ -316,13 +316,17 @@ const Div = styled.div`
     line-height: 30px;
     list-style: none;
     margin-right: 40px;
+    color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")};
   }
 
   li {
     text-decoration: underline #6F5358;
-    /* color: #fefefe; */
+
     color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")};
     font-weight: 400;
+    color: ${(props) => (props.view === "home" ? "#fefefe !important" : "#6a6f58")};
+        color: #fefefe;
+
   }
 
   img {

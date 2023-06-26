@@ -81,6 +81,7 @@ import achavalferrermalbec from "../assets/vinos/grilla/Achaval Ferrer Malbec.pn
 import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.png";
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
+  const [selectedImage, setSelectedImage] = useState({});
   const [scroll, setScroll] = useState(window.pageYOffset);
   const input = useInput("");
   const [wines, setWines] = useState(vinos);
@@ -148,9 +149,10 @@ const Products = () => {
     document.body.style.overflow = "auto";
   };
 
-  const opening = (vino) => {
+  const opening = (vino, imagenVariable) => {
     setOpenModal(true);
     setSelectedWine(vino);
+    setSelectedImage(imagenVariable);
     document.body.style.overflow = "hidden";
   };
 
@@ -311,7 +313,7 @@ const Products = () => {
                                 {hovered && (
                                   <div
                                     className="overlay"
-                                    onClick={() => opening(vino)}
+                                    onClick={() => opening(vino, imagenVariable)}
                                   >
                                     <p>{vino.name}</p>
                                     <p>ver más</p>
@@ -331,6 +333,7 @@ const Products = () => {
                                 <Modal
                                   open={openModal}
                                   selectedWine={selectedWine}
+                                  selectedImage={selectedImage}
                                   onClose={() => closing()}
                                 />
                               </WineName>
@@ -443,6 +446,7 @@ const Products = () => {
                                 <Modal
                                   open={openModal}
                                   selectedWine={selectedWine}
+                                  selectedImage={selectedImage}
                                   onClose={() => closing()}
                                 />
                               </WineName>
