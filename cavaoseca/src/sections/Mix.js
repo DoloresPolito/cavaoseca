@@ -198,6 +198,11 @@ const Img2 = styled.img`
   position: absolute;
   top: 1428px;
   left: 1000px;
+
+
+  @media only screen and (max-width: 1300px) {
+display: none;
+    }
 `;
 
 const Box = styled.div`

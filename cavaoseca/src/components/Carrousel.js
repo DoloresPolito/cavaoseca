@@ -9,7 +9,7 @@ import Navbar from "./Navbar";
 
 import promomixdesktop from "../assets/promos/mixdif.png";
 import promomixtablet from "../assets/promos/mix/mixtablet.png";
-import promomixmobile from "../assets/promos/mix/mixmobile.png";
+import promomixmobile from "../assets/promos/mix/promomixmobilenew.png";
 
 import promooffmobile from "../assets/promos/off/offmobile.png"
 
@@ -96,7 +96,7 @@ function Carrousel() {
       </SlideContainer>
         <SlideContainer>
           <img  
-          style={{backgroundImage: `url(${promooffmobile})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
+          style={{backgroundImage: `url(${promomixtablet})`, height:"100%", width:"100%", backgroundSize:"cover", backgroundPosition:"center"}}
           />
       </SlideContainer>
       </Slider>
