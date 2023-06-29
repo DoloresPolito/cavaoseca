@@ -14,7 +14,6 @@ const ProductsFooter = () => {
 
 const FooterSection = styled.div`
   height: 200px;
-  /* background-color: #dad6cc; */
   background-color: transparent;
   background-image: 'url(${backgroundImage}';
   color: #252525 !important;

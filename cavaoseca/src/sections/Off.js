@@ -22,12 +22,10 @@ const Off = () => {
               <h3>malbec</h3>
               <img src={vino4} />
               <button>
-                  {" "}
-                  <p>$5.600</p>
-                </button>
+                {" "}
+                <p>$5.600</p>
+              </button>
             </div>
-       
-    
           </Box>
 
           <Box>
@@ -35,12 +33,11 @@ const Off = () => {
               <h2>Saint Felicien </h2>
               <h3>malbec</h3>
               <img src={vino5} />
-                  <button>
-                  {" "}
-                  <p>$5.600</p>
-                </button>
+              <button>
+                {" "}
+                <p>$5.600</p>
+              </button>
             </div>
-           
           </Box>
 
           <Box>
@@ -48,26 +45,26 @@ const Off = () => {
               <h2>DV Catena </h2>
               <h3>Chardonnay Chardonnay</h3>
               <img src={vino3} />
-                 <button>
-                  {" "}
-                  <p>$5.600</p>
-                </button>
+              <button>
+                {" "}
+                <p>$5.600</p>
+              </button>
             </div>
-          
           </Box>
           <Box>
             <div>
               <h2>DV Catena </h2>
               <h3>Chardonnay Chardonnay</h3>
               <img src={vino3} />
-                <button>
-                  {" "}
-                  <p>$5.600</p>
-                </button>
+              <button>
+                {" "}
+                <p>$5.600</p>
+              </button>
             </div>
-          
           </Box>
         </div>
+
+        <button className="vertodo">ver todos los productos</button>
       </Section>
     </>
   );
@@ -75,7 +72,7 @@ const Off = () => {
 
 const Section = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: url(${offfondosolo});
   background-position: center;
   background-repeat: no-repeat;
@@ -91,6 +88,17 @@ const Section = styled.div`
 
   @media only screen and (max-width: 1230px) {
     height: 100%;
+  }
+
+  .vertodo {
+    border: 1px solid #6a7059;
+    height: 40px;
+    background: transparent;
+    cursor: pointer;
+    color: #6a7059;
+    padding: 10px 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -111,14 +119,12 @@ const TopLine = styled.div`
 `;
 
 const Box = styled.div`
-  /* background-color: blue !important; */
   display: flex;
   flex-direction: column !important;
   padding-top: 60px;
-  /* margin-top: 60px; */
   z-index: 100;
 
-  img{
+  img {
     height: 360px;
     padding-top: 20px;
   }
@@ -129,7 +135,6 @@ const Box = styled.div`
 
     justify-content: center;
     align-items: center;
-
 
     button {
       background-color: #6a7059;
@@ -160,8 +165,6 @@ const Box = styled.div`
       text-transform: uppercase;
       color: #6a7059;
     }
-
-  
   }
 `;
 

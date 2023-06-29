@@ -12,7 +12,6 @@ import Checkbox from "../components/Checkbox";
 import { useChecked } from "../hooks/useChecked";
 import ProductsFooter from "./ProductsFooter";
 import { useLocation } from "react-router-dom";
-import images from "./images";
 
 import cocodrilo from "../assets/vinos/grilla/Cocodrilo.png";
 import bramarevalledeuco from "../assets/vinos/grilla/Bramare Valle De Uco.png";
@@ -294,6 +293,7 @@ const Products = () => {
                                   height: "100px",
                                   width: "170px",
                                   marginBottom: "80px",
+                                  cursor: "pointer",
                                 }}
                                 className="image-container"
                                 onMouseEnter={handleMouseEnter}
@@ -313,7 +313,9 @@ const Products = () => {
                                 {hovered && (
                                   <div
                                     className="overlay"
-                                    onClick={() => opening(vino, imagenVariable)}
+                                    onClick={() =>
+                                      opening(vino, imagenVariable)
+                                    }
                                   >
                                     <p>{vino.name}</p>
                                     <p>ver más</p>
@@ -324,8 +326,6 @@ const Products = () => {
 
                             <Info>
                               <WineName>
-                                {/* <p> {`${vino.ruta}`}</p> */}
-
                                 <p className="winery"> {vino.winery}</p>
                                 <p className="name"> {vino.name}</p>
                                 <p className="type"> {vino.type}</p>
@@ -340,7 +340,6 @@ const Products = () => {
 
                               <WinePrice>
                                 <p>{vino.price}</p>
-                                {/* <bold> </bold> */}
                               </WinePrice>
                             </Info>
                           </div>
@@ -382,14 +381,13 @@ const Products = () => {
                         placeholder="Buscar por nombre"
                       />
                     </form>
-                    <button onClick={borrarFiltros}>borrar filtros</button>
+                    <button className="buttonform" onClick={borrarFiltros}>borrar filtros</button>
                   </div>
                 </Top>
                 <Catalog>
                   <SimpleGrid spacing={25} columns={width > 1000 ? 4 : 3}>
                     {wines.map((vino) => {
-                      const imagenSrc = images(`./${vino.name}.png`).default;
-                      console.log(imagenSrc); // Verifica la ruta de la imagen importada
+                      const imagenVariable = imagenes[vino.imagename];
                       return (
                         <>
                           <div>
@@ -405,14 +403,14 @@ const Products = () => {
                                   height: "100px",
                                   width: "170px",
                                   marginBottom: "80px",
+                                  cursor: "pointer",
                                 }}
                                 className="image-container"
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                               >
                                 <img
-                                  // src={vino.ruta}
-                                  src={imagenSrc}
+                                  src={imagenVariable}
                                   height="240px"
                                   width="160px"
                                   alt="vino"
@@ -425,7 +423,9 @@ const Products = () => {
                                 {hovered && (
                                   <div
                                     className="overlay"
-                                    onClick={() => opening(vino)}
+                                    onClick={() =>
+                                      opening(vino, imagenVariable)
+                                    }
                                   >
                                     <p>{vino.name}</p>
                                     <p>ver más</p>
@@ -437,13 +437,12 @@ const Products = () => {
                             <Info>
                               <WineName>
                                 <p className="winery"> {vino.winery}</p>
-                                <p className="name"> {vino.name}</p>
-                                <p className="price"> {vino.type}</p>
-                                {/* <button onClick={() => opening(vino)}>
-                              <p>ver mas</p>
-                            </button> */}
+                                <p className="name"> {vino.shortname}</p>
+                                <p className="type"> {vino.type}</p>
 
-                                <Modal
+
+
+<Modal
                                   open={openModal}
                                   selectedWine={selectedWine}
                                   selectedImage={selectedImage}
@@ -452,10 +451,8 @@ const Products = () => {
                               </WineName>
 
                               <WinePrice>
-                                <bold> {vino.price}</bold>
+                                <p>{vino.price}</p>
                               </WinePrice>
-                              {/* <p>3 cuotas de $3.600</p> */}
-                              {/* <button>ENVIO GRATIS</button> */}
                             </Info>
                           </div>
                         </>
@@ -482,7 +479,7 @@ const SelectProducts = styled.div`
   img {
     height: 200px;
     position: absolute;
-    right: 130px;
+    right: 50px;
   }
 
   form {
@@ -529,96 +526,6 @@ const SelectProducts = styled.div`
   }
 `;
 
-const RedWines = styled.div`
-  display: flex;
-  align-items: center;
-
-  /* img {
-    display: ${(props) => (props.mode !== "tintos" ? "flex" : "none")};
-  }
-
-  div img {
-    display: ${(props) => (props.mode !== "tintos" ? "none" : "flex")};
-  } */
-
-  /* span {
-    position: absolute;
-    left: 223px;
-  } */
-  /* span img {
-    display: ${(props) => (props.mode !== "tintos" ? "none" : "inline")};
-  }
-
-  :hover {
-    img {
-      display: none;
-    }
-    div img {
-      display: flex;
-    }
-  } */
-`;
-
-const WhiteWines = styled.div`
-  display: flex;
-  align-items: center;
-
-  /* img {
-    display: ${(props) => (props.mode !== "blancos" ? "flex" : "none")};
-  }
-
-  div img {
-    display: ${(props) => (props.mode !== "blancos" ? "none" : "flex")};
-  } */
-
-  /* span {
-    position: absolute;
-    left: 223px;
-  }
-  span img {
-    display: ${(props) => (props.mode !== "blancos" ? "none" : "inline")};
-  } */
-
-  /* :hover {
-    img {
-      display: none;
-    }
-    div img {
-      display: flex;
-    }
-  } */
-`;
-
-const SparklingWines = styled.div`
-  display: flex;
-  align-items: center;
-
-  /* img {
-    display: ${(props) => (props.mode !== "espumantes" ? "flex" : "none")};
-  }
-
-  div img {
-    display: ${(props) => (props.mode !== "espumantes" ? "none" : "flex")};
-  } */
-
-  /* span {
-    position: absolute;
-    left: 223px;
-  }
-  span img {
-    display: ${(props) => (props.mode !== "profile" ? "none" : "inline")};
-  } */
-
-  /* :hover {
-    img {
-      display: none;
-    }
-    div img {
-      display: flex;
-    }
-  } */
-`;
-
 const WineName = styled.div`
   display: flex;
   flex-direction: column;
@@ -636,13 +543,11 @@ const WineName = styled.div`
     line-height: 1 !important;
     margin: 5px;
 
-
-      font-size: 12px;
-      font-weight: 600;
-      font-family: "Cinzel", sans-serif;
-      text-transform: uppercase;
-      color: #5b5a5a;
-    
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Cinzel", sans-serif;
+    text-transform: uppercase;
+    color: #5b5a5a;
   }
 
   .name {
@@ -670,16 +575,15 @@ const WineName = styled.div`
 `;
 
 const WinePrice = styled.button`
- width: 80px !important;
-margin-top: 0px !important;
-  p{
+  width: 80px !important;
+  margin-top: 0px !important;
+  p {
     color: #6a6f58 !important;
-  font-size: 15px !important;
-  font-family: "Poppins";
-  font-weight: 600;
-  text-align: left;
-  margin: 0;
-
+    font-size: 15px !important;
+    font-family: "Poppins";
+    font-weight: 600;
+    text-align: left;
+    margin: 0;
   }
 `;
 
@@ -865,7 +769,7 @@ const VerticalContainer = styled.div`
     vertical-align: middle;
   }
 
-  button {
+  .buttonform {
     background-color: #6a6f58;
     border: none;
     color: #fefefe;

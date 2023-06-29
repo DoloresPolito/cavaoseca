@@ -21,8 +21,6 @@ const Navbar = ({ props }) => {
   return (
     <NavbarSection location={location.pathname}>
       <NavbarContainer className={!isOpen && "isClosed"}>
-        {/* {location.pathname === "/products" ? (<> <Logo src={logoverde} /></>) : (<>  <Logo src={logo} /></>)} */}
-        {/* <Logo src={copasverdes} /> */}
         <Logo location={location.pathname}>
           {" "}
           <h2>CAVA O SECA</h2>

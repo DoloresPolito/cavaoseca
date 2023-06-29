@@ -36,70 +36,14 @@ const FooterGeneral = ({view}) => {
         });
       }
     }, [inView]);
-    return(<> {width > 800 ? (
-        <>
-          <FooterContainer mode={width} ref={ref} view={view}>
-            <motion.div>
-              {" "}
-              {/* <Logo src={logo} /> */}
-            </motion.div>
 
-            <Column1 animate={animation} view={view}>
-              <FooterTitle view={view}>Contactanos</FooterTitle>
-              <div>
-                <a href="mailto:dolores.polito@gmail.com">
-                  {" "}
-                  {/* <img src={mail} alt="mail" /> */}
-                </a>
-                <a
-                  href="https://www.instagram.com/cavaoseca/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <img src={instagram} alt="instagram" />
-                </a>
-                <a
-                  href="https://wa.me/5493446584076"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <img src={whatsapp} alt="whatsapp" />
-                </a>
-              </div>
-            </Column1>
 
-            <Column2 animate={animation} view={view}>
-              {" "}
-              <ul className="list">
-                {/* <li>{t("footer.services")}</li> {/* <RouterLink to="/work"> } */}
-                <RouterLink to="/products">
-                  {" "}
-                  <li> PRODUCTOS</li>
-                </RouterLink>
-                {/* <RouterLink to="/about">
-                  {" "}
-                  <li>SOBRE NOSOTROS</li>{" "}
-                </RouterLink> */}
-                <RouterLink to="/contact">
-                  {" "}
-                  <li>CONTACTO</li>{" "}
-                </RouterLink>
-              </ul>
-            </Column2>
-
-            <CopyRight animate={animation} view={view}>
-              <p> Todos los derechos reservados</p>
-            </CopyRight>
-          </FooterContainer>
-        </>
-      ) : (
+    return(<> 
         <MobileSection>
           <MobileContainer>
-            <Div>
+            <Div view={view}>
               <div>
-                <FooterTitle>CONTACTANOS</FooterTitle>
+                <FooterTitle view={view}>CONTACTANOS</FooterTitle>
                 <div style={{ display: "flex", flexDirection: "row" }}>
                   <a href="mailto:oliviapollitzer@gmail.com">
                     {" "}
@@ -125,135 +69,40 @@ const FooterGeneral = ({view}) => {
               </div>
 
               <ul className="list">
-                {/* <RouterLink to="/services">
-                  {" "}
-                  <li> {t("footer.services")}</li>{" "}
-                </RouterLink> */}
+         
                 <RouterLink to="/products">
                   {" "}
                   <li> PRODUCTOS</li>{" "}
                 </RouterLink>
-                {/* <RouterLink to="/about">
-                  {" "}
-                  <li>SOBRE NOSOTROS</li>{" "}
-                </RouterLink> */}
+       
                 <RouterLink to="/contact">
                   {" "}
                   <li>CONTACTO</li>{" "}
                 </RouterLink>
+                <RouterLink to="/cavaoseca">
+                  {" "}
+                  <li>HOME</li>{" "}
+                </RouterLink>
               </ul>
             </Div>
-            <div> {/* <Logo2 src={logo} /> */}</div>
+         
 
-            <CopyRight2>
+            <CopyRight2 view={view}>
               <p> Todos los derechos reservados</p>
             </CopyRight2>
           </MobileContainer>
         </MobileSection>
-      )}</>)
+    </>)
 }
 
 
-const FooterContainer = styled(motion.div)`
-  display: flex;
-  height: 200px;
-  width: 85%;
-  /* border-top: 1px solid white; */
-  margin: auto;
-  position: relative;
-  /* border-top: ${(props) => (props.view === "products" ? "1px solid #6a6f58" : "1px solid white")}; */
-`;
 
-const Logo = styled.img`
-  position: relative;
-  left: 90px;
-  width: 230px;
-  top: 10px;
-
-  @media only screen and (max-width: 1150px) {
-    width: 300px;
-    top: 30px;
-  }
-`;
-
-const Logo2 = styled.img`
-  width: 240px;
-`;
-
-const Column1 = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 310px;
-  top: 50px;
-
-
-  div {
-    margin-left: -17px;
-    margin-top: -20px;
-    display: flex;
-    flex-direction: row;
-
-    a {
-      padding-left: 20px;
-    }
-  }
-
-  img {
-    height: 20px;
-    width: 20px;
-    margin-top: 10px;
-  }
-
-  @media only screen and (max-width: 1150px) {
-    right: 160px;
-    ul {
-      font-size: 13px;
-    }
-  }
-`;
-
-const Column2 = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  margin-top: 35px;
-  margin-right: 10px;
-  position: absolute;
-  right: 120px;
-
-  ul {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 30px;
-    list-style: none;
-  }
-
-  li {
-    /* text-decoration: underline #6F5358; */
-
-    text-decoration: ${(props) => (props.view === "products" ? "underline #6F5358" : "underline white")};
-    /* color: #fefefe; */
-
-      color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")};
-    font-weight: 400;
-  }
-
-  @media only screen and (max-width: 1150px) {
-    right: 30px;
-    ul {
-      font-size: 13px;
-    }
-  }
-`;
 
 const FooterTitle = styled.h4`
   font-family: "Bebas Neue", cursive;
   font-size: 20px;
   line-height: 22px;
-  /* color: #fefefe; */
-  color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")};
+  color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")} !important;
   font-weight: 600;
   letter-spacing: 2px;
 
@@ -263,26 +112,7 @@ const FooterTitle = styled.h4`
   }
 `;
 
-const CopyRight = styled(motion.div)`
-  position: absolute; 
-   bottom: -60px;
-  left: 500px;
 
-
-  p {
-    font-size: 13px;
-    font-family: "Poppins";
-    line-height: 30px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    /* color:#fefefe; */
-    color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")};
-  }
-
-  @media only screen and (max-width: 1150px) {
-    left: 30px;
-  }
-`;
 
 const CopyRight2 = styled.div`
   display: flex;
@@ -293,6 +123,7 @@ const CopyRight2 = styled.div`
     line-height: 30px;
     font-weight: 400;
     letter-spacing: 1px;
+    color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")} !important;
   }
 `;
 
@@ -316,16 +147,16 @@ const Div = styled.div`
     line-height: 30px;
     list-style: none;
     margin-right: 40px;
-    color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")};
+    color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")} !important;
+    text-decoration: ${(props) => (props.view === "home" ? "underline #6f5358" : "underline #eae9e5")} !important;
   }
 
   li {
-    text-decoration: underline #6F5358;
 
-    color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")};
+    text-decoration: ${(props) => (props.view === "home" ? "underline #6f5358" : "underline #eae9e5")} !important;
+    color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")} !important;
     font-weight: 400;
-    color: ${(props) => (props.view === "home" ? "#fefefe !important" : "#6a6f58")};
-        color: #fefefe;
+
 
   }
 
