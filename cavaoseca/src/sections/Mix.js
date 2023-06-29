@@ -21,7 +21,7 @@ const Mix = () => {
           <Img2 src={mancha2} />
         </Top>
         <Bottom>
-          <div>
+          <BoxContainer>
             <Box>
               <img src={vino1} />
               <div>
@@ -83,10 +83,10 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino6} />
+            <img src={vino7} />
               <div>
-                <h2>Felino</h2>
-                <h3>CHARDONNAY</h3>
+                <h2>Cocodrilo</h2>
+                <h3>cabernet sauvignon</h3>
                 <button>
                   {" "}
                   <p>$5.600</p>
@@ -95,10 +95,12 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino7} />
+      
+
+              <img src={vino6} />
               <div>
-                <h2>Cocodrilo</h2>
-                <h3>cabernet sauvignon</h3>
+                <h2>Felino</h2>
+                <h3>CHARDONNAY</h3>
                 <button>
                   {" "}
                   <p>$5.600</p>
@@ -116,8 +118,10 @@ const Mix = () => {
                   <p>$5.600</p>
                 </button>
               </div>
+
+
             </Box>
-          </div>
+          </BoxContainer>
         </Bottom>
       </MixSection>
     </>
@@ -166,26 +170,20 @@ const Top = styled.div`
 const Bottom = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex: 50%;
   background-color: white;
   background-image: url("./fondomix.png");
   z-index: 100;
   padding: 10px;
-  div {
-    /* background-color: white;
-    opacity: 0.8; */
-    display: flex;
-    flex-wrap: wrap;
+`;
 
-    justify-content: center;
-  }
-  img {
-    margin: 0px;
-    height: 250px;
-    width: 180px;
-    margin-left: -40px;
-    margin-top: -5px;
-  }
+const BoxContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  width: 80%;
 `;
 
 const Img1 = styled.img`
@@ -199,14 +197,12 @@ const Img2 = styled.img`
   top: 1428px;
   left: 1000px;
 
-
   @media only screen and (max-width: 1300px) {
-display: none;
-    }
+    display: none;
+  }
 `;
 
 const Box = styled.div`
-  /* background-color: blue !important; */
   display: flex;
   flex-direction: row;
 
@@ -215,16 +211,23 @@ const Box = styled.div`
   opacity: 0.8;
 
   height: 230px;
-  width: 280px;
+  width: 250px;
+
+  img {
+
+
+    position: relative;
+    left: -40px;
+  }
 
   div {
     display: flex;
     flex-direction: column;
-
     justify-content: flex-start;
     align-items: flex-start;
     margin-top: 40px;
-    margin-left: -30px;
+    margin-left: -60px;
+
 
     h2 {
       font-size: 12px;
@@ -232,6 +235,7 @@ const Box = styled.div`
       font-family: "Cinzel", sans-serif;
       text-transform: uppercase;
       color: #5b5a5a;
+      text-align: start;
     }
 
     h3 {
@@ -240,6 +244,7 @@ const Box = styled.div`
       font-family: "Roboto";
       text-transform: uppercase;
       color: #6a7059;
+      text-align: start;
     }
 
     button {
@@ -248,7 +253,9 @@ const Box = styled.div`
       border: none;
       width: 80px;
       height: 30px;
-      margin-top: 30px;
+      /* margin-top: 30px; */
+      position: relative;
+      top: 50px;
 
       p {
         margin-top: 6px;
