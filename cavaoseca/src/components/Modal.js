@@ -52,7 +52,7 @@ const Modal = ({ open, onClose, selectedWine, selectedImage }) => {
                     <h4>{selectedWine.type}</h4>
                   </TitleContainer>
                   <Text>
-                  <p>{selectedWine.singlewinedescription}</p>
+                  {selectedWine.singlewinedescription}
                   </Text>
             
 
@@ -297,9 +297,9 @@ const Picture = styled.div`
   }
 `;
 
-const Text = styled.div`
+const Text = styled.p`
 
-p {
+
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 1.2px;
@@ -320,7 +320,7 @@ p {
       margin-top: 15px;
       font-size: 10px;
       max-width: 300px;
-    }
+    
   }
 
 `
