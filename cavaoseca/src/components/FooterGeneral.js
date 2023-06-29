@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import instagram from "../assets/contact/instagram-white.png";
 import whatsapp from "../assets/contact/whatsapp-white.png";
 import { Link as RouterLink } from "react-router-dom";
-import logo from "../assets/logobebasnegro.png";
+
 
 const FooterGeneral = ({view}) => {
 
@@ -45,10 +45,7 @@ const FooterGeneral = ({view}) => {
               <div>
                 <FooterTitle view={view}>CONTACTANOS</FooterTitle>
                 <div style={{ display: "flex", flexDirection: "row" }}>
-                  <a href="mailto:oliviapollitzer@gmail.com">
-                    {" "}
-                    {/* <img src={mail} alt="mail" /> */}
-                  </a>
+                
                   <a
                     href="https://www.instagram.com/olipollitzer/"
                     target="_blank"
@@ -105,11 +102,9 @@ const FooterTitle = styled.h4`
   color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")} !important;
   font-weight: 600;
   letter-spacing: 2px;
-
-  @media only screen and (max-width: 800px) {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
     margin-top: 0px;
-  }
+
 `;
 
 
@@ -132,11 +127,26 @@ const MobileContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+
+  width: 400px;
+
+  @media only screen and (max-width: 405px) {
+    width: 300px;
+  }
 `;
 
 const Div = styled.div`
   display: flex;
   margin-bottom: 40px;
+
+width: 400px;
+
+
+@media only screen and (max-width: 470px) {
+
+
+  width: 300px;
+}
 
 
   ul {
@@ -146,9 +156,17 @@ const Div = styled.div`
     font-size: 14px;
     line-height: 30px;
     list-style: none;
-    margin-right: 40px;
+    /* margin-right: 40px; */
     color: ${(props) => (props.view === "home" ? "#fefefe" : "#6a6f58")} !important;
     text-decoration: ${(props) => (props.view === "home" ? "underline #6f5358" : "underline #eae9e5")} !important;
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 170px;
+
+    @media only screen and (max-width: 470px) {
+      margin-left: 70px;
+    }
   }
 
   li {
@@ -171,10 +189,14 @@ const Div = styled.div`
     flex-direction: column;
     justify-content: center;
 
+
     div {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+
+      a{
+        padding:3px 10px;
+      }
     }
   }
 `;

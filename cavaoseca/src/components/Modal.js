@@ -299,28 +299,26 @@ const Picture = styled.div`
 
 const Text = styled.p`
 
+  font-size: 14px !important;
+  font-family: "Montserrat", sans-serif !important;
+  letter-spacing: 1.2px !important;
+  line-height: 35px !important;
+  color: #6a6f58 !important;
+  margin-top: 20px !important;
+  text-align: left !important;
+  font-weight: 400 !important;
+  @media only screen and (max-width: 820px) {
+    letter-spacing: 1px !important;
+    line-height: 20px !important;
+    margin-top: 15px !important;
+  }
 
-    font-size: 14px;
-    font-family: "Montserrat", sans-serif;
-    letter-spacing: 1.2px;
-    line-height: 35px;
-    color: #6a6f58;
-    margin-top: 20px;
-    text-align: left;
-    font-weight: 400;
-    @media only screen and (max-width: 820px) {
-      letter-spacing: 1px;
-      line-height: 20px;
-      margin-top: 15px;
-    }
-
-    @media only screen and (max-width: 500px) {
-      letter-spacing: 0.5px;
-      line-height: 15px;
-      margin-top: 15px;
-      font-size: 10px;
-      max-width: 300px;
-    
+  @media only screen and (max-width: 500px) {
+    letter-spacing: 0.5px !important;
+    line-height: 15px !important;
+    margin-top: 15px !important;
+    font-size: 10px !important;
+    max-width: 300px !important;
   }
 
 `

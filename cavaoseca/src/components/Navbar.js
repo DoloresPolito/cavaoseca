@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-// import logo from "../assets/logo_blanco_horiz.png";
-// import logoverde from "../assets/logoverde.png"
 import Menu from "../components/Menu";
 import Tabs from "../components/Tabs";
 import Hamburger from "hamburger-react";
 import { Container } from "../styles";
 import { useLocation } from "react-router-dom";
-import copasverdes from "../assets/copasverde.png";
 
 const Navbar = ({ props }) => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -21,6 +18,7 @@ const Navbar = ({ props }) => {
   return (
     <NavbarSection location={location.pathname}>
       <NavbarContainer className={!isOpen && "isClosed"}>
+
         <Logo location={location.pathname}>
           {" "}
           <h2>CAVA O SECA</h2>
@@ -98,10 +96,6 @@ const NavbarContainer = styled(Container)`
   display: flex;
   margin-right: -95px;
 
-  /* @media only screen and (max-width: 700px) {
-    padding: 10px 0;
-    align-items: center;
-  } */
 `;
 
 export default Navbar;

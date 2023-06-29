@@ -116,6 +116,10 @@ const TopLine = styled.div`
     margin: auto;
     padding-top: 6px;
   }
+
+  @media only screen and (max-width: 519px) {
+    height: 100px;
+  }
 `;
 
 const Box = styled.div`

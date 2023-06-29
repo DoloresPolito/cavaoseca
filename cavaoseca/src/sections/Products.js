@@ -233,6 +233,7 @@ const Products = () => {
           backgroundSize: "1500px 1000px",
           backgroundRepeat: "repeat-y",
           backgroundPosition: "center center",
+          overflowX: "hidden",
         }}
       >
         <Navbar props="products" />
@@ -287,14 +288,8 @@ const Products = () => {
                               width="110px"
                               borderRadius={"3px"}
                             >
-                              <div
-                                style={{
-                                  backgroundColor: "#eae9e5",
-                                  height: "100px",
-                                  width: "170px",
-                                  marginBottom: "80px",
-                                  cursor: "pointer",
-                                }}
+                              <BoxImage
+                  
                                 className="image-container"
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
@@ -321,7 +316,7 @@ const Products = () => {
                                     <p>ver más</p>
                                   </div>
                                 )}
-                              </div>
+                              </BoxImage>
                             </Box>
 
                             <Info>
@@ -381,11 +376,16 @@ const Products = () => {
                         placeholder="Buscar por nombre"
                       />
                     </form>
-                    <button className="buttonform" onClick={borrarFiltros}>borrar filtros</button>
+                    <button className="buttonform" onClick={borrarFiltros}>
+                      borrar filtros
+                    </button>
                   </div>
                 </Top>
                 <Catalog>
-                  <SimpleGrid spacing={25} columns={width > 1000 ? 4 : 3}>
+                  <SimpleGrid
+                    spacing={width > 1000 ? 24 : width > 555 ? 20 : 0}
+                    columns={width > 1000 ? 4 : width > 555 ? 3 : 2}
+                  >
                     {wines.map((vino) => {
                       const imagenVariable = imagenes[vino.imagename];
                       return (
@@ -397,14 +397,8 @@ const Products = () => {
                               width="110px"
                               borderRadius={"3px"}
                             >
-                              <div
-                                style={{
-                                  backgroundColor: "#eae9e5",
-                                  height: "100px",
-                                  width: "170px",
-                                  marginBottom: "80px",
-                                  cursor: "pointer",
-                                }}
+                              <BoxImage
+                       
                                 className="image-container"
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
@@ -431,7 +425,7 @@ const Products = () => {
                                     <p>ver más</p>
                                   </div>
                                 )}
-                              </div>
+                              </BoxImage>
                             </Box>
 
                             <Info>
@@ -440,9 +434,7 @@ const Products = () => {
                                 <p className="name"> {vino.shortname}</p>
                                 <p className="type"> {vino.type}</p>
 
-
-
-<Modal
+                                <Modal
                                   open={openModal}
                                   selectedWine={selectedWine}
                                   selectedImage={selectedImage}
@@ -548,6 +540,10 @@ const WineName = styled.div`
     font-family: "Cinzel", sans-serif;
     text-transform: uppercase;
     color: #5b5a5a;
+
+    @media only screen and (max-width: 435px) {
+      font-size: 11px !important;
+    }
   }
 
   .name {
@@ -559,6 +555,9 @@ const WineName = styled.div`
 
     line-height: 1 !important;
     margin: 5px;
+    @media only screen and (max-width: 435px) {
+      font-size: 12px !important;
+    }
   }
 
   .type {
@@ -571,6 +570,9 @@ const WineName = styled.div`
     line-height: 1 !important;
     margin: 5px;
     text-transform: uppercase;
+    @media only screen and (max-width: 435px) {
+      font-size: 12px !important;
+    }
   }
 `;
 
@@ -585,6 +587,20 @@ const WinePrice = styled.button`
     text-align: left;
     margin: 0;
   }
+
+  @media only screen and (max-width: 700px) {
+    margin-bottom: 5px;
+  }
+
+  @media only screen and (max-width: 435px) {
+    width: 60px !important;
+    p{
+      font-size: 12px !important;
+    }
+
+    }
+
+
 `;
 
 export const Line = styled.div`
@@ -786,5 +802,17 @@ const Top = styled.div`
   justify-content: space-between !important;
 
   width: 100%;
+`;
+
+const BoxImage = styled.div`
+  background-color: #eae9e5;
+  height: 100px;
+  width: 170px;
+  margin-bottom: 80px;
+  cursor: "pointer";
+
+  @media only screen and (max-width: 435px) {
+    width: 130px;
+  }
 `;
 export default Products;

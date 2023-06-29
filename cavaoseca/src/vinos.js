@@ -132,7 +132,7 @@ const vinos = [
         year:"",
         description:"Un blend de un rojo intenso con aromas a frutos rojos maduros y especias. Posee taninos maduros que dan una sensación de redondez y una amplitud y final perdurables.",
         price:"$2.690",
-        type:"?",
+        type:"Blend",
         tipo:"Tinto",
         imagename:"closdelossiete",
         singlewinedescription:"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
