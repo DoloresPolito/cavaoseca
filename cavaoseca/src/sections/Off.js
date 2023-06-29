@@ -10,8 +10,8 @@ import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
 const Off = () => {
   return (
     <>
-      <Section>
-        <TopLine>
+      <Section id="off">
+        <TopLine >
           <p>30% OFF EN VINOS SELECCIONADOS</p>
         </TopLine>
 

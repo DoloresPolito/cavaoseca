@@ -15,6 +15,8 @@ import promooffmobile from "../assets/promos/off/offmobile.png";
 import off30 from "../assets/promos/20nuevo.png";
 import off30mobile from "../assets/promos/30mobile.png";
 
+import { Link as SmoothLink } from "react-scroll";
+
 function Carrousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showNavBar, setShowNavBar] = useState(true);
@@ -49,7 +51,6 @@ function Carrousel() {
       {showNavBar && (
         <nav className="navbar">
           <Navbar />
-        
         </nav>
       )}
 
@@ -69,7 +70,15 @@ function Carrousel() {
 
               {showButton && (
                 <button className="bigbutton">
-                  <BigButtonMix>ver más mix</BigButtonMix>
+                  {/* <SmoothLink
+                    to="off"
+                    spy={true}
+                    smooth={false}
+                    offset={70}
+                    duration={400}
+                  > */}
+                    <BigButtonMix>ver más mix</BigButtonMix>
+                  {/* </SmoothLink> */}
                 </button>
               )}
             </SlideContainer>
@@ -85,7 +94,9 @@ function Carrousel() {
               />
               {showButton && (
                 <button className="bigbutton">
-                  <BigButtonOff>ver más off</BigButtonOff>
+                  <BigButtonOff>
+                    <p>ver más </p>
+                  </BigButtonOff>
                 </button>
               )}
             </SlideContainer>
@@ -160,7 +171,7 @@ const CarrouselContainer = styled.div`
   width: 100vw;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 10;
 `;
 
@@ -170,11 +181,26 @@ const SlideContainer = styled.div`
 `;
 
 const BigButtonOff = styled.button`
-  height: 30px;
-  width: 100px;
-  background-color: red;
+  height: 50px;
+  width: 120px;
+  background-color: transparent;
   z-index: 100;
   position: absolute;
+  top: 620px;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  margin-left: -50px;
+
+  p {
+    color: white !important;
+    font-size: 15px !important;
+    font-family: "Poppins";
+    font-weight: 400 !important;
+    letter-spacing: 1.5px;
+    line-height: 1 !important;
+    margin: 5px;
+  }
 `;
 
 const BigButtonMix = styled.div`
@@ -183,7 +209,7 @@ const BigButtonMix = styled.div`
   background-color: blue;
   z-index: 100;
   position: absolute;
-`
+`;
 
 // const SlideImage = styled.div`
 //   height: 100%;
