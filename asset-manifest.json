@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cavaoseca/static/css/main.190f3840.css",
-    "main.js": "/cavaoseca/static/js/main.5ab65722.js",
+    "main.js": "/cavaoseca/static/js/main.d1a15e6d.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
     "static/media/30mobile.png": "/cavaoseca/static/media/30mobile.14468c67d144640414d8.png",
     "static/media/offfondosolo.png": "/cavaoseca/static/media/offfondosolo.2536aaf0363a1cfe148d.png",
@@ -76,11 +76,11 @@
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
     "main.190f3840.css.map": "/cavaoseca/static/css/main.190f3840.css.map",
-    "main.5ab65722.js.map": "/cavaoseca/static/js/main.5ab65722.js.map",
+    "main.d1a15e6d.js.map": "/cavaoseca/static/js/main.d1a15e6d.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.190f3840.css",
-    "static/js/main.5ab65722.js"
+    "static/js/main.d1a15e6d.js"
   ]
 }
