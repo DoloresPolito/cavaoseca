@@ -51,7 +51,10 @@ const Modal = ({ open, onClose, selectedWine, selectedImage }) => {
                     <div />
                     <h4>{selectedWine.type}</h4>
                   </TitleContainer>
+                  <Text>
                   <p>{selectedWine.singlewinedescription}</p>
+                  </Text>
+            
 
                   <h6>$ 4.500</h6>
                 </Description>
@@ -92,8 +95,6 @@ const ModalContainer = styled.div`
   @media only screen and (max-width: 500px) {
     max-width: 320px;
     height: 450px;
-    top: 25% !important;
-    left: 30%;
   }
 `;
 const TitleContainer = styled.div`
@@ -217,7 +218,7 @@ const Description = styled.div`
 
   }
 
-  p {
+  /* p {
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 1.2px;
@@ -239,7 +240,7 @@ const Description = styled.div`
       font-size: 10px;
       max-width: 300px;
     }
-  }
+  } */
 
   h6 {
     color: #6a6f58 !important;
@@ -295,5 +296,33 @@ const Picture = styled.div`
     position: relative;
   }
 `;
+
+const Text = styled.div`
+
+p {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1.2px;
+    line-height: 35px;
+    color: #6a6f58;
+    margin-top: 20px;
+    text-align: left;
+    font-weight: 400;
+    @media only screen and (max-width: 820px) {
+      letter-spacing: 1px;
+      line-height: 20px;
+      margin-top: 15px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      letter-spacing: 0.5px;
+      line-height: 15px;
+      margin-top: 15px;
+      font-size: 10px;
+      max-width: 300px;
+    }
+  }
+
+`
 
 export default Modal;
