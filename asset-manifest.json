@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/cavaoseca/static/css/main.190f3840.css",
-    "main.js": "/cavaoseca/static/js/main.245cae5b.js",
+    "main.js": "/cavaoseca/static/js/main.f9c59a18.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
-    "static/media/30mobile.png": "/cavaoseca/static/media/30mobile.14468c67d144640414d8.png",
     "static/media/offfondosolo.png": "/cavaoseca/static/media/offfondosolo.2536aaf0363a1cfe148d.png",
     "static/media/fondo_producto.png": "/cavaoseca/static/media/fondo_producto.3cc67f59f47751e23e05.png",
     "static/media/20nuevo.png": "/cavaoseca/static/media/20nuevo.f17475fc351efd42c7c8.png",
@@ -51,6 +50,7 @@
     "static/media/Caro - Laura Catena.png": "/cavaoseca/static/media/Caro - Laura Catena.b7ecf6a1866f81f81273.png",
     "static/media/Zaha Malbec.png": "/cavaoseca/static/media/Zaha Malbec.b2cb6613ddb22407f48b.png",
     "static/media/Black.png": "/cavaoseca/static/media/Black.260f1eb174bcb29c51af.png",
+    "static/media/Dv Catena Malbec.png": "/cavaoseca/static/media/Dv Catena Malbec.525c501356e89c096756.png",
     "static/media/Bressia Piel Negra.png": "/cavaoseca/static/media/Bressia Piel Negra.4ec3f41d576e1ba471cf.png",
     "static/media/Judas Malbec.png": "/cavaoseca/static/media/Judas Malbec.784130453eb60863f80e.png",
     "static/media/Dv Catena La Pirámide.png": "/cavaoseca/static/media/Dv Catena La Pirámide.94c60b280024d5473b0b.png",
@@ -75,11 +75,11 @@
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
     "main.190f3840.css.map": "/cavaoseca/static/css/main.190f3840.css.map",
-    "main.245cae5b.js.map": "/cavaoseca/static/js/main.245cae5b.js.map",
+    "main.f9c59a18.js.map": "/cavaoseca/static/js/main.f9c59a18.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.190f3840.css",
-    "static/js/main.245cae5b.js"
+    "static/js/main.f9c59a18.js"
   ]
 }
