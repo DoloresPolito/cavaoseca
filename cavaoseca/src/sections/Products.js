@@ -244,9 +244,9 @@ const Products = () => {
           overflowX: "hidden",
         }}
       >
-        <Navbar props="products" />
+        {/* <Navbar props="products" /> */}
 
-        <SectionProducts mode={scroll}>
+        <SectionProducts mode={scroll} id="products">
           {width > 1200 ? (
             <>
               <Left>
@@ -281,6 +281,7 @@ const Products = () => {
               </Left>
               <Right>
                 <SelectProducts>
+                  <h2>** Los siguientes vinos se venden en cajas cerradas **</h2>
                   <img src={copasverdes} />
                 </SelectProducts>
 
@@ -524,6 +525,10 @@ const SelectProducts = styled.div`
   label {
     display: inline-block;
     vertical-align: middle;
+  }
+
+  h2{
+    padding-top: 60px;
   }
 `;
 

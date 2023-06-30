@@ -24,15 +24,13 @@ const Mix = () => {
   
    
           <h2>
-            ¡Explora una exquisita variedad de vinos y elige tus 6 favoritos
-            para armar una caja única y llena de sabor!
+          ¡Armá una o más cajas con tus vinos favoritos!
+           {/* Explora una exquisita variedad de vinos y elige tus 6 favoritos
+            para armar una caja única y llena de sabor! */}
           </h2>
 
           <h3>
-            Recuerda que puedes seleccionar hasta 6 de estos vinos para componer
-            una caja que te deleite con una variedad de sabores, aromas y
-            experiencias vinícolas. ¡Disfruta de esta oportunidad para explorar
-            y degustar los mejores vinos que el mundo tiene para ofrecer!
+          ¡Podés elegir un mix con los siguientes vinos para crear una caja llena de variedad, sabores y experiencias vinícolas que te dejarán con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo tiene para ofrecer!
           </h3>
           <Img2 src={mancha2} />
         </Top>
@@ -162,9 +160,7 @@ flex-direction: column;
   border: 0.5px solid white;
   opacity: 0.95;
 
-  :hover {
-    background-color: #6f5358;
-  }
+
 
 
 

@@ -5,6 +5,7 @@ import Tabs from "../components/Tabs";
 import Hamburger from "hamburger-react";
 import { Container } from "../styles";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ props }) => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -19,10 +20,14 @@ const Navbar = ({ props }) => {
     <NavbarSection location={location.pathname}>
       <NavbarContainer className={!isOpen && "isClosed"}>
 
-        <Logo location={location.pathname}>
+      <Link to="/cavaoseca" spy={true} smooth={false} offset={-50} duration={800}>
+      <Logo location={location.pathname}>
           {" "}
           <h2>CAVA O SECA</h2>
         </Logo>
+        </Link>
+
+
 
         {width >= medium ? (
           <>

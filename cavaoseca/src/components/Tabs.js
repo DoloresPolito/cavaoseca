@@ -4,14 +4,15 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import instagram from "../assets/contact/instagram-white.png";
 import instagramverde from "../assets/contact/instagramverde.png";
+import whatsapp from "../assets/contact/whatsapp-white.png"
 
 const Tabs = ({ mode, location }) => {
   {
     return (
       <TabsBox mode={mode} location={location}>
-        <Link to="/cavaoseca" spy={true} smooth={false} offset={-50} duration={800}>
+        {/* <Link to="/cavaoseca" spy={true} smooth={false} offset={-50} duration={800}>
           HOME
-        </Link>
+        </Link> */}
         {/* <Link
         
         // to="/about" spy={true} smooth={false} offset={-13} duration={800}
@@ -19,7 +20,7 @@ const Tabs = ({ mode, location }) => {
         >
           QUIENES SOMOS
         </Link> */}
-        <Link
+        {/* <Link
           to="/products"
           spy={true}
           smooth={false}
@@ -27,7 +28,7 @@ const Tabs = ({ mode, location }) => {
           duration={800}
         >
           PRODUCTOS
-        </Link>
+        </Link> */}
         <Link
           to="/contact"
           spy={true}
@@ -35,7 +36,7 @@ const Tabs = ({ mode, location }) => {
           offset={70}
           duration={800}
         >
-          CONTACTO
+          QUIENES SOMOS
         </Link>
 
         <a href="https://www.instagram.com/cavaoseca/" target="_blank">
@@ -50,6 +51,11 @@ const Tabs = ({ mode, location }) => {
               <img src={instagram} />
             </>
           )}
+        </a>
+
+        <a href="https://www.instagram.com/cavaoseca/" target="_blank">
+              <img src={whatsapp} />
+
         </a>
       </TabsBox>
     );

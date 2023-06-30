@@ -81,9 +81,11 @@ const Off = () => {
           </Box>
         </div>
 
-        <button className="vertodo" onClick={() => handleNavigate()}>
-          ver todos los productos
-        </button>
+        <Link to="products" smooth={true} duration={500}>
+          <button className="vertodo" >
+            ver todos los productos
+          </button>
+        </Link>
       </Section>
     </>
   );

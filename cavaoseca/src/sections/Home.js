@@ -6,6 +6,7 @@ import Mix from "./Mix";
 import Off from "./Off";
 import MoreButton from "../components/MoreButton";
 import Products from "../sections/Products"
+import CompleteCatalog from "../components/CompleteCatalog";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Off />
       <Mix />
               {/* <MoreButton/> */}
+              {/* <CompleteCatalog/> */}
       <Products/>
 
 
