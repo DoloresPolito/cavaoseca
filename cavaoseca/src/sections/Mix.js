@@ -10,14 +10,30 @@ import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
 import vino6 from "../assets/vinos/grilla/Felino.png";
 import vino7 from "../assets/vinos/grilla/Cocodrilo.png";
 import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
-
+import mixicon from "../assets/icons/mixiconwhite.png";
 const Mix = () => {
   return (
     <>
       <MixSection id="mix">
         <Top>
           <Img1 src={mancha1} />
-          <h2>Elegí 6 vinos de nuestro catalogo y arma una caja a tu gusto!</h2>
+          <h2>
+         PROMO Mix
+          </h2>
+          <img src={mixicon} />
+  
+   
+          <h2>
+            ¡Explora una exquisita variedad de vinos y elige tus 6 favoritos
+            para armar una caja única y llena de sabor!
+          </h2>
+
+          <h3>
+            Recuerda que puedes seleccionar hasta 6 de estos vinos para componer
+            una caja que te deleite con una variedad de sabores, aromas y
+            experiencias vinícolas. ¡Disfruta de esta oportunidad para explorar
+            y degustar los mejores vinos que el mundo tiene para ofrecer!
+          </h3>
           <Img2 src={mancha2} />
         </Top>
         <Bottom>
@@ -83,7 +99,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-            <img src={vino7} />
+              <img src={vino7} />
               <div>
                 <h2>Cocodrilo</h2>
                 <h3>cabernet sauvignon</h3>
@@ -95,8 +111,6 @@ const Mix = () => {
             </Box>
 
             <Box>
-      
-
               <img src={vino6} />
               <div>
                 <h2>Felino</h2>
@@ -118,8 +132,6 @@ const Mix = () => {
                   <p>$5.600</p>
                 </button>
               </div>
-
-
             </Box>
           </BoxContainer>
         </Bottom>
@@ -138,10 +150,77 @@ const MixSection = styled.div`
 `;
 
 const Top = styled.div`
-  display: flex;
+
+display: flex;
+flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  flex-basis: 100%;
+  flex: 1;
+  background-color: #6a7059;
+  color: white;
+  border: 0.5px solid white;
+  opacity: 0.95;
+
+  :hover {
+    background-color: #6f5358;
+  }
+
+
+
+  p {
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    letter-spacing: 1px;
+ 
+    font-size: 30px;
+    cursor: pointer;
+
+    @media only screen and (max-width: 500px) {
+        padding-left: 20px;
+    }
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+  }
+
+  h2 {
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    letter-spacing: 2px;
+
+    font-size: 30px;
+    cursor: pointer;
+    max-width: 700px;
+
+    @media only screen and (max-width: 500px) {
+        padding-left: 20px;
+    }
+  }
+
+  h3 {
+    font-family: "Poppins";
+    color: white;
+    letter-spacing: 1px;
+
+    font-size: 15px;
+    cursor: pointer;
+    max-width: 900px;
+    font-weight: 400;
+    padding-bottom: 50px;
+
+    @media only screen and (max-width: 500px) {
+        padding-left: 20px;
+    }
+  }
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 
   h2 {
     color: white;
@@ -149,9 +228,9 @@ const Top = styled.div`
     font-size: 28px;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    /* font-family: "Cinzel", sans-serif; */
+ 
     font-weight: 500;
-    /* margin-left: 100px; */
+
     line-height: 40px;
     max-width: 800px;
     z-index: 1000;
@@ -164,7 +243,7 @@ const Top = styled.div`
       max-width: 400px;
       font-size: 23px;
     }
-  }
+  } */
 `;
 
 const Bottom = styled.div`
@@ -175,7 +254,7 @@ const Bottom = styled.div`
   background-color: white;
   background-image: url("./fondomix.png");
   z-index: 100;
-  padding: 10px;
+  padding:80px 10px;
 `;
 
 const BoxContainer = styled.div`
@@ -214,8 +293,6 @@ const Box = styled.div`
   width: 250px;
 
   img {
-
-
     position: relative;
     left: -40px;
   }
@@ -227,7 +304,6 @@ const Box = styled.div`
     align-items: flex-start;
     margin-top: 40px;
     margin-left: -60px;
-
 
     h2 {
       font-size: 12px;

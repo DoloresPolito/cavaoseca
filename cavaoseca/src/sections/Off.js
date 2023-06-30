@@ -6,21 +6,19 @@ import offfondosolo from "../assets/promos/offfondosolo.png";
 import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png";
 import vino4 from "../assets/vinos/grilla/Rutini Coleccion Malbec.png";
 import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
+import vino6 from "../assets/vinos/grilla/Dv Catena Malbec.png";
 
-import { Link  } from "react-scroll";
+import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
-
 const Off = () => {
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleNavigate = () => {
-
-    navigate("/products")
-
-  }
+    navigate("/products");
+  };
   return (
     <>
-      <Section >
+      <Section>
         {/* <TopLine id="off">
           <p>30% OFF EN VINOS SELECCIONADOS</p>
         </TopLine> */}
@@ -31,9 +29,12 @@ const navigate = useNavigate()
               <h2>Rutini Coleccion</h2>
               <h3>malbec</h3>
               <img src={vino4} />
-              <button>
+
+              <p className="prevprice">$7.600</p>
+
+              <button className="now">
                 {" "}
-                <p>$5.600</p>
+                <p className="nowprice">$5.600</p>
               </button>
             </div>
           </Box>
@@ -43,9 +44,11 @@ const navigate = useNavigate()
               <h2>Saint Felicien </h2>
               <h3>malbec</h3>
               <img src={vino5} />
-              <button>
+              <p className="prevprice">$7.600</p>
+
+              <button className="now">
                 {" "}
-                <p>$5.600</p>
+                <p className="nowprice">$5.600</p>
               </button>
             </div>
           </Box>
@@ -53,11 +56,13 @@ const navigate = useNavigate()
           <Box>
             <div>
               <h2>DV Catena </h2>
-              <h3>Chardonnay Chardonnay</h3>
-              <img src={vino3} />
-              <button>
+              <h3>Malbec</h3>
+              <img src={vino6} />
+              <p className="prevprice">$7.600</p>
+
+              <button className="now">
                 {" "}
-                <p>$5.600</p>
+                <p className="nowprice">$5.600</p>
               </button>
             </div>
           </Box>
@@ -66,15 +71,19 @@ const navigate = useNavigate()
               <h2>DV Catena </h2>
               <h3>Chardonnay Chardonnay</h3>
               <img src={vino3} />
-              <button>
+              <p className="prevprice">$7.600</p>
+
+              <button className="now">
                 {" "}
-                <p>$5.600</p>
+                <p className="nowprice">$5.600</p>
               </button>
             </div>
           </Box>
         </div>
 
-        <button className="vertodo" onClick={() => handleNavigate()}>ver todos los productos</button>
+        <button className="vertodo" onClick={() => handleNavigate()}>
+          ver todos los productos
+        </button>
       </Section>
     </>
   );
@@ -150,7 +159,39 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
 
-    button {
+    .prev {
+      background-color: #6f5358;
+      color: white;
+      border: none;
+      width: 80px;
+      height: 30px;
+      margin-bottom: 10px;
+
+      p {
+        margin-top: 6px;
+        text-decoration: line-through;
+      }
+
+      .prevprice {
+        margin-top: 6px;
+        text-decoration: line-through;
+        color: #6f5358;
+      }
+    }
+
+    .prevprice {
+      margin-top: 6px;
+      text-decoration: line-through;
+      color: #6f5358;
+      font-weight: 600;
+    }
+
+    .nowprice {
+      margin-top: 6px;
+      color: white;
+      font-weight: 700;
+    }
+    .now {
       background-color: #6a7059;
       color: white;
       border: none;

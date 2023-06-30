@@ -5,16 +5,20 @@ import HomeFooter from "../sections/HomeFooter";
 import Mix from "./Mix";
 import Off from "./Off";
 import MoreButton from "../components/MoreButton";
+import Products from "../sections/Products"
 
 const Home = () => {
   return (
     <>
       <HomeSection>
         <Carrousel />
-        <MoreButton/>
+
       </HomeSection>
       <Off />
       <Mix />
+              {/* <MoreButton/> */}
+      <Products/>
+
 
       <HomeFooter />
     </>

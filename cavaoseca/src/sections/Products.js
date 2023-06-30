@@ -331,7 +331,7 @@ const Products = () => {
                             <Info>
                               <WineName>
                                 <p className="winery"> {vino.winery}</p>
-                                <p className="name"> {vino.name}</p>
+                                <p className="name"> {vino.shortname}</p>
                                 <p className="type"> {vino.type}</p>
 
                                 <Modal
@@ -465,7 +465,7 @@ const Products = () => {
             </>
           )}
         </SectionProducts>
-        <ProductsFooter />
+        {/* <ProductsFooter /> */}
       </div>
     </>
   );

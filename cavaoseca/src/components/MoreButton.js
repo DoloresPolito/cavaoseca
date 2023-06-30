@@ -60,6 +60,7 @@ const MoreOff = styled.div`
   background-color: #6a7059;
   color: white;
   border: 0.5px solid white;
+  opacity: 0.95;
 
   :hover {
     background-color: #6f5358;
@@ -74,6 +75,7 @@ const MoreMix = styled.div`
   background-color: #6a7059;
   border: 0.5px solid white;
   color: white;
+  opacity: 0.95;
 
   :hover {
     background-color: #6f5358;

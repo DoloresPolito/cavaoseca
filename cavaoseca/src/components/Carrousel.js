@@ -13,9 +13,7 @@ import promomixmobile from "../assets/promos/mix/promomixmobilenew.png";
 import promooffmobile from "../assets/promos/off/offmobile.png";
 
 import off30 from "../assets/promos/20nuevo.png";
-import off30mobile from "../assets/promos/30mobile.png";
 
-import { Link  } from "react-scroll";
 
 function Carrousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,7 +55,7 @@ function Carrousel() {
       {width >= medium ? (
         <>
           <Slider {...settings} afterChange={setCurrentIndex}>
-            <SlideContainer>
+            {/* <SlideContainer>
               <img
                 style={{
                   backgroundImage: `url(${promomixdesktop})`,
@@ -71,7 +69,7 @@ function Carrousel() {
               {showButton && (
          <></>
               )}
-            </SlideContainer>
+            </SlideContainer> */}
             <SlideContainer>
               <img
                 style={{
@@ -153,7 +151,7 @@ function Carrousel() {
 
 const CarrouselContainer = styled.div`
   position: relative;
-  height: 85vh;
+  height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -162,7 +160,7 @@ const CarrouselContainer = styled.div`
 `;
 
 const SlideContainer = styled.div`
-  height: 85vh;
+  height: 100vh;
   z-index: 10;
 `;
 
