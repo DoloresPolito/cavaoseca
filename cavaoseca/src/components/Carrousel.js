@@ -15,7 +15,7 @@ import promooffmobile from "../assets/promos/off/offmobile.png";
 import off30 from "../assets/promos/20nuevo.png";
 import off30mobile from "../assets/promos/30mobile.png";
 
-import { Link as SmoothLink } from "react-scroll";
+import { Link  } from "react-scroll";
 
 function Carrousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -69,17 +69,7 @@ function Carrousel() {
               ></img>
 
               {showButton && (
-                <button className="bigbutton">
-                  {/* <SmoothLink
-                    to="off"
-                    spy={true}
-                    smooth={false}
-                    offset={70}
-                    duration={400}
-                  > */}
-                    <BigButtonMix>ver más mix</BigButtonMix>
-                  {/* </SmoothLink> */}
-                </button>
+         <></>
               )}
             </SlideContainer>
             <SlideContainer>
@@ -93,11 +83,7 @@ function Carrousel() {
                 }}
               />
               {showButton && (
-                <button className="bigbutton">
-                  <BigButtonOff>
-                    <p>ver más </p>
-                  </BigButtonOff>
-                </button>
+         <></>
               )}
             </SlideContainer>
           </Slider>
@@ -167,7 +153,7 @@ function Carrousel() {
 
 const CarrouselContainer = styled.div`
   position: relative;
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -176,46 +162,10 @@ const CarrouselContainer = styled.div`
 `;
 
 const SlideContainer = styled.div`
-  height: 100vh;
+  height: 85vh;
   z-index: 10;
 `;
 
-const BigButtonOff = styled.button`
-  height: 50px;
-  width: 120px;
-  background-color: transparent;
-  z-index: 100;
-  position: absolute;
-  top: 620px;
-  color: white;
-  border: 1px solid white;
-  cursor: pointer;
-  margin-left: -50px;
 
-  p {
-    color: white !important;
-    font-size: 15px !important;
-    font-family: "Poppins";
-    font-weight: 400 !important;
-    letter-spacing: 1.5px;
-    line-height: 1 !important;
-    margin: 5px;
-  }
-`;
-
-const BigButtonMix = styled.div`
-  height: 30px;
-  width: 100px;
-  background-color: blue;
-  z-index: 100;
-  position: absolute;
-`;
-
-// const SlideImage = styled.div`
-//   height: 100%;
-//   width: 100%;
-//   background-size: cover;
-//   background-position: center;
-// `;
 
 export default Carrousel;

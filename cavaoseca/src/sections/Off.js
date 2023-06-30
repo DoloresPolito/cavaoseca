@@ -7,15 +7,25 @@ import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png";
 import vino4 from "../assets/vinos/grilla/Rutini Coleccion Malbec.png";
 import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
 
+import { Link  } from "react-scroll";
+import { useNavigate } from "react-router-dom";
+
+
 const Off = () => {
+const navigate = useNavigate()
+  const handleNavigate = () => {
+
+    navigate("/products")
+
+  }
   return (
     <>
-      <Section id="off">
-        <TopLine >
+      <Section >
+        {/* <TopLine id="off">
           <p>30% OFF EN VINOS SELECCIONADOS</p>
-        </TopLine>
+        </TopLine> */}
 
-        <div>
+        <div id="off">
           <Box>
             <div>
               <h2>Rutini Coleccion</h2>
@@ -64,7 +74,7 @@ const Off = () => {
           </Box>
         </div>
 
-        <button className="vertodo">ver todos los productos</button>
+        <button className="vertodo" onClick={() => handleNavigate()}>ver todos los productos</button>
       </Section>
     </>
   );

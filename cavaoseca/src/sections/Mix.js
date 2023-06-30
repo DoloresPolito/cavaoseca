@@ -14,7 +14,7 @@ import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
 const Mix = () => {
   return (
     <>
-      <MixSection>
+      <MixSection id="mix">
         <Top>
           <Img1 src={mancha1} />
           <h2>Elegí 6 vinos de nuestro catalogo y arma una caja a tu gusto!</h2>

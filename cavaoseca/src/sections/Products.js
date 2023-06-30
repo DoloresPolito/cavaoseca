@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { SectionProducts } from "../styles";
 import { SimpleGrid, Box } from "@chakra-ui/react";
 import styled from "styled-components";
@@ -85,7 +85,9 @@ const Products = () => {
   const input = useInput("");
   const [wines, setWines] = useState(vinos);
   const [width, setWidth] = useState(window.innerWidth);
+  const [estadoBoton, setEstadoBoton] = useState(false);
 
+  const inputRef = useRef(null);
   const initialState = {
     tintos: false,
     blancos: false,
@@ -96,17 +98,19 @@ const Products = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const obtenerVinos = async () => {
-      try {
-        setWines(vinos);
-      } catch (error) {
-        console.error("Error al obtener las imágenes:", error);
-      }
-    };
+    console.log("useEffect")
+    input.value = "";
+    // const obtenerVinos = async () => {
+    //   try {
+    //     setWines(vinos);
+    //   } catch (error) {
+    //     console.error("Error al obtener las imágenes:", error);
+    //   }
+    // };
 
-    obtenerVinos();
+    // obtenerVinos();
     window.addEventListener("resize", () => setWidth(window.innerWidth));
-  }, [wines, checked]);
+  }, [wines, checked, estadoBoton]);
 
   const handleSubmit = function (e) {
     e.preventDefault();
@@ -116,13 +120,17 @@ const Products = () => {
     console.log(vinosFiltrados);
 
     console.log("vinos filtrados", vinosFiltrados);
-
+  
     setWines(vinosFiltrados);
   };
 
-  const borrarFiltros = () => {
+  const borrarFiltros = (e) => {
     setWines(vinos);
+    setEstadoBoton(!estadoBoton);
+    console.log("estado boton", estadoBoton)
+    e.target.value = "";
     input.value = "";
+    inputRef.current.value = '';
   };
 
   function buscarVinos(search) {
@@ -246,6 +254,7 @@ const Products = () => {
                   <input
                     onChange={input.onChange}
                     value={input.value}
+                    ref={inputRef}
                     type="search"
                     placeholder="Buscar por nombre"
                   />
@@ -731,6 +740,12 @@ const CheckboxContainer = styled.div`
   flex-direction: column;
   height: 200px;
   margin-top: 70px;
+
+  @media only screen and (max-width: 555px) {
+      margin-top: 20px;
+      order: 2;
+      height: 150px;
+    }
 `;
 
 const VerticalContainer = styled.div`
@@ -744,6 +759,10 @@ const VerticalContainer = styled.div`
     @media only screen and (max-width: 1200px) {
       margin-top: 70px;
     }
+
+    @media only screen and (max-width: 555px) {
+      margin-top: 20px;
+    }
   }
 
   input {
@@ -754,6 +773,10 @@ const VerticalContainer = styled.div`
     border-radius: 25px;
     padding: 20px;
     border: 1px solid #6a6f58;
+    @media only screen and (max-width: 555px) {
+      height: 40px;
+    width: 250px;
+    }
   }
 
   h2 {
@@ -778,6 +801,10 @@ const VerticalContainer = styled.div`
     margin-right: 10px;
     vertical-align: middle;
     background-color: red !important;
+    @media only screen and (max-width: 555px) {
+      width: 13px;
+    height: 13px;
+    }
   }
 
   label {
@@ -793,6 +820,10 @@ const VerticalContainer = styled.div`
     border-radius: 15px;
     width: 100px;
     margin-top: 10px;
+    @media only screen and (max-width: 555px) {
+      width: 90px;
+      padding: 5px;
+    }
   }
 `;
 
@@ -800,8 +831,15 @@ const Top = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between !important;
-
   width: 100%;
+
+  @media only screen and (max-width: 555px) {
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: flex-start  !important;
+  }
+
+
 `;
 
 const BoxImage = styled.div`

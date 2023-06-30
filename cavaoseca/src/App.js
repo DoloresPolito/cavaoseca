@@ -2,14 +2,14 @@ import "./App.css";
 import Home from "./sections/Home";
 import Contact from "./sections/Contacts";
 import Products from "./sections/Products";
-
+import ScrollToTop from "./components/ScrollToTop";
 
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
- 
+      <ScrollToTop />
       <Routes>
         <>
           <Route path="/cavaoseca" element={<Home />} />
