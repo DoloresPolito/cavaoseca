@@ -282,7 +282,7 @@ const Products = () => {
               <Right>
                 <SelectProducts>
                   <h2>** Los siguientes vinos se venden en cajas cerradas **</h2>
-                  <img src={copasverdes} />
+                  {/* <img src={copasverdes} /> */}
                 </SelectProducts>
 
                 <Catalog>
@@ -476,7 +476,8 @@ const SelectProducts = styled.div`
   width: 85%;
   display: flex;
   align-self: flex-end;
-  padding-top: 50px;
+  padding-top: 20px;
+  justify-content: flex-end;
 
   img {
     height: 200px;
@@ -852,7 +853,7 @@ const BoxImage = styled.div`
   height: 100px;
   width: 170px;
   margin-bottom: 80px;
-  cursor: "pointer";
+  cursor: pointer;
 
   @media only screen and (max-width: 435px) {
     width: 130px;

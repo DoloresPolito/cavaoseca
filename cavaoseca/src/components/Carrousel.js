@@ -6,11 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./Navbar";
 
-import promomixdesktop from "../assets/promos/mixdif.png";
-import promomixtablet from "../assets/promos/mix/mixtablet.png";
-import promomixmobile from "../assets/promos/mix/promomixmobilenew.png";
 
-import promooffmobile from "../assets/promos/off/offmobile.png";
+
+import promooffmobile from "../assets/promos/ultimamobile.png";
 
 import off30 from "../assets/promos/20nuevo.png";
 
@@ -91,7 +89,7 @@ function Carrousel() {
           {width >= small ? (
             <>
               <Slider {...settings} afterChange={setCurrentIndex}>
-                <SlideContainer>
+                {/* <SlideContainer>
                   <img
                     style={{
                       backgroundImage: `url(${promomixtablet})`,
@@ -112,13 +110,13 @@ function Carrousel() {
                       backgroundPosition: "center",
                     }}
                   />
-                </SlideContainer>
+                </SlideContainer> */}
               </Slider>
             </>
           ) : (
             <>
               <Slider {...settings} afterChange={setCurrentIndex}>
-                <SlideContainer>
+                {/* <SlideContainer>
                   <img
                     style={{
                       backgroundImage: `url(${promomixmobile})`,
@@ -128,7 +126,7 @@ function Carrousel() {
                       backgroundPosition: "center",
                     }}
                   />
-                </SlideContainer>
+                </SlideContainer> */}
                 <SlideContainer>
                   <img
                     style={{

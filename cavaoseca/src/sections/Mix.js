@@ -17,20 +17,20 @@ const Mix = () => {
       <MixSection id="mix">
         <Top>
           <Img1 src={mancha1} />
-          <h2>
-         PROMO Mix
-          </h2>
+          <h2>PROMO Mix</h2>
           <img src={mixicon} />
-  
-   
+
           <h2>
-          ¡Armá una o más cajas con tus vinos favoritos!
-           {/* Explora una exquisita variedad de vinos y elige tus 6 favoritos
+            ¡Armá una o más cajas con tus vinos favoritos!
+            {/* Explora una exquisita variedad de vinos y elige tus 6 favoritos
             para armar una caja única y llena de sabor! */}
           </h2>
 
           <h3>
-          ¡Podés elegir un mix con los siguientes vinos para crear una caja llena de variedad, sabores y experiencias vinícolas que te dejarán con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo tiene para ofrecer!
+            ¡Podés elegir un mix con los siguientes vinos para crear una caja
+            llena de variedad, sabores y experiencias vinícolas que te dejarán
+            con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo
+            tiene para ofrecer!
           </h3>
           <Img2 src={mancha2} />
         </Top>
@@ -148,9 +148,8 @@ const MixSection = styled.div`
 `;
 
 const Top = styled.div`
-
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-basis: 100%;
@@ -159,22 +158,21 @@ flex-direction: column;
   color: white;
   border: 0.5px solid white;
   opacity: 0.95;
+  padding:40px 0px;
 
-
-
-
+  @media only screen and (max-width: 500px) {
+      padding:40px 20px;
+    }
 
   p {
     font-family: "Bebas Neue", cursive;
     color: white;
     letter-spacing: 1px;
- 
+
     font-size: 30px;
     cursor: pointer;
 
-    @media only screen and (max-width: 500px) {
-        padding-left: 20px;
-    }
+
   }
 
   img {
@@ -191,9 +189,7 @@ flex-direction: column;
     cursor: pointer;
     max-width: 700px;
 
-    @media only screen and (max-width: 500px) {
-        padding-left: 20px;
-    }
+
   }
 
   h3 {
@@ -208,7 +204,7 @@ flex-direction: column;
     padding-bottom: 50px;
 
     @media only screen and (max-width: 500px) {
-        padding-left: 20px;
+      padding-left: 20px;
     }
   }
 
@@ -250,7 +246,7 @@ const Bottom = styled.div`
   background-color: white;
   background-image: url("./fondomix.png");
   z-index: 100;
-  padding:80px 10px;
+  padding: 80px 10px;
 `;
 
 const BoxContainer = styled.div`
