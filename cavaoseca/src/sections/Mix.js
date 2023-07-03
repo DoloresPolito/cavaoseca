@@ -250,6 +250,7 @@ const BoxContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 80%;
+  
 
   @media only screen and (max-width: 700px) {
     width: 90%;
@@ -258,6 +259,7 @@ const BoxContainer = styled.div`
   @media only screen and (max-width: 420px) {
 
     width: 100%;
+    padding:0px;
   }
 `;
 
@@ -300,7 +302,9 @@ const Box = styled.div`
 
   @media only screen and (max-width: 465px) {
     height: 210px;
-    width: 140px;
+    width: 156px;
+    padding:0px;
+    
 
   }
 
@@ -309,7 +313,7 @@ const Box = styled.div`
     left: -40px;
 
     @media only screen and (max-width: 390px) {
-      left: -50px;
+      left: -45px;
     }
   }
 
@@ -331,7 +335,8 @@ const Box = styled.div`
     }
 
     @media only screen and (max-width: 390px) {
-      margin-left: -90px;
+
+      margin-left: -85px;
     }
 
     h2 {
@@ -347,7 +352,7 @@ const Box = styled.div`
       }
 
       @media only screen and (max-width: 465px) {
-        font-size: 11px;
+        font-size: 10px;
       }
     }
 
