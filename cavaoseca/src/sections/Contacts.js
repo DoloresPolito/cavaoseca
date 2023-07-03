@@ -49,7 +49,7 @@ const Contact = () => {
         style={{
           backgroundImage: `url(${backgroundImage})`,
           width: "100%",
-          height: "100vh",
+          height: "700px",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
@@ -58,7 +58,7 @@ const Contact = () => {
           justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
-          overflowX: "hidden",
+          // overflowX: "hidden",
         }}
       >
         {/* <Navbar /> */}
@@ -267,18 +267,7 @@ const Input = styled.input`
   border-bottom: 0.8px solid #f6f6f6;
 `;
 
-const Media = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
 
-
-  img {
-    height: 30px;
-    width: 30px;
-    padding: 10px;
-  }
-`;
 
 const Button = styled.button`
   position: fixed;

@@ -32,6 +32,7 @@ export const SectionProducts = styled.div`
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
+  margin-bottom: 80px;
   @media only screen and (max-width: 435px) {
     width: 99%;
     }
