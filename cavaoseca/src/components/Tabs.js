@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import { Link } from "react-scroll";
 import { Link } from "react-router-dom";
 import instagram from "../assets/contact/instagram-white.png";
 import instagramverde from "../assets/contact/instagramverde.png";
@@ -10,25 +9,6 @@ const Tabs = ({ mode, location }) => {
   {
     return (
       <TabsBox mode={mode} location={location}>
-        {/* <Link to="/cavaoseca" spy={true} smooth={false} offset={-50} duration={800}>
-          HOME
-        </Link> */}
-        {/* <Link
-        
-        // to="/about" spy={true} smooth={false} offset={-13} duration={800}
-        
-        >
-          QUIENES SOMOS
-        </Link> */}
-        {/* <Link
-          to="/products"
-          spy={true}
-          smooth={false}
-          offset={70}
-          duration={800}
-        >
-          PRODUCTOS
-        </Link> */}
         <Link
           to="/contact"
           spy={true}
@@ -39,7 +19,7 @@ const Tabs = ({ mode, location }) => {
           QUIENES SOMOS
         </Link>
 
-        <a href="https://www.instagram.com/cavaoseca/" target="_blank">
+        {/* <a href="https://www.instagram.com/cavaoseca/" target="_blank">
           {location === "/products" ? (
             <>
               {" "}
@@ -56,7 +36,7 @@ const Tabs = ({ mode, location }) => {
         <a href="https://www.instagram.com/cavaoseca/" target="_blank">
               <img src={whatsapp} />
 
-        </a>
+        </a> */}
       </TabsBox>
     );
   }

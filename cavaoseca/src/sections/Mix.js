@@ -186,6 +186,16 @@ const Top = styled.div`
     font-size: 30px;
     cursor: pointer;
     max-width: 700px;
+
+    @media only screen and (max-width: 800px) {
+      font-size: 25px;
+
+  }
+
+  @media only screen and (max-width: 670px) {
+      font-size: 20px;
+
+  }
   }
 
   h3 {
@@ -199,9 +209,17 @@ const Top = styled.div`
     font-weight: 400;
     padding-bottom: 50px;
 
-    @media only screen and (max-width: 500px) {
-      padding-left: 20px;
-    }
+    @media only screen and (max-width: 800px) {
+      font-size: 13px;
+      max-width: 600px;
+  }
+
+  @media only screen and (max-width: 670px) {
+      font-size: 12px;
+      max-width: 400px;
+  }
+
+
   }
 
   /* display: flex;
