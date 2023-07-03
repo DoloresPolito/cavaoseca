@@ -61,7 +61,7 @@ const Contact = () => {
           overflowX: "hidden",
         }}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         {width >= medium ? (
           <>
             <Column1>
@@ -117,10 +117,10 @@ const Contact = () => {
                 </Form>
               </FormContainer>
 
-              <Media>
+              {/* <Media>
                 <a href="mailto:dolores.polito@gmail.com">
                   {" "}
-                  {/* <img src={mail} alt="mail" /> */}
+           
                 </a>
                 <a
                   href="https://www.instagram.com/cavaoseca/"
@@ -138,18 +138,18 @@ const Contact = () => {
                   {" "}
                   <img src={whatsapp} alt="whatsapp" />
                 </a>
-              </Media>
+              </Media> */}
             </Column2>
           </>
         ) : (
           <>
             <div>
               <SingleColumn>
-                <h4>
-                  HOLA! SOMOS MARCOS Y DOLORES. NOS ENCANTARÍA ASESORARTE Y QUE
+           <h4>
+                  {/*      HOLA! SOMOS MARCOS Y DOLORES. NOS ENCANTARÍA ASESORARTE Y QUE
                   PUEDAS DISFRUTAR DE NUESTRA VARIEDAD.
                   <br />
-                  <br />
+                  <br /> */}
                 <span>CONTACTANOS!</span> 
                 </h4>
 

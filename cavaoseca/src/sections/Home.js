@@ -7,8 +7,9 @@ import Off from "./Off";
 // import MoreButton from "../components/MoreButton";
 import Products from "../sections/Products";
 // import CompleteCatalog from "../components/CompleteCatalog";
-import instagram from "../assets/contact/instagram-white.png"
-import whatsapp from "../assets/contact/whatsapp-white.png"
+import instagram from "../assets/contact/instagram-white.png";
+import whatsapp from "../assets/contact/whatsapp-white.png";
+import Contacts from "./Contacts"
 
 const Home = () => {
   return (
@@ -21,15 +22,17 @@ const Home = () => {
       {/* <MoreButton/> */}
       {/* <CompleteCatalog/> */}
       <Products />
+      <Contacts />
 
-      <WhatsappButton><img src={whatsapp}/></WhatsappButton>
+      <WhatsappButton>
+        <img src={whatsapp} />
+      </WhatsappButton>
       <a href="https://www.instagram.com/cavaoseca/" target="_blank">
-      <InstagramButton>
-        
-
-        <img src={instagram}/>
-  </InstagramButton>      </a>
-      <HomeFooter />
+        <InstagramButton>
+          <img src={instagram} />
+        </InstagramButton>{" "}
+      </a>
+      {/* <HomeFooter /> */}
     </>
   );
 };
@@ -53,18 +56,17 @@ const InstagramButton = styled.div`
 
   @media only screen and (max-width: 645px) {
     height: 40px;
-  width: 40px;
-  left: 14px;
+    width: 40px;
+    left: 14px;
   }
-  img{
+  img {
     height: 30px;
     width: 30px;
     margin-top: 10px;
     @media only screen and (max-width: 645px) {
-    height: 20px;
-  width: 20px;
-
-  }
+      height: 20px;
+      width: 20px;
+    }
   }
 `;
 
@@ -80,21 +82,20 @@ const WhatsappButton = styled.div`
 
   @media only screen and (max-width: 645px) {
     height: 40px;
-  width: 40px;
+    width: 40px;
     bottom: 80px;
     left: 14px;
   }
 
-  img{
+  img {
     height: 30px;
     width: 30px;
     margin-top: 10px;
 
-
-  @media only screen and (max-width: 645px) {
-    height: 20px;
-  width: 20px
-  }
+    @media only screen and (max-width: 645px) {
+      height: 20px;
+      width: 20px;
+    }
   }
 `;
 

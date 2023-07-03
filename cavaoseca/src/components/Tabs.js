@@ -9,7 +9,7 @@ const Tabs = ({ mode, location }) => {
   {
     return (
       <TabsBox mode={mode} location={location}>
-        <Link
+        {/* <Link
           to="/contact"
           spy={true}
           smooth={false}
@@ -17,7 +17,7 @@ const Tabs = ({ mode, location }) => {
           duration={800}
         >
           QUIENES SOMOS
-        </Link>
+        </Link> */}
 
         {/* <a href="https://www.instagram.com/cavaoseca/" target="_blank">
           {location === "/products" ? (

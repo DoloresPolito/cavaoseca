@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "./Navbar";
 import promooffmobile from "../assets/promos/ultimamobile.png";
-import off30 from "../assets/promos/20nuevo.png";
+import off30 from "../assets/promos/desktop1.png";
 
 
 function Carrousel() {

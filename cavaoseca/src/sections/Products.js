@@ -247,118 +247,24 @@ const Products = () => {
         {/* <Navbar props="products" /> */}
 
         <SectionProducts mode={scroll} id="products">
-          {width > 1200 ? (
-            <>
-              <Left>
-                <form onSubmit={handleSubmit}>
-                  <input
-                    onChange={input.onChange}
-                    value={input.value}
-                    ref={inputRef}
-                    type="search"
-                    placeholder="Buscar por nombre"
-                  />
-                </form>
-                <button onClick={borrarFiltros}>borrar filtros</button>
-
-                <CheckboxContainer>
-                  <Checkbox
-                    name="tintos"
-                    checked={checked.tintos}
-                    setChecked={handleClickCheckbox}
-                  />
-                  <Checkbox
-                    name="blancos"
-                    checked={checked.blancos}
-                    setChecked={handleClickCheckbox}
-                  />
-                  <Checkbox
-                    name="espumantes"
-                    checked={checked.espumantes}
-                    setChecked={handleClickCheckbox}
-                  />
-                </CheckboxContainer>
-              </Left>
-              <Right>
-                <SelectProducts>
-                  <h2>** Los siguientes vinos se venden en cajas cerradas **</h2>
-                  {/* <img src={copasverdes} /> */}
-                </SelectProducts>
-
-                <Catalog>
-                  <SimpleGrid columns={4} spacing={25}>
-                    {wines.map((vino) => {
-                      const imagenVariable = imagenes[vino.imagename];
-                      return (
-                        <>
-                          <div key={vino.name}>
-                            <Box
-                              bg="transparent"
-                              height="190px"
-                              width="110px"
-                              borderRadius={"3px"}
-                            >
-                              <BoxImage
-                  
-                                className="image-container"
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                              >
-                                <img
-                                  src={imagenVariable}
-                                  height="240px"
-                                  width="160px"
-                                  alt="vino"
-                                  style={{
-                                    marginTop: "0px",
-                                    marginLeft: "0px",
-                                  }}
-                                />
-
-                                {hovered && (
-                                  <div
-                                    className="overlay"
-                                    onClick={() =>
-                                      opening(vino, imagenVariable)
-                                    }
-                                  >
-                                    <p>{vino.name}</p>
-                                    <p>ver más</p>
-                                  </div>
-                                )}
-                              </BoxImage>
-                            </Box>
-
-                            <Info>
-                              <WineName>
-                                <p className="winery"> {vino.winery}</p>
-                                <p className="name"> {vino.shortname}</p>
-                                <p className="type"> {vino.type}</p>
-
-                                <Modal
-                                  open={openModal}
-                                  selectedWine={selectedWine}
-                                  selectedImage={selectedImage}
-                                  onClose={() => closing()}
-                                />
-                              </WineName>
-
-                              <WinePrice>
-                                <p>{vino.price}</p>
-                              </WinePrice>
-                            </Info>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </SimpleGrid>
-                </Catalog>
-              </Right>
-            </>
-          ) : (
+         
             <>
               <VerticalContainer>
                 <Top>
+                
+                  <div>
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        onChange={input.onChange}
+                        value={input.value}
+                        type="search"
+                        placeholder="Buscar por nombre"
+                      />
+                    </form>
+                    <button className="buttonform" onClick={borrarFiltros}>
+                      borrar filtros
+                    </button>
+                  </div>
                   {" "}
                   <CheckboxContainer>
                     <Checkbox
@@ -377,19 +283,6 @@ const Products = () => {
                       setChecked={handleClickCheckbox}
                     />
                   </CheckboxContainer>
-                  <div>
-                    <form onSubmit={handleSubmit}>
-                      <input
-                        onChange={input.onChange}
-                        value={input.value}
-                        type="search"
-                        placeholder="Buscar por nombre"
-                      />
-                    </form>
-                    <button className="buttonform" onClick={borrarFiltros}>
-                      borrar filtros
-                    </button>
-                  </div>
                 </Top>
                 <Catalog>
                   <SimpleGrid
@@ -464,7 +357,7 @@ const Products = () => {
                 </Catalog>
               </VerticalContainer>
             </>
-          )}
+     
         </SectionProducts>
         {/* <ProductsFooter /> */}
       </div>
@@ -639,8 +532,10 @@ const Catalog = styled.div`
   margin-bottom: 50px;
   padding-top: 30px !important;
 
-  position: relative;
-  left: 80px;
+display: flex;
+padding-left: 50px;
+
+
 
   @media only screen and (max-width: 1200px) {
     padding-left: 0px !important;
@@ -648,6 +543,36 @@ const Catalog = styled.div`
     margin: 0 auto;
 
     left: 0px !important;
+  }
+
+
+  @media only screen and (max-width: 985px) {
+    padding-left: 50px !important;
+  }
+
+  @media only screen and (max-width: 830px) {
+    padding-left: 30px !important;
+  }
+
+  @media only screen and (max-width: 730px) {
+    padding-left: 10px !important;
+  }
+  @media only screen and (max-width: 555px) {
+    padding-left: 60px !important;
+  }
+  @media only screen and (max-width: 500px) {
+    padding-left: 30px !important;
+  }
+  @media only screen and (max-width: 440px) {
+    padding-left: 20px !important;
+  }
+
+  @media only screen and (max-width: 400px) {
+    padding-left: 15px !important;
+  }
+
+  @media only screen and (max-width: 369px) {
+    padding-left: 15px !important;
   }
 `;
 
@@ -729,7 +654,7 @@ const Left = styled.div`
     border: none;
     color: #fefefe;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 20px;
     width: 100px;
     margin-top: 10px;
   }
@@ -748,10 +673,12 @@ const CheckboxContainer = styled.div`
   margin-top: 70px;
 
   @media only screen and (max-width: 555px) {
-      margin-top: 20px;
-      order: 2;
-      height: 150px;
+      margin-top: 10px;
+      order: 1;
+      height: 100px;
     }
+
+
 `;
 
 const VerticalContainer = styled.div`
@@ -759,6 +686,7 @@ const VerticalContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 
   form {
     color: black;
@@ -783,6 +711,7 @@ const VerticalContainer = styled.div`
       height: 40px;
     width: 250px;
     }
+
   }
 
   h2 {
@@ -811,11 +740,21 @@ const VerticalContainer = styled.div`
       width: 13px;
     height: 13px;
     }
+
+    @media only screen and (max-width: 500px) {
+      width: 12px;
+    height: 12px;
+    }
   }
 
   label {
     display: inline-block;
     vertical-align: middle;
+
+
+    @media only screen and (max-width: 555px) {
+      font-size: 15px;
+    }
   }
 
   .buttonform {
@@ -835,15 +774,17 @@ const VerticalContainer = styled.div`
 
 const Top = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between !important;
   width: 100%;
 
-  @media only screen and (max-width: 555px) {
+  flex-direction: column;
+    justify-content: center !important;
+    align-items: center  !important;
+
+  /* @media only screen and (max-width: 555px) {
     flex-direction: column;
     justify-content: flex-start !important;
     align-items: flex-start  !important;
-  }
+  } */
 
 
 `;
@@ -855,8 +796,8 @@ const BoxImage = styled.div`
   margin-bottom: 80px;
   cursor: pointer;
 
-  @media only screen and (max-width: 435px) {
-    width: 130px;
+  @media only screen and (max-width: 369px) {
+    width: 155px;
   }
 `;
 export default Products;

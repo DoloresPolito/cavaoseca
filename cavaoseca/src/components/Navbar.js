@@ -29,16 +29,16 @@ const Navbar = ({ props }) => {
 
 
 
-        {width >= medium ? (
-          <>
+        {/* {width >= medium ? ( */}
+          {/* <>
             <Tabs mode={"large"} view={props} location={location.pathname} />
-          </>
-        ) : (
-          <>
-            <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
-            <Menu open={isOpen} location={location.pathname} />
-          </>
-        )}
+          </> */}
+        {/* // ) : (
+        //   <>
+        //     <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
+        //     <Menu open={isOpen} location={location.pathname} />
+        //   </>
+        // )} */}
       </NavbarContainer>
       <div
         style={{ backgrondColor: "violet", height: "30px", width: "30px" }}
@@ -59,11 +59,20 @@ const Logo = styled.div`
     font-size: 38px;
     letter-spacing: 1px;
     color: ${(props) => (props.location === "/products" ? "#6a6f58" : "white")};
+
+    @media only screen and (max-width: 635px) {
+    top: 2px;
+    margin-left: -30px !important;
+
+
+  }
   }
 
   @media only screen and (max-width: 635px) {
     top: 2px;
-    margin-left: 30px;
+    margin-left: 0px !important;
+
+
   }
 `;
 
@@ -73,8 +82,8 @@ const NavbarSection = styled.section`
   width: 90%;
   border-bottom: ${(props) =>
     props.location === "/products"
-      ? "1.5px solid #6a6f58"
-      : "1.5px solid white"};
+      ? "1px solid #6a6f58"
+      : "0.5px solid white"};
   height: 85px;
   display: flex;
   flex-direction: row;
