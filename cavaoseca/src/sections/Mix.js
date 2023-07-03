@@ -16,7 +16,7 @@ const Mix = () => {
     <>
       <MixSection id="mix">
         <Top>
-          <Img1 src={mancha1} />
+          {/* <Img1 src={mancha1} /> */}
           <h2>PROMO Mix</h2>
           <img src={mixicon} />
 
@@ -32,7 +32,7 @@ const Mix = () => {
             con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo
             tiene para ofrecer!
           </h3>
-          <Img2 src={mancha2} />
+          {/* <Img2 src={mancha2} /> */}
         </Top>
         <Bottom>
           <BoxContainer>
@@ -158,11 +158,11 @@ const Top = styled.div`
   color: white;
   border: 0.5px solid white;
   opacity: 0.95;
-  padding:40px 0px;
+  padding: 40px 0px;
 
   @media only screen and (max-width: 500px) {
-      padding:40px 20px;
-    }
+    padding: 40px 20px;
+  }
 
   p {
     font-family: "Bebas Neue", cursive;
@@ -171,8 +171,6 @@ const Top = styled.div`
 
     font-size: 30px;
     cursor: pointer;
-
-
   }
 
   img {
@@ -188,8 +186,6 @@ const Top = styled.div`
     font-size: 30px;
     cursor: pointer;
     max-width: 700px;
-
-
   }
 
   h3 {
@@ -252,9 +248,17 @@ const Bottom = styled.div`
 const BoxContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-
   justify-content: center;
   width: 80%;
+
+  @media only screen and (max-width: 700px) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: 420px) {
+
+    width: 100%;
+  }
 `;
 
 const Img1 = styled.img`
@@ -284,9 +288,29 @@ const Box = styled.div`
   height: 230px;
   width: 250px;
 
+  @media only screen and (max-width: 620px) {
+    height: 210px;
+    width: 210px;
+  }
+
+  @media only screen and (max-width: 532px) {
+    height: 210px;
+    width: 180px;
+  }
+
+  @media only screen and (max-width: 465px) {
+    height: 210px;
+    width: 140px;
+
+  }
+
   img {
     position: relative;
     left: -40px;
+
+    @media only screen and (max-width: 390px) {
+      left: -50px;
+    }
   }
 
   div {
@@ -297,6 +321,19 @@ const Box = styled.div`
     margin-top: 40px;
     margin-left: -60px;
 
+    @media only screen and (max-width: 620px) {
+      margin-top: 20px;
+      margin-left: -60px;
+    }
+    @media only screen and (max-width: 465px) {
+      margin-top: 20px;
+      margin-left: -80px;
+    }
+
+    @media only screen and (max-width: 390px) {
+      margin-left: -90px;
+    }
+
     h2 {
       font-size: 12px;
       font-weight: 600;
@@ -304,6 +341,14 @@ const Box = styled.div`
       text-transform: uppercase;
       color: #5b5a5a;
       text-align: start;
+
+      @media only screen and (max-width: 620px) {
+        font-size: 12px;
+      }
+
+      @media only screen and (max-width: 465px) {
+        font-size: 11px;
+      }
     }
 
     h3 {
@@ -313,6 +358,12 @@ const Box = styled.div`
       text-transform: uppercase;
       color: #6a7059;
       text-align: start;
+      @media only screen and (max-width: 620px) {
+        font-size: 11px;
+      }
+      @media only screen and (max-width: 465px) {
+        font-size: 10px;
+      }
     }
 
     button {
@@ -325,8 +376,20 @@ const Box = styled.div`
       position: relative;
       top: 50px;
 
+      @media only screen and (max-width: 620px) {
+        width: 60px;
+        height: 25px;
+      }
+
+      @media only screen and (max-width: 465px) {
+        width: 55px;
+      }
+
       p {
         margin-top: 6px;
+        @media only screen and (max-width: 620px) {
+          margin-top: 4px;
+        }
       }
     }
   }
