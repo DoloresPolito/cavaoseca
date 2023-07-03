@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/cavaoseca/static/css/main.190f3840.css",
-    "main.js": "/cavaoseca/static/js/main.08a9c48c.js",
+    "main.css": "/cavaoseca/static/css/main.3aab1814.css",
+    "main.js": "/cavaoseca/static/js/main.bac2e425.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
     "static/media/offfondosolo.png": "/cavaoseca/static/media/offfondosolo.2536aaf0363a1cfe148d.png",
     "static/media/fondo_producto.png": "/cavaoseca/static/media/fondo_producto.3cc67f59f47751e23e05.png",
-    "static/media/20nuevo.png": "/cavaoseca/static/media/20nuevo.f17475fc351efd42c7c8.png",
+    "static/media/desktop1.png": "/cavaoseca/static/media/desktop1.ca159c47b8a3b256ad23.png",
     "static/media/nuevo_loli_pruebacontacto.png": "/cavaoseca/static/media/nuevo_loli_pruebacontacto.9b78aa2a5de621184bd6.png",
     "static/media/ultimamobile.png": "/cavaoseca/static/media/ultimamobile.eee165a7d2392acc1cbc.png",
     "static/media/copasverde.png": "/cavaoseca/static/media/copasverde.285325a4f5f4e18b2fa7.png",
@@ -71,12 +71,12 @@
     "static/media/slick.ttf": "/cavaoseca/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
-    "main.190f3840.css.map": "/cavaoseca/static/css/main.190f3840.css.map",
-    "main.08a9c48c.js.map": "/cavaoseca/static/js/main.08a9c48c.js.map",
+    "main.3aab1814.css.map": "/cavaoseca/static/css/main.3aab1814.css.map",
+    "main.bac2e425.js.map": "/cavaoseca/static/js/main.bac2e425.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.190f3840.css",
-    "static/js/main.08a9c48c.js"
+    "static/css/main.3aab1814.css",
+    "static/js/main.bac2e425.js"
   ]
 }
