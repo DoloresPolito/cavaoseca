@@ -23,10 +23,12 @@ const Home = () => {
       {/* <CompleteCatalog/> */}
       <Products />
       <Contacts />
-
+      <a   href="https://api.whatsapp.com/send/?phone=543446584076" target="_blank"
+>
       <WhatsappButton>
         <img src={whatsapp} />
       </WhatsappButton>
+      </a>
       <a href="https://www.instagram.com/cavaoseca/" target="_blank">
         <InstagramButton>
           <img src={instagram} />

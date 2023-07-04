@@ -27,6 +27,7 @@ const Off = () => {
         <Carousel itemsToShow={width > medium ? 4 : width > small ? 3 : width > small2 ? 2 : 1} enableTilt={true} pagination={false}>
           <Item>
             <Box>
+              <OffDetail><p>30% <br/>OFF</p></OffDetail>
               <div>
                 <h2>Rutini Coleccion</h2>
                 <h3>malbec</h3>
@@ -43,6 +44,7 @@ const Off = () => {
           </Item>
           <Item>
             <Box>
+            <OffDetail><p>25% <br/>OFF</p></OffDetail>
               <div>
                 <h2>Saint Felicien </h2>
                 <h3>malbec</h3>
@@ -58,6 +60,7 @@ const Off = () => {
           </Item>
           <Item>
             <Box>
+            <OffDetail><p>20% <br/>OFF</p></OffDetail>
               <div>
                 <h2>DV Catena </h2>
                 <h3>Malbec</h3>
@@ -73,6 +76,7 @@ const Off = () => {
           </Item>
           <Item>
             <Box>
+            <OffDetail><p>15% <br/>OFF</p></OffDetail>
               <div>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
@@ -88,6 +92,7 @@ const Off = () => {
           </Item>
           <Item>
             <Box>
+            <OffDetail><p>20% <br/>OFF</p></OffDetail>
               <div>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
@@ -103,6 +108,7 @@ const Off = () => {
           </Item>
           <Item>
             <Box>
+            <OffDetail><p>30% <br/>OFF</p></OffDetail>
               <div>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
@@ -118,7 +124,7 @@ const Off = () => {
           </Item>
         </Carousel>
 
-        <Link to="products" smooth={true} duration={500}>
+        <Link to="products" smooth={true} duration={1000}>
           <button className="vertodo">ver todos los productos</button>
         </Link>
       </BenefitsContainer>
@@ -411,5 +417,23 @@ const BenefitsContainer = styled.div`
 
   }
 `;
+
+const OffDetail = styled.div`
+position:relative;
+bottom:-170px;
+left:-70px;
+height: 50px;
+width: 50px;
+background-color: #6A6F58;
+border-radius: 30px;
+
+p{
+  font-family: "Bebas Neue", cursive;
+  color:white;
+  letter-spacing: 1px;
+  text-align:center;
+}
+
+`
 
 export default Off;

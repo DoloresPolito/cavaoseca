@@ -78,6 +78,11 @@ import achavalferrercabernetfranc from "../assets/vinos/grilla/Achaval Ferrer Ca
 import achavalferrermalbec from "../assets/vinos/grilla/Achaval Ferrer Malbec.png";
 
 import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.png";
+
+
+import bottle1 from "../assets/icons/bottle1.png"
+
+import bottle2 from "../assets/icons/bottle2.png"
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
   const [selectedImage, setSelectedImage] = useState({});
@@ -340,7 +345,21 @@ const Products = () => {
                             </WineName>
 
                             <WinePrice>
+                              <button>
                               <p>{vino.price}</p>
+                              </button>
+                              <h6>unidad</h6>
+                              {/* <h6>X 1</h6>
+                              <img src={bottle1}/> */}
+                         
+                            </WinePrice>
+                            <WinePrice>
+                              <button>
+                              <p>$52.000</p>
+                              </button>
+                              <h6>x 6</h6>
+                              <img src={bottle1}/>
+                         
                             </WinePrice>
                           </Info>
                         </div>
@@ -471,9 +490,37 @@ const WineName = styled.div`
   }
 `;
 
-const WinePrice = styled.button`
+const WinePrice = styled.div`
+
+display: flex;
+margin-bottom: 5px;
+
+img{
+  height: 35px;
+  margin-top: -10px;
+
+}
+
+
+h6 {
+    color: #6a6f58 !important;
+    font-size: 13px !important;
+    font-family: "Poppins";
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+
+button{
   width: 80px !important;
   margin-top: 0px !important;
+  margin-bottom: 5px;
+
+}
+
   p {
     color: #6a6f58 !important;
     font-size: 15px !important;
@@ -481,6 +528,7 @@ const WinePrice = styled.button`
     font-weight: 600;
     text-align: left;
     margin: 0;
+    
   }
 
   @media only screen and (max-width: 700px) {

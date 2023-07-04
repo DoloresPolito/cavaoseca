@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import mancha1 from "../assets/Mancha 3.png";
-import mancha2 from "../assets/Manch 4.png";
+// import mancha1 from "../assets/Mancha 3.png";
+// import mancha2 from "../assets/Manch 4.png";
 import vino1 from "../assets/vinos/grilla/Bressia Lagrima Canela.png";
 import vino2 from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png";
 import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png";
@@ -11,6 +11,8 @@ import vino6 from "../assets/vinos/grilla/Felino.png";
 import vino7 from "../assets/vinos/grilla/Cocodrilo.png";
 import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
 import mixicon from "../assets/icons/mixiconwhite.png";
+import arrow from "../assets/icons/arrow-down.png"
+
 const Mix = () => {
   return (
     <>
@@ -32,6 +34,7 @@ const Mix = () => {
             con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo
             tiene para ofrecer!
           </h3>
+          <img src={arrow} />
           {/* <Img2 src={mancha2} /> */}
         </Top>
         <Bottom>
