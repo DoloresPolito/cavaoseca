@@ -83,6 +83,10 @@ import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.
 import bottle1 from "../assets/icons/bottle1.png"
 
 import bottle2 from "../assets/icons/bottle2.png"
+
+import {  useAnimation, motion } from "framer-motion";
+
+import { useInView } from "react-intersection-observer";
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
   const [selectedImage, setSelectedImage] = useState({});
@@ -116,6 +120,50 @@ const Products = () => {
     // obtenerVinos();
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, [wines, checked, estadoBoton]);
+
+  const animation1 = useAnimation();
+  const animation2 = useAnimation();
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
+
+  useEffect(() => {
+    if (inView) {
+
+
+      animation1.start({
+        x: 0,
+        transition: {
+          duration: 0.75,
+          bounce: 0.5,
+          ease: "easeIn",
+        },
+      });
+
+      animation2.start({
+        opacity: 0,
+        transition: {
+          duration: 0.8,
+          ease: "easeIn",
+        },
+
+      });
+    }
+
+    if (!inView) {
+  
+
+      animation1.start({
+        x: "-20%",
+      });
+
+
+      animation2.start({
+        opacity: 1,
+
+      });
+      
+    }
+  }, [inView]);
 
   const handleSubmit = function (e) {
     e.preventDefault();
@@ -248,13 +296,14 @@ const Products = () => {
           backgroundPosition: "center center",
           overflowX: "hidden",
         }}
+        ref={ref}
       >
 
-        <SectionProducts mode={scroll} id="products">
+        <SectionProducts mode={scroll} id="products" >
           <>
             <VerticalContainer>
               <Top>
-                <h2>** Los siguientes vinos se venden en cajas cerradas **</h2>
+                <motion.h2 animate={animation2}>** Los siguientes vinos se venden en cajas cerradas **</motion.h2>
                 <div>
                   <form onSubmit={handleSubmit}>
                     <input

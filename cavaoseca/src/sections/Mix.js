@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 // import mancha1 from "../assets/Mancha 3.png";
 // import mancha2 from "../assets/Manch 4.png";
@@ -12,29 +12,80 @@ import vino7 from "../assets/vinos/grilla/Cocodrilo.png";
 import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
 import mixicon from "../assets/icons/mixiconwhite.png";
 import arrow from "../assets/icons/arrow-down.png"
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Mix = () => {
+
+
+  const animation1 = useAnimation();
+  const animation2 = useAnimation();
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
+
+  useEffect(() => {
+    if (inView) {
+
+
+      animation1.start({
+        x: 0,
+        transition: {
+          duration: 0.75,
+          bounce: 0.5,
+          ease: "easeIn",
+        },
+      });
+
+      animation2.start({
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+          ease: "easeIn",
+        },
+
+      });
+    }
+
+    if (!inView) {
+  
+
+      animation1.start({
+        x: "-20%",
+      });
+
+
+      animation2.start({
+        opacity: 0,
+
+      });
+      
+    }
+  }, [inView]);
+
+
   return (
     <>
-      <MixSection id="mix">
+      <MixSection id="mix" ref={ref}>
         <Top>
           {/* <Img1 src={mancha1} /> */}
-          <h2>PROMO Mix</h2>
-          <img src={mixicon} />
+          <motion.h2 animate={animation2}>PROMO Mix</motion.h2>
+          <motion.img animate={animation1} src={mixicon} />
 
-          <h2>
+          <motion.h2 animate={animation2}>
             ¡Armá una o más cajas con tus vinos favoritos!
             {/* Explora una exquisita variedad de vinos y elige tus 6 favoritos
             para armar una caja única y llena de sabor! */}
-          </h2>
+          </motion.h2>
 
-          <h3>
+          <motion.h3
+          
+          animate={animation2}>
             ¡Podés elegir un mix con los siguientes vinos para crear una caja
             llena de variedad, sabores y experiencias vinícolas que te dejarán
             con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo
             tiene para ofrecer!
-          </h3>
-          <img src={arrow} />
+          </motion.h3>
+          <motion.img animate={animation1} src={arrow} />
           {/* <Img2 src={mancha2} /> */}
         </Top>
         <Bottom>
