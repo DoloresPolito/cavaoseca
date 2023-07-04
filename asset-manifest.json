@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cavaoseca/static/css/main.3aab1814.css",
-    "main.js": "/cavaoseca/static/js/main.fc0f796c.js",
+    "main.js": "/cavaoseca/static/js/main.c8f23944.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
     "static/media/offfondosolo.png": "/cavaoseca/static/media/offfondosolo.2536aaf0363a1cfe148d.png",
     "static/media/fondo_producto.png": "/cavaoseca/static/media/fondo_producto.3cc67f59f47751e23e05.png",
@@ -23,7 +23,6 @@
     "static/media/Artesano.png": "/cavaoseca/static/media/Artesano.52f21327673efd45f8fd.png",
     "static/media/Gran Enemigo El Cepillo.png": "/cavaoseca/static/media/Gran Enemigo El Cepillo.617f54c2188d0bcb0720.png",
     "static/media/Saint Felicien Chardonnay.png": "/cavaoseca/static/media/Saint Felicien Chardonnay.01ca78010254b655c30a.png",
-    "static/media/Mancha 3.png": "/cavaoseca/static/media/Mancha 3.d89de5718630d06232ef.png",
     "static/media/Dv Catena Chardonnay.png": "/cavaoseca/static/media/Dv Catena Chardonnay.735ba17815983f1fb831.png",
     "static/media/Brioso.png": "/cavaoseca/static/media/Brioso.d495e11fac3e2f9c21fb.png",
     "static/media/Fin del Mundo Single Vineyard Malbec.png": "/cavaoseca/static/media/Fin del Mundo Single Vineyard Malbec.915f0b16940e9fcb58b9.png",
@@ -72,11 +71,11 @@
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
     "main.3aab1814.css.map": "/cavaoseca/static/css/main.3aab1814.css.map",
-    "main.fc0f796c.js.map": "/cavaoseca/static/js/main.fc0f796c.js.map",
+    "main.c8f23944.js.map": "/cavaoseca/static/js/main.c8f23944.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3aab1814.css",
-    "static/js/main.fc0f796c.js"
+    "static/js/main.c8f23944.js"
   ]
 }
