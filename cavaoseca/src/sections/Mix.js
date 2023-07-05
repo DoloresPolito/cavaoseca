@@ -10,10 +10,12 @@ import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
 import vino6 from "../assets/vinos/grilla/Felino.png";
 import vino7 from "../assets/vinos/grilla/Cocodrilo.png";
 import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
-import mixicon from "../assets/icons/mixiconwhite.png";
+// import mixicon from "../assets/icons/mixiconwhite.png";
 import arrow from "../assets/icons/arrow-down.png"
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import fondomix from "../assets/fondos/fondomix.png";
+
 
 const Mix = () => {
 
@@ -69,14 +71,14 @@ const Mix = () => {
         <Top>
           {/* <Img1 src={mancha1} /> */}
           <motion.h2 animate={animation2}>PROMO Mix</motion.h2>
-          <motion.img animate={animation1} src={mixicon} />
+          {/* <motion.img animate={animation2} src={mixicon} /> */}
 
           <motion.h2 animate={animation2}>
             ¡Armá una o más cajas con tus vinos favoritos!
             {/* Explora una exquisita variedad de vinos y elige tus 6 favoritos
             para armar una caja única y llena de sabor! */}
           </motion.h2>
-
+          <Content>
           <motion.h3
           
           animate={animation2}>
@@ -85,7 +87,10 @@ const Mix = () => {
             con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo
             tiene para ofrecer!
           </motion.h3>
-          <motion.img animate={animation1} src={arrow} />
+          <motion.img animate={animation2} src={arrow} />
+          </Content>
+
+         
           {/* <Img2 src={mancha2} /> */}
         </Top>
         <Bottom>
@@ -228,8 +233,8 @@ const Top = styled.div`
   }
 
   img {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
   }
 
   h2 {
@@ -252,29 +257,7 @@ const Top = styled.div`
   }
   }
 
-  h3 {
-    font-family: "Poppins";
-    color: white;
-    letter-spacing: 1px;
-
-    font-size: 15px;
-    cursor: pointer;
-    max-width: 900px;
-    font-weight: 400;
-    padding-bottom: 50px;
-
-    @media only screen and (max-width: 800px) {
-      font-size: 13px;
-      max-width: 600px;
-  }
-
-  @media only screen and (max-width: 670px) {
-      font-size: 12px;
-      max-width: 400px;
-  }
-
-
-  }
+  
 
   /* display: flex;
   flex-direction: column;
@@ -312,7 +295,8 @@ const Bottom = styled.div`
   justify-content: center;
   flex: 50%;
   background-color: white;
-  background-image: url("./fondomix.png");
+  background-image: ${fondomix};
+  /* url("./fondomix.png"); */
   z-index: 100;
   padding: 80px 10px;
 `;
@@ -434,6 +418,7 @@ const Box = styled.div`
       font-family: "Roboto";
       text-transform: uppercase;
       color: #6a7059;
+
       text-align: start;
       @media only screen and (max-width: 620px) {
         font-size: 11px;
@@ -471,4 +456,37 @@ const Box = styled.div`
     }
   }
 `;
+
+const Content = styled.div`
+display:flex;
+
+align-items: center;
+
+
+
+h3 {
+    font-family: "Poppins";
+    color: white;
+    letter-spacing: 1px;
+
+    font-size: 15px;
+    cursor: pointer;
+    max-width: 500px;
+    font-weight: 400;
+    padding-bottom: 50px;
+margin-right: 50px;
+
+    @media only screen and (max-width: 800px) {
+      font-size: 13px;
+
+  }
+
+  @media only screen and (max-width: 670px) {
+      font-size: 12px;
+      max-width: 400px;
+  }
+
+
+  }
+`
 export default Mix;

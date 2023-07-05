@@ -79,12 +79,11 @@ import achavalferrermalbec from "../assets/vinos/grilla/Achaval Ferrer Malbec.pn
 
 import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.png";
 
+import bottle1 from "../assets/icons/bottle1.png";
 
-import bottle1 from "../assets/icons/bottle1.png"
+import bottle2 from "../assets/icons/bottle2.png";
 
-import bottle2 from "../assets/icons/bottle2.png"
-
-import {  useAnimation, motion } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
 
 import { useInView } from "react-intersection-observer";
 const Products = () => {
@@ -125,11 +124,8 @@ const Products = () => {
   const animation2 = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.3 });
 
-
   useEffect(() => {
     if (inView) {
-
-
       animation1.start({
         x: 0,
         transition: {
@@ -145,23 +141,17 @@ const Products = () => {
           duration: 0.8,
           ease: "easeIn",
         },
-
       });
     }
 
     if (!inView) {
-  
-
       animation1.start({
         x: "-20%",
       });
 
-
       animation2.start({
         opacity: 1,
-
       });
-      
     }
   }, [inView]);
 
@@ -298,12 +288,13 @@ const Products = () => {
         }}
         ref={ref}
       >
-
-        <SectionProducts mode={scroll} id="products" >
+        <SectionProducts mode={scroll} id="products">
           <>
             <VerticalContainer>
               <Top>
-                <motion.h2 animate={animation2}>** Los siguientes vinos se venden en cajas cerradas **</motion.h2>
+                <motion.h2 animate={animation2}>
+                  ** Los siguientes vinos se venden en cajas cerradas **
+                </motion.h2>
                 <div>
                   <form onSubmit={handleSubmit}>
                     <input
@@ -395,20 +386,18 @@ const Products = () => {
 
                             <WinePrice>
                               <button>
-                              <p>{vino.price}</p>
+                                <p>{vino.price}</p>
                               </button>
                               <h6>unidad</h6>
                               {/* <h6>X 1</h6>
                               <img src={bottle1}/> */}
-                         
                             </WinePrice>
                             <WinePrice>
                               <button>
-                              <p>$52.000</p>
+                                <p>$52.000</p>
                               </button>
                               <h6>x 6</h6>
-                              <img src={bottle1}/>
-                         
+                              <img src={bottle1} />
                             </WinePrice>
                           </Info>
                         </div>
@@ -431,7 +420,6 @@ const SelectProducts = styled.div`
   align-self: center;
   padding-top: 20px;
   justify-content: center;
-
 
   form {
     color: black;
@@ -540,18 +528,15 @@ const WineName = styled.div`
 `;
 
 const WinePrice = styled.div`
+  display: flex;
+  margin-bottom: 5px;
 
-display: flex;
-margin-bottom: 5px;
+  img {
+    height: 35px;
+    margin-top: -10px;
+  }
 
-img{
-  height: 35px;
-  margin-top: -10px;
-
-}
-
-
-h6 {
+  h6 {
     color: #6a6f58 !important;
     font-size: 13px !important;
     font-family: "Poppins";
@@ -562,13 +547,11 @@ h6 {
     margin-left: 5px;
   }
 
-
-button{
-  width: 80px !important;
-  margin-top: 0px !important;
-  margin-bottom: 5px;
-
-}
+  button {
+    width: 80px !important;
+    margin-top: 0px !important;
+    margin-bottom: 5px;
+  }
 
   p {
     color: #6a6f58 !important;
@@ -577,7 +560,6 @@ button{
     font-weight: 600;
     text-align: left;
     margin: 0;
-    
   }
 
   @media only screen and (max-width: 700px) {
@@ -585,9 +567,12 @@ button{
   }
 
   @media only screen and (max-width: 435px) {
-    width: 60px !important;
     p {
       font-size: 12px !important;
+    }
+
+    button {
+      width: 70px !important;
     }
   }
 `;

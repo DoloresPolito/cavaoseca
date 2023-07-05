@@ -8,6 +8,9 @@ import vino6 from "../assets/vinos/grilla/Dv Catena Malbec.png";
 import { Link } from "react-scroll";
 import Carousel from "react-elastic-carousel";
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const Off = () => {
 
   const [width, setWidth] = useState(window.innerWidth)
@@ -19,16 +22,60 @@ const Off = () => {
   const small = 530
   const small2 = 420
 
+  const animation1 = useAnimation();
+  const animation2 = useAnimation();
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
+
+  useEffect(() => {
+    if (inView) {
+
+
+      animation1.start({
+        x: 0,
+        transition: {
+          duration: 0.75,
+          bounce: 0.5,
+          ease: "easeIn",
+        },
+      });
+
+      animation2.start({
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+          ease: "easeIn",
+        },
+
+      });
+    }
+
+    if (!inView) {
+  
+
+      animation1.start({
+        x: "-20%",
+      });
+
+
+      animation2.start({
+        opacity: 0,
+
+      });
+      
+    }
+  }, [inView]);
+
   return (
     <>
 
 
-      <BenefitsContainer>
+      <BenefitsContainer ref={ref}>
         <Carousel itemsToShow={width > medium ? 4 : width > small ? 3 : width > small2 ? 2 : 1} enableTilt={true} pagination={false}>
           <Item>
             <Box>
               <OffDetail><p>30% <br/>OFF</p></OffDetail>
-              <div>
+              <motion.div animate={animation2}>
                 <h2>Rutini Coleccion</h2>
                 <h3>malbec</h3>
                 <img src={vino4} />
@@ -39,13 +86,13 @@ const Off = () => {
                   {" "}
                   <p className="nowprice">$5.600</p>
                 </button>
-              </div>
+              </motion.div>
             </Box>
           </Item>
           <Item>
             <Box>
             <OffDetail><p>25% <br/>OFF</p></OffDetail>
-              <div>
+            <motion.div animate={animation2}>
                 <h2>Saint Felicien </h2>
                 <h3>malbec</h3>
                 <img src={vino5} />
@@ -55,13 +102,13 @@ const Off = () => {
                   {" "}
                   <p className="nowprice">$5.600</p>
                 </button>
-              </div>
+                </motion.div>
             </Box>{" "}
           </Item>
           <Item>
             <Box>
             <OffDetail><p>20% <br/>OFF</p></OffDetail>
-              <div>
+            <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Malbec</h3>
                 <img src={vino6} />
@@ -71,13 +118,13 @@ const Off = () => {
                   {" "}
                   <p className="nowprice">$5.600</p>
                 </button>
-              </div>
+                </motion.div>
             </Box>
           </Item>
           <Item>
             <Box>
             <OffDetail><p>15% <br/>OFF</p></OffDetail>
-              <div>
+            <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
                 <img src={vino3} />
@@ -87,13 +134,13 @@ const Off = () => {
                   {" "}
                   <p className="nowprice">$5.600</p>
                 </button>
-              </div>
+                </motion.div>
             </Box>
           </Item>
           <Item>
             <Box>
             <OffDetail><p>20% <br/>OFF</p></OffDetail>
-              <div>
+            <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
                 <img src={vino3} />
@@ -103,13 +150,13 @@ const Off = () => {
                   {" "}
                   <p className="nowprice">$5.600</p>
                 </button>
-              </div>
+                </motion.div>
             </Box>
           </Item>
           <Item>
             <Box>
             <OffDetail><p>30% <br/>OFF</p></OffDetail>
-              <div>
+            <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
                 <img src={vino3} />
@@ -119,7 +166,7 @@ const Off = () => {
                   {" "}
                   <p className="nowprice">$5.600</p>
                 </button>
-              </div>
+                </motion.div>
             </Box>
           </Item>
         </Carousel>
