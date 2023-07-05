@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/cavaoseca/static/css/main.3aab1814.css",
-    "main.js": "/cavaoseca/static/js/main.6e4bb64b.js",
+    "main.js": "/cavaoseca/static/js/main.60849e9c.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
     "static/media/offfondosolo.png": "/cavaoseca/static/media/offfondosolo.2536aaf0363a1cfe148d.png",
     "static/media/fondo_producto.png": "/cavaoseca/static/media/fondo_producto.3cc67f59f47751e23e05.png",
     "static/media/desktop1.png": "/cavaoseca/static/media/desktop1.ca159c47b8a3b256ad23.png",
     "static/media/nuevo_loli_pruebacontacto.png": "/cavaoseca/static/media/nuevo_loli_pruebacontacto.9b78aa2a5de621184bd6.png",
     "static/media/ultimamobile.png": "/cavaoseca/static/media/ultimamobile.eee165a7d2392acc1cbc.png",
+    "static/media/fondomix.png": "/cavaoseca/static/media/fondomix.5e08befd61f5134ceef2.png",
     "static/media/copasverde.png": "/cavaoseca/static/media/copasverde.285325a4f5f4e18b2fa7.png",
     "static/media/Saint Felicien Malbec.png": "/cavaoseca/static/media/Saint Felicien Malbec.acff9d983a4c5c47de12.png",
     "static/media/Malbec Argentino.png": "/cavaoseca/static/media/Malbec Argentino.1be425e3cc547b5af773.png",
@@ -71,11 +72,11 @@
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
     "main.3aab1814.css.map": "/cavaoseca/static/css/main.3aab1814.css.map",
-    "main.6e4bb64b.js.map": "/cavaoseca/static/js/main.6e4bb64b.js.map",
+    "main.60849e9c.js.map": "/cavaoseca/static/js/main.60849e9c.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3aab1814.css",
-    "static/js/main.6e4bb64b.js"
+    "static/js/main.60849e9c.js"
   ]
 }
