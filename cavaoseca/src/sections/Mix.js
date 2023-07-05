@@ -14,7 +14,7 @@ import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
 import arrow from "../assets/icons/arrow-down.png"
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import fondomix from "../assets/fondos/fondomix.png";
+// import fondomix from "../assets/fondos/fondomixbaja.png";
 
 
 const Mix = () => {
@@ -295,8 +295,11 @@ const Bottom = styled.div`
   justify-content: center;
   flex: 50%;
   background-color: white;
-  background-image: ${fondomix};
-  /* url("./fondomix.png"); */
+  background-image:
+  
+  url("./fondomixbaja.png")
+  
+  ;
   z-index: 100;
   padding: 80px 10px;
 `;

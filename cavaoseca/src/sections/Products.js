@@ -293,7 +293,7 @@ const Products = () => {
             <VerticalContainer>
               <Top>
                 <motion.h2 animate={animation2}>
-                  ** Los siguientes vinos se venden en cajas cerradas **
+                  Los siguientes vinos se venden en cajas cerradas
                 </motion.h2>
                 <div>
                   <form onSubmit={handleSubmit}>
