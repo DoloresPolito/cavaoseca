@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cavaoseca/static/css/main.3aab1814.css",
-    "main.js": "/cavaoseca/static/js/main.15c4f67a.js",
+    "main.js": "/cavaoseca/static/js/main.f33cd937.js",
     "static/js/787.96ff43f6.chunk.js": "/cavaoseca/static/js/787.96ff43f6.chunk.js",
     "static/media/fondo_producto.png": "/cavaoseca/static/media/fondo_producto.3cc67f59f47751e23e05.png",
     "static/media/desktop1.png": "/cavaoseca/static/media/desktop1.ca159c47b8a3b256ad23.png",
@@ -72,11 +72,11 @@
     "static/media/slick.woff": "/cavaoseca/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/cavaoseca/index.html",
     "main.3aab1814.css.map": "/cavaoseca/static/css/main.3aab1814.css.map",
-    "main.15c4f67a.js.map": "/cavaoseca/static/js/main.15c4f67a.js.map",
+    "main.f33cd937.js.map": "/cavaoseca/static/js/main.f33cd937.js.map",
     "787.96ff43f6.chunk.js.map": "/cavaoseca/static/js/787.96ff43f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3aab1814.css",
-    "static/js/main.15c4f67a.js"
+    "static/js/main.f33cd937.js"
   ]
 }
