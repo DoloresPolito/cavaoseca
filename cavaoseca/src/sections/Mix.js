@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
-// import mancha1 from "../assets/Mancha 3.png";
-// import mancha2 from "../assets/Manch 4.png";
+import mancha1 from "../assets/Mancha 3.png";
+import mancha2 from "../assets/Manch 4.png";
 import vino1 from "../assets/vinos/grilla/Bressia Lagrima Canela.png";
 import vino2 from "../assets/vinos/grilla/Gran Enemigo Gualtallary.png";
 import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png";
@@ -10,12 +10,11 @@ import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
 import vino6 from "../assets/vinos/grilla/Felino.png";
 import vino7 from "../assets/vinos/grilla/Cocodrilo.png";
 import vino8 from "../assets/vinos/grilla/Dv Catena Malbec Malbec.png";
-// import mixicon from "../assets/icons/mixiconwhite.png";
 import arrow from "../assets/icons/arrow-down.png"
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-// import fondomix from "../assets/fondos/fondomixbaja.png";
-
+import fondomix from "../assets/fondos/fondomixbaja.png";
+import { Parallax } from "react-scroll-parallax";
 
 const Mix = () => {
 
@@ -41,7 +40,7 @@ const Mix = () => {
       animation2.start({
         opacity: 1,
         transition: {
-          duration: 0.5,
+          duration: 0.1,
           ease: "easeIn",
         },
 
@@ -57,7 +56,7 @@ const Mix = () => {
 
 
       animation2.start({
-        opacity: 0,
+        opacity: 0.5,
 
       });
       
@@ -69,9 +68,13 @@ const Mix = () => {
     <>
       <MixSection id="mix" ref={ref}>
         <Top>
-          {/* <Img1 src={mancha1} /> */}
+       <Parallax speed={8}>
+
+
+          <Img1 src={mancha1} alt="macha"/>
+
+          </Parallax>
           <motion.h2 animate={animation2}>PROMO Mix</motion.h2>
-          {/* <motion.img animate={animation2} src={mixicon} /> */}
 
           <motion.h2 animate={animation2}>
             ¡Armá una o más cajas con tus vinos favoritos!
@@ -87,16 +90,19 @@ const Mix = () => {
             con ganas de más! ¡Disfrutá y explorá los mejores vinos que el mundo
             tiene para ofrecer!
           </motion.h3>
+            <Parallax speed={-5}>
           <motion.img animate={animation2} src={arrow} />
+                 </Parallax>
           </Content>
 
-         
-          {/* <Img2 src={mancha2} /> */}
+          <Parallax speed={8}>
+          <Img2 src={mancha2} alt="macha"/>
+          </Parallax>
         </Top>
         <Bottom>
           <BoxContainer>
             <Box>
-              <img src={vino1} />
+              <img src={vino1} alt="wine"/>
               <div>
                 <h2>Bressia Lagrima Canela</h2>
                 <h3>CHARDONNAY</h3>
@@ -108,7 +114,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino2} />
+              <img src={vino2} alt="wine"/>
               <div>
                 <h2>Gualtallary</h2>
                 <h3>malbec</h3>
@@ -120,7 +126,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino3} />
+              <img src={vino3} alt="wine"/>
               <div>
                 <h2>DV Catena Chardonnay</h2>
                 <h3>cabernet franc</h3>
@@ -132,7 +138,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino4} />
+              <img src={vino4} alt="wine"/>
               <div>
                 <h2>Rutini Coleccion Malbec</h2>
                 <h3>malbec</h3>
@@ -144,7 +150,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino5} />
+              <img src={vino5} alt="wine"/>
               <div>
                 <h2>Saint Felicien Malbec</h2>
                 <h3>malbec</h3>
@@ -156,7 +162,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino7} />
+              <img src={vino7} alt="wine" />
               <div>
                 <h2>Cocodrilo</h2>
                 <h3>cabernet sauvignon</h3>
@@ -168,7 +174,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino6} />
+              <img src={vino6} alt="wine"/>
               <div>
                 <h2>Felino</h2>
                 <h3>CHARDONNAY</h3>
@@ -180,7 +186,7 @@ const Mix = () => {
             </Box>
 
             <Box>
-              <img src={vino8} />
+              <img src={vino8} alt="wine"/>
               <div>
                 <h2>DV Catena </h2>
                 <h3>syrah</h3>
@@ -218,6 +224,7 @@ const Top = styled.div`
   border: 0.5px solid white;
   opacity: 0.95;
   padding: 40px 0px;
+  position:relative;
 
   @media only screen and (max-width: 500px) {
     padding: 40px 20px;
@@ -246,6 +253,7 @@ const Top = styled.div`
     cursor: pointer;
     max-width: 700px;
 
+
     @media only screen and (max-width: 800px) {
       font-size: 25px;
 
@@ -257,36 +265,12 @@ const Top = styled.div`
   }
   }
 
+  h3{
+    text-align: start;
+  }
+
   
 
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-
-  h2 {
-    color: white;
-    font-family: "Cormorant", serif;
-    font-size: 28px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
- 
-    font-weight: 500;
-
-    line-height: 40px;
-    max-width: 800px;
-    z-index: 1000;
-
-    @media only screen and (max-width: 900px) {
-      max-width: 500px;
-    }
-
-    @media only screen and (max-width: 600px) {
-      max-width: 400px;
-      font-size: 23px;
-    }
-  } */
 `;
 
 const Bottom = styled.div`
@@ -295,11 +279,13 @@ const Bottom = styled.div`
   justify-content: center;
   flex: 50%;
   background-color: white;
-  background-image:
+  /* background-image:
   
   url("./fondomixbaja.png")
   
-  ;
+  ; */
+  background-image: url(${fondomix});
+
   z-index: 100;
   padding: 80px 10px;
 `;
@@ -324,14 +310,19 @@ const BoxContainer = styled.div`
 
 const Img1 = styled.img`
   position: absolute;
-  top: 1428px;
-  left: -50px;
+  top: 0;
+  left: -730px;
+  height: 400px !important;
+  width: 200px !important;
+  z-index: -1;
 `;
 
 const Img2 = styled.img`
   position: absolute;
-  top: 1428px;
-  left: 1000px;
+  top: -230px;
+  left: 450px;
+  height: 300px !important;
+  width: 200px !important;
 
   @media only screen and (max-width: 1300px) {
     display: none;

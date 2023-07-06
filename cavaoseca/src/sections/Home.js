@@ -1,12 +1,9 @@
 import "../App.css";
 import Carrousel from "../components/Carrousel";
 import styled from "styled-components";
-import HomeFooter from "../sections/HomeFooter";
 import Mix from "./Mix";
 import Off from "./Off";
-// import MoreButton from "../components/MoreButton";
 import Products from "../sections/Products";
-// import CompleteCatalog from "../components/CompleteCatalog";
 import instagram from "../assets/contact/instagram-white.png";
 import whatsapp from "../assets/contact/whatsapp-white.png";
 import Contacts from "./Contacts"
@@ -19,22 +16,19 @@ const Home = () => {
       </HomeSection>
       <Off />
       <Mix />
-      {/* <MoreButton/> */}
-      {/* <CompleteCatalog/> */}
       <Products />
       <Contacts />
-      <a   href="https://api.whatsapp.com/send/?phone=543446584076" target="_blank"
+      <a   href="https://api.whatsapp.com/send/?phone=543446584076" target="_blank" rel="noreferrer"
 >
       <WhatsappButton>
-        <img src={whatsapp} />
+        <img src={whatsapp} alt="whatsapp"/>
       </WhatsappButton>
       </a>
-      <a href="https://www.instagram.com/cavaoseca/" target="_blank">
+      <a href="https://www.instagram.com/cavaoseca/" target="_blank" rel="noreferrer">
         <InstagramButton>
-          <img src={instagram} />
+          <img src={instagram} alt="instagram"/>
         </InstagramButton>{" "}
       </a>
-      {/* <HomeFooter /> */}
     </>
   );
 };

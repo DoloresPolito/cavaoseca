@@ -2,16 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import { SectionProducts } from "../styles";
 import { SimpleGrid, Box } from "@chakra-ui/react";
 import styled from "styled-components";
-import Navbar from "../components/Navbar";
 import vinos from "../vinos";
 import { useInput } from "../hooks/useInput";
 import Modal from "../components/Modal";
-import copasverdes from "../assets/copasverde.png";
 import backgroundImage from "../assets/fondos/fondo_producto.png";
 import Checkbox from "../components/Checkbox";
 import { useChecked } from "../hooks/useChecked";
-import ProductsFooter from "./ProductsFooter";
-import { useLocation } from "react-router-dom";
 
 import cocodrilo from "../assets/vinos/grilla/Cocodrilo.png";
 import bramarevalledeuco from "../assets/vinos/grilla/Bramare Valle De Uco.png";
@@ -81,7 +77,6 @@ import achavalferrerquimera from "../assets/vinos/grilla/Achaval Ferrer Quimera.
 
 import bottle1 from "../assets/icons/bottle1.png";
 
-import bottle2 from "../assets/icons/bottle2.png";
 
 import { useAnimation, motion } from "framer-motion";
 
@@ -89,7 +84,6 @@ import { useInView } from "react-intersection-observer";
 const Products = () => {
   const [selectedWine, setSelectedWine] = useState({});
   const [selectedImage, setSelectedImage] = useState({});
-  const [scroll, setScroll] = useState(window.pageYOffset);
   const input = useInput("");
   const [wines, setWines] = useState(vinos);
   const [width, setWidth] = useState(window.innerWidth);
@@ -103,20 +97,10 @@ const Products = () => {
   };
 
   const [checked, handleClickCheckbox] = useChecked(initialState);
-  const location = useLocation();
 
   useEffect(() => {
     console.log("useEffect");
     input.value = "";
-    // const obtenerVinos = async () => {
-    //   try {
-    //     setWines(vinos);
-    //   } catch (error) {
-    //     console.error("Error al obtener las imágenes:", error);
-    //   }
-    // };
-
-    // obtenerVinos();
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, [wines, checked, estadoBoton]);
 
@@ -184,13 +168,13 @@ const Products = () => {
     return resultado;
   }
 
-  function filtrarPorTipo(tipo) {
-    console.log("entra a la funcion filtrar por tipo");
-    const resultado = vinos.filter((vino) =>
-      vino.tipo.toLowerCase().includes(tipo.toLowerCase())
-    );
-    return resultado;
-  }
+  // function filtrarPorTipo(tipo) {
+  //   console.log("entra a la funcion filtrar por tipo");
+  //   const resultado = vinos.filter((vino) =>
+  //     vino.tipo.toLowerCase().includes(tipo.toLowerCase())
+  //   );
+  //   return resultado;
+  // }
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -288,7 +272,7 @@ const Products = () => {
         }}
         ref={ref}
       >
-        <SectionProducts mode={scroll} id="products">
+        <SectionProducts  id="products">
           <>
             <VerticalContainer>
               <Top>
@@ -356,6 +340,7 @@ const Products = () => {
                                   marginTop: "0px",
                                   marginLeft: "0px",
                                 }}
+                         
                               />
 
                               {hovered && (
@@ -389,8 +374,7 @@ const Products = () => {
                                 <p>{vino.price}</p>
                               </button>
                               <h6>unidad</h6>
-                              {/* <h6>X 1</h6>
-                              <img src={bottle1}/> */}
+                    
                             </WinePrice>
                             <WinePrice>
                               <button>
@@ -413,61 +397,61 @@ const Products = () => {
     </>
   );
 };
-const SelectProducts = styled.div`
-  height: 150px;
-  width: 85%;
-  display: flex;
-  align-self: center;
-  padding-top: 20px;
-  justify-content: center;
+// const SelectProducts = styled.div`
+//   height: 150px;
+//   width: 85%;
+//   display: flex;
+//   align-self: center;
+//   padding-top: 20px;
+//   justify-content: center;
 
-  form {
-    color: black;
-    margin-top: 70px;
-  }
+//   form {
+//     color: black;
+//     margin-top: 70px;
+//   }
 
-  input {
-    color: black;
-    height: 50px;
-    width: 350px;
-    border: none;
-    border-radius: 25px;
-    padding: 20px;
-  }
+//   input {
+//     color: black;
+//     height: 50px;
+//     width: 350px;
+//     border: none;
+//     border-radius: 25px;
+//     padding: 20px;
+//   }
 
-  h2 {
-    font-family: "Bebas Neue", cursive;
-    color: #6a6f58;
-    letter-spacing: 2px;
-  }
+//   h2 {
+//     font-family: "Bebas Neue", cursive;
+//     color: #6a6f58;
+//     letter-spacing: 2px;
+//   }
 
-  ul {
-    list-style: none;
-    text-align: left;
-  }
+//   ul {
+//     list-style: none;
+//     text-align: left;
+//   }
 
-  li {
-    margin-bottom: 10px;
-  }
+//   li {
+//     margin-bottom: 10px;
+//   }
 
-  input[type="checkbox"] {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-    background-color: red !important;
-  }
+//   input[type="checkbox"] {
+//     display: inline-block;
+//     width: 20px;
+//     height: 20px;
+//     margin-right: 10px;
+//     vertical-align: middle;
+//     background-color: red !important;
+//   }
 
-  label {
-    display: inline-block;
-    vertical-align: middle;
-  }
+//   label {
+//     display: inline-block;
+//     vertical-align: middle;
+//   }
 
-  h2 {
-    padding-top: 60px;
-  }
-`;
+//   h2 {
+//     padding-top: 60px;
+//   }
+// `;
 
 const WineName = styled.div`
   display: flex;
@@ -663,71 +647,71 @@ const Info = styled.div`
   }
 `;
 
-const Left = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 280px;
-  margin-top: 100px;
+// const Left = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   width: 280px;
+//   margin-top: 100px;
 
-  form {
-    color: black;
-  }
+//   form {
+//     color: black;
+//   }
 
-  input {
-    color: black;
-    height: 50px;
-    width: 280px;
-    border: none;
-    border-radius: 25px;
-    padding: 20px;
-    border: 1px solid #6a6f58;
-  }
+//   input {
+//     color: black;
+//     height: 50px;
+//     width: 280px;
+//     border: none;
+//     border-radius: 25px;
+//     padding: 20px;
+//     border: 1px solid #6a6f58;
+//   }
 
-  h2 {
-    font-family: "Bebas Neue", cursive;
-    color: #6a6f58;
-    letter-spacing: 2px;
-  }
+//   h2 {
+//     font-family: "Bebas Neue", cursive;
+//     color: #6a6f58;
+//     letter-spacing: 2px;
+//   }
 
-  ul {
-    list-style: none;
-    text-align: left;
-  }
+//   ul {
+//     list-style: none;
+//     text-align: left;
+//   }
 
-  li {
-    margin-bottom: 10px;
-  }
+//   li {
+//     margin-bottom: 10px;
+//   }
 
-  input[type="checkbox"] {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-    background-color: red !important;
-  }
+//   input[type="checkbox"] {
+//     display: inline-block;
+//     width: 20px;
+//     height: 20px;
+//     margin-right: 10px;
+//     vertical-align: middle;
+//     background-color: red !important;
+//   }
 
-  label {
-    display: inline-block;
-    vertical-align: middle;
-  }
+//   label {
+//     display: inline-block;
+//     vertical-align: middle;
+//   }
 
-  button {
-    background-color: #6a6f58;
-    border: none;
-    color: #fefefe;
-    padding: 10px;
-    border-radius: 20px;
-    width: 100px;
-    margin-top: 10px;
-  }
-`;
+//   button {
+//     background-color: #6a6f58;
+//     border: none;
+//     color: #fefefe;
+//     padding: 10px;
+//     border-radius: 20px;
+//     width: 100px;
+//     margin-top: 10px;
+//   }
+// `;
 
-const Right = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: -80px;
-`;
+// const Right = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   margin-left: -80px;
+// `;
 
 const CheckboxContainer = styled.div`
   display: flex;
@@ -841,11 +825,6 @@ const Top = styled.div`
   justify-content: center !important;
   align-items: center !important;
 
-  /* @media only screen and (max-width: 555px) {
-    flex-direction: column;
-    justify-content: flex-start !important;
-    align-items: flex-start  !important;
-  } */
 `;
 
 const BoxImage = styled.div`

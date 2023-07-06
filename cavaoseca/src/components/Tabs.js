@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import instagram from "../assets/contact/instagram-white.png";
-import instagramverde from "../assets/contact/instagramverde.png";
-import whatsapp from "../assets/contact/whatsapp-white.png"
+
 
 const Tabs = ({ mode, location }) => {
   {
@@ -19,7 +16,7 @@ const Tabs = ({ mode, location }) => {
           QUIENES SOMOS
         </Link> */}
 
-        {/* <a href="https://www.instagram.com/cavaoseca/" target="_blank">
+        {/* <a href="https://www.instagram.com/cavaoseca/" target="_blank" rel="noreferrer">
           {location === "/products" ? (
             <>
               {" "}
@@ -33,7 +30,7 @@ const Tabs = ({ mode, location }) => {
           )}
         </a>
 
-        <a href="https://www.instagram.com/cavaoseca/" target="_blank">
+        <a href="https://www.instagram.com/cavaoseca/" target="_blank" rel="noreferrer">
               <img src={whatsapp} />
 
         </a> */}

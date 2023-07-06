@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
 import styled from "styled-components";
-import instagram from "../assets/contact/instagram-white.png";
-import whatsapp from "../assets/contact/whatsapp-white.png";
 // import emailjs from "emailjs-com";
-import backgroundImage from "../assets/fondos/nuevo_loli_pruebacontacto.png";
-import Modal from "../components/Modal";
-import { SimpleGrid } from "@chakra-ui/react";
+import fondocontacto from "../assets/fondos/contacto70.png";
+import { Parallax } from "react-scroll-parallax";
 
 const Contact = () => {
   //   const frmContact = { userName: ``, userEmail: ``, message: `` };
@@ -41,35 +37,21 @@ const Contact = () => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
-  const medium = 1230;
+  const medium = 1000;
 
   return (
-    <>
-      <div
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          width: "100%",
-          height: "700px",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          display: "flex",
-          // flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          flexWrap: "wrap",
-          // overflowX: "hidden",
-        }}
-      >
-        {/* <Navbar /> */}
+    <ContactSection>
+      <ContactContent>
         {width >= medium ? (
           <>
             <Column1>
-              <h4>
-                HOLA! SOMOS MARCOS Y DOLORES. NOS ENCANTARÍA ASESORARTE Y QUE
-                PUEDAS DISFRUTAR DE NUESTRA VARIEDAD.
-              </h4>
-              <h3>CONTACTANOS!</h3>
+              <Parallax speed={8}>
+                <h4>
+                  HOLA! SOMOS MARCOS Y DOLORES. NOS ENCANTARÍA ASESORARTE Y QUE
+                  PUEDAS DISFRUTAR DE NUESTRA VARIEDAD.
+                </h4>
+                <h3>CONTACTANOS!</h3>
+              </Parallax>
             </Column1>
 
             <Column2>
@@ -111,46 +93,19 @@ const Contact = () => {
                     required
                   />
 
-                  <button type="submit" className="bottom-form">
+                  <button type="submit" >
                     Enviar
                   </button>
                 </Form>
               </FormContainer>
-
-              {/* <Media>
-                <a href="mailto:dolores.polito@gmail.com">
-                  {" "}
-           
-                </a>
-                <a
-                  href="https://www.instagram.com/cavaoseca/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <img src={instagram} alt="instagram" />
-                </a>
-                <a
-                  href="https://wa.me/5493446584076"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <img src={whatsapp} alt="whatsapp" />
-                </a>
-              </Media> */}
             </Column2>
           </>
         ) : (
           <>
-            <div>
+    
               <SingleColumn>
-           <h4>
-                  {/*      HOLA! SOMOS MARCOS Y DOLORES. NOS ENCANTARÍA ASESORARTE Y QUE
-                  PUEDAS DISFRUTAR DE NUESTRA VARIEDAD.
-                  <br />
-                  <br /> */}
-                <span>CONTACTANOS!</span> 
+                <h4>
+                  <span>CONTACTANOS!</span>
                 </h4>
 
                 <FormContainer>
@@ -191,32 +146,53 @@ const Contact = () => {
                       required
                     />
 
-                    <button type="submit" className="bottom-form">
+                    <button type="submit" >
                       Enviar
                     </button>
                   </Form>
                 </FormContainer>
               </SingleColumn>
-            </div>
+    
           </>
         )}
-      </div>
-    </>
+
+      </ContactContent>
+      <CopyRight>
+        <p>Todos los derechos reservados. CAVAOSECA © </p>
+      </CopyRight>
+    </ContactSection>
   );
 };
 
+const ContactSection = styled.div`
+  height: 500px;
+  width: 100%;
+  background-image: url(${fondocontacto});
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContactContent = styled.div`
+  height: 450px;
+  display: flex;
+
+`;
 const FormContainer = styled.div`
   width: 60%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
 
-  @media only screen and (max-width: 1230px) {
+  /* @media only screen and (max-width: 1230px) {
     width: 80%;
     margin: 0 0;
     justify-content: center;
     align-items: center;
-  }
+  } */
 
   /* @media only screen and (max-width: 900px) {
     width: 60%;
@@ -227,6 +203,8 @@ const FormContainer = styled.div`
 `;
 
 const Form = styled.form`
+display: flex;
+flex-direction: column;
   list-style: none;
   text-decoration: none !important;
   font-size: 20px !important;
@@ -234,10 +212,9 @@ const Form = styled.form`
   align-items: center;
   font-weight: 300;
   letter-spacing: 2px;
+  justify-content: center;
 
-  @media only screen and (max-width: 1230px) {
-    width: 100%;
-  }
+
 
   button {
     padding: 10px;
@@ -247,13 +224,9 @@ const Form = styled.form`
     border: 1px solid #f6f6f6;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 390px;
-    margin-top: 10px;
-    border-radius: 10px;
 
-    @media only screen and (max-width: 1230px) {
-      margin-left: 0px;
-    }
+    margin-top: 10px; 
+    border-radius: 10px;
   }
 `;
 
@@ -268,37 +241,11 @@ const Input = styled.input`
 `;
 
 
-
-const Button = styled.button`
-  position: fixed;
-  top: 100px;
-  right: 80px;
-  background-color: black;
-  border: 1.5px solid #ff5000;
-  height: 40px;
-  width: 150px;
-  border-radius: 20px;
-  z-index: 100;
-
-  p {
-    color: #ffffff;
-    font-size: 14px;
-    margin: auto;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-  }
-`;
-
 const Column2 = styled.div`
   width: 700px;
-  height: 400px;
 
   padding-top: 100px;
 
-  @media only screen and (max-width: 1230px) {
-    width: 100%;
-  }
 `;
 
 const Column1 = styled.div`
@@ -306,19 +253,11 @@ const Column1 = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 500px;
-  margin-left: 40px;
-  height: 700px;
-  justify-content: center;
+  margin-left: 150px;
 
-  @media only screen and (max-width: 1230px) {
-    margin-left: 0px;
-    width: 100%;
-    align-items: center;
-  }
+  height: 430px;
+  padding-top: 20px;
 
-  @media only screen and (max-width: 535px) {
-    width: 80%;
-  }
 
   h4 {
     display: flex;
@@ -331,7 +270,7 @@ const Column1 = styled.div`
     margin-top: 50px;
     text-align: left;
 
-    @media only screen and (max-width: 1230px) {
+    @media only screen and (max-width: 1000px) {
       font-size: 35px;
       width: 700px;
     }
@@ -360,10 +299,10 @@ const Column1 = styled.div`
     background-color: #536052;
     width: 190px;
     border-radius: 5px;
-    padding:3px;
+    padding: 3px;
     padding-left: 6px;
 
-    @media only screen and (max-width: 1230px) {
+    @media only screen and (max-width: 1000px) {
       font-size: 35px;
       width: 700px;
     }
@@ -378,15 +317,13 @@ const Column1 = styled.div`
       width: auto;
     }
   }
-
-
 `;
 
 const SingleColumn = styled.div`
   display: flex;
   flex-direction: column;
+align-items: center;
   width: 80%;
-  height: 100vh;
   margin: 0 auto;
 
   h4 {
@@ -403,14 +340,14 @@ const SingleColumn = styled.div`
     max-width: 800px;
     flex-direction: column;
 
-    @media only screen and (max-width: 1230px) {
+    @media only screen and (max-width: 1000px) {
       font-size: 35px;
-      /* width: 700px; */
+
     }
 
     @media only screen and (max-width: 700px) {
       font-size: 35px;
-      /* width: 400px; */
+
     }
 
     @media only screen and (max-width: 535px) {
@@ -427,10 +364,10 @@ const SingleColumn = styled.div`
     letter-spacing: 2px;
     font-size: 35px;
     margin-top: 10px;
-    text-align: left !important;  
+    text-align: left !important;
     /* background-color: green; */
 
-    @media only screen and (max-width: 1230px) {
+    @media only screen and (max-width: 1000px) {
       font-size: 35px;
       width: 700px;
     }
@@ -446,14 +383,31 @@ const SingleColumn = styled.div`
     }
   }
 
-  span{
+  span {
     background-color: #536052;
     width: 190px;
     border-radius: 5px;
-    padding:3px;
+    padding: 3px;
     padding-left: 12px;
   }
+`;
 
+const CopyRight = styled.div`
+display: flex;
+justify-content: center;
+
+
+p{
+
+  color: #ffffff;
+    font-size: 12px;
+    margin: auto;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 20px;
+
+}
 `;
 
 export default Contact;

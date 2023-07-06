@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled from "styled-components";
-import offfondosolo from "../assets/promos/offfondosolo.png";
+import offfondosolo from "../assets/fondos/offfondosolobaja.png";
 import vino3 from "../assets/vinos/grilla/Dv Catena Chardonnay.png";
 import vino4 from "../assets/vinos/grilla/Rutini Coleccion Malbec.png";
 import vino5 from "../assets/vinos/grilla/Saint Felicien Chardonnay.png";
 import vino6 from "../assets/vinos/grilla/Dv Catena Malbec.png";
 import { Link } from "react-scroll";
 import Carousel from "react-elastic-carousel";
-
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -78,7 +77,7 @@ const Off = () => {
               <motion.div animate={animation2}>
                 <h2>Rutini Coleccion</h2>
                 <h3>malbec</h3>
-                <img src={vino4} />
+                <img src={vino4} alt="wine"/>
 
                 <p className="prevprice">$7.600</p>
 
@@ -95,7 +94,7 @@ const Off = () => {
             <motion.div animate={animation2}>
                 <h2>Saint Felicien </h2>
                 <h3>malbec</h3>
-                <img src={vino5} />
+                <img src={vino5} alt="wine"/>
                 <p className="prevprice">$7.600</p>
 
                 <button className="now">
@@ -111,7 +110,7 @@ const Off = () => {
             <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Malbec</h3>
-                <img src={vino6} />
+                <img src={vino6} alt="wine"/>
                 <p className="prevprice">$7.600</p>
 
                 <button className="now">
@@ -127,7 +126,7 @@ const Off = () => {
             <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
-                <img src={vino3} />
+                <img src={vino3} alt="wine"/>
                 <p className="prevprice">$7.600</p>
 
                 <button className="now">
@@ -143,7 +142,7 @@ const Off = () => {
             <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
-                <img src={vino3} />
+                <img src={vino3} alt="wine"/>
                 <p className="prevprice">$7.600</p>
 
                 <button className="now">
@@ -159,7 +158,7 @@ const Off = () => {
             <motion.div animate={animation2}>
                 <h2>DV Catena </h2>
                 <h3>Chardonnay </h3>
-                <img src={vino3} />
+                <img src={vino3} alt="wine"/>
                 <p className="prevprice">$7.600</p>
 
                 <button className="now">
@@ -179,57 +178,7 @@ const Off = () => {
   );
 };
 
-// const Section = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   background-image: url(${offfondosolo});
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
 
-//   div {
-//     display: flex;
-//     flex-direction: row;
-//     margin: 0 auto;
-//     flex-wrap: wrap;
-//     /* padding-bottom: 140px; */
-//   }
-
-//   @media only screen and (max-width: 1230px) {
-//     height: 100%;
-//   }
-
-//   .vertodo {
-//     border: 1px solid #6a7059;
-//     height: 40px;
-//     background: transparent;
-//     cursor: pointer;
-//     color: #6a7059;
-//     padding: 10px 20px;
-//     margin-top: 40px;
-//     margin-bottom: 40px;
-//   }
-// `;
-
-// const TopLine = styled.div`
-//   height: 70px;
-//   width: 100%;
-//   background-color: #9fb097;
-//   position: relative;
-
-//   p {
-//     color: white;
-//     font-family: "Cormorant", serif;
-//     font-size: 28px;
-//     letter-spacing: 1.2px;
-//     margin: auto;
-//     padding-top: 6px;
-//   }
-
-//   @media only screen and (max-width: 519px) {
-//     height: 100px;
-//   }
-// `;
 
 const Box = styled.div`
   display: flex;
@@ -239,7 +188,7 @@ const Box = styled.div`
 
   img {
     height: 360px;
-    /* padding-top: 20px; */
+
   }
 
   div {
@@ -319,18 +268,14 @@ const Item = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* gap: 25px; */
   flex-wrap: wrap;
 
 
   @media only screen and (max-width: 1000px) {
     flex-direction: column;
-    /* height: 400px; */
     align-items: left;
     justify-content: center;
     align-items: flex-start !important;
-    /* padding: 50px; */
-    /* margin-left: 5px; */
   }
   
   div {
@@ -431,7 +376,6 @@ const BenefitsContainer = styled.div`
     width: calc(100% + 90px);
     min-height: 300px;
     width: 90vw;
-    /* border: 1px solid black; */
     @media only screen and (max-width: 850px) {
       width: 90vw;
     }
