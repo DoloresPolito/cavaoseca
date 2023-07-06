@@ -12,7 +12,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <>
-          <Route path="/cavaoseca" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
           {/* <Route path="*" element={<Route404/>} /> */}
