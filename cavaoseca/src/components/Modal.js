@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
 import close from "../assets/icons/close-verde.png";
+import backgroundImage from "../assets/fondos/fondo_producto.png";
+
+
+
+
 
 const Modal = ({ open, onClose, selectedWine, selectedImage }) => {
   const { ref, inView } = useInView();
@@ -22,7 +27,30 @@ const Modal = ({ open, onClose, selectedWine, selectedImage }) => {
   return (
     <>
       <Overlay onClick={onClose}>
+     
+
         <div ref={ref}>
+          <motion.div
+            // animate={controls}
+            // initial="hidden"
+            // variants={{
+            //   visible: { width: '455px', height: '625px' },
+            //   hidden: { width: '0', height: '0' },
+            // }}
+            // transition={{ duration: 0.5 }}
+            // style={{
+            //   backgroundColor: 'black',
+            //   border: '2px solid rgb(255, 80, 0)',
+            //   borderRadius: '44px',
+            //   position: 'absolute',
+            //   top: '0',
+            //   right: '0',
+            //   marginTop: '75px',
+            //   marginLeft: 'auto',
+            //   marginRight: '80px',
+            //   overflow: 'hidden',
+            // }}
+          >
           <ModalContainer
             onClick={(e) => {
               e.stopPropagation();
@@ -61,6 +89,7 @@ const Modal = ({ open, onClose, selectedWine, selectedImage }) => {
               </Content>
             </>
           </ModalContainer>
+          </motion.div>
         </div>
       </Overlay>
     </>
@@ -68,9 +97,16 @@ const Modal = ({ open, onClose, selectedWine, selectedImage }) => {
 };
 
 const Overlay = styled.div`
+
+
   position: fixed;
+  top: 0;
+  right: 0 !important;
   width: 100%;
   height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-image: url(${backgroundImage});
+  z-index: 100;
 `;
 const ModalContainer = styled.div`
   max-width: 700px;
@@ -87,14 +123,20 @@ const ModalContainer = styled.div`
   margin-top: 70px;
   height: 670px;
 
+  z-index: 1000;
+
+  border:1.5px solid #6a6f58;
+  /* max-width: 50%;
+    height: 90%; */
+
   @media only screen and (max-width: 820px) {
-    max-width: 500px;
-    height: 500px;
+    max-width: 80%;
+    height: 80%;
   }
 
   @media only screen and (max-width: 500px) {
-    max-width: 320px;
-    height: 450px;
+    max-width: 80%;
+    height: 80%;
   }
 `;
 const TitleContainer = styled.div`

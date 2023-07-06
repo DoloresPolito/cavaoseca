@@ -18,8 +18,8 @@ const Off = () => {
   }, [])
 
   const medium = 800
-  const small = 530
-  const small2 = 420
+  const small = 620
+  const small2 = 460
 
   const animation1 = useAnimation();
   const animation2 = useAnimation();
@@ -417,6 +417,16 @@ height: 50px;
 width: 50px;
 background-color: #6A6F58;
 border-radius: 30px;
+
+@media only screen and (max-width: 980px) {
+  left:-60px;
+
+}
+
+@media only screen and (max-width: 869px) {
+  left:-50px;
+
+}
 
 p{
   font-family: "Bebas Neue", cursive;
