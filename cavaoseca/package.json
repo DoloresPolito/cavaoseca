@@ -1,7 +1,7 @@
 {
   "name": "cavaoseca",
   "version": "0.1.0",
-  "homepage": "https://dolorespolito.github.io/cavaoseca",
+  "homepage": "https://DoloresPolito.github.io/cavaoseca",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.6.1",
